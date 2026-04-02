@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LaSiDoHouse | Boutique Hotel Hoàn Kiếm</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#ffa26a",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#956e00",
+              "surface-tint": "#50652a",
+              "on-primary-container": "#030600",
+              "secondary-fixed": "#ffdbc9",
+              "on-secondary-fixed": "#321200",
+              "primary-fixed": "#d2eca2",
+              "surface-container-highest": "#e4e4cc",
+              "surface-container-high": "#eaead1",
+              "secondary-fixed-dim": "#ffb68c",
+              "tertiary-fixed-dim": "#f6be3b",
+              "outline-variant": "#d1c4b9",
+              "outline": "#7f756b",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface-container": "#efefd7",
+              "on-secondary-fixed-variant": "#753401",
+              "on-tertiary-fixed": "#261900",
+              "inverse-surface": "#303221",
+              "on-background": "#1b1d0e",
+              "primary-fixed-dim": "#b6d088",
+              "surface": "#fbfbe2",
+              "secondary": "#934b19",
+              "primary": "#50652a",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#765700",
+              "on-primary-fixed-variant": "#394d14",
+              "surface-variant": "#e4e4cc",
+              "tertiary-fixed": "#ffdea0",
+              "surface-dim": "#dbdcc3",
+              "inverse-primary": "#b6d088",
+              "on-secondary": "#ffffff",
+              "primary-container": "#687f40",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-low": "#f5f5dc",
+              "inverse-on-surface": "#f2f2d9",
+              "on-secondary-container": "#783603",
+              "on-tertiary-container": "#fffbff",
+              "background": "#fbfbe2",
+              "on-surface": "#1b1d0e",
+              "on-surface-variant": "#4d453c",
+              "on-primary-fixed": "#131f00",
+              "surface-bright": "#fbfbe2",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .hero-gradient { background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(0,0,0,0.6)); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm transition-all duration-500">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<a class="text-2xl font-serif italic text-lime-950 dark:text-lime-200" href="#">LaSiDoHouse</a>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#about">About</a>
+<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#highlights">Highlights</a>
+<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#floors">Floors</a>
+<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#location">Location</a>
+<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#reviews">Reviews</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-sm font-medium tracking-wide shadow-lg hover:brightness-110 transition-all">
+                Đặt phòng ngay
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury boutique interior" class="w-full h-full object-cover" data-alt="Interior of a luxury boutique townhouse in Hanoi with warm wooden accents, soft ambient lighting, and traditional Vietnamese architectural details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq6UjMHoZ2ANI5YBuskEeK3-iyWyAKuEVt-GI9zw74hb60It7Ou9-Kafm8AeXOEKBD8ZC6xWT46JkLMTipCkSIsBaNwH1n9E9m22NirEFhScZ5Tns524qcSj4h7hpdG8_6r6__oZVAT7oXRhEXeuWr9NUARNCSXitGgqCyXOaNSOrylCu5izduKtDzJOldPj7QrqEQaldkQGQhaJC1O9UwXLGgZiN-9VE1pfuuta9kpsovTEMDEe-699YaCGvTHhuDvvP8TZ7Ijw0"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl">
+<h1 class="font-headline italic text-6xl md:text-8xl text-surface mb-4 leading-tight">LaSiDoHouse</h1>
+<p class="font-headline text-xl md:text-3xl text-surface-container-low mb-10 tracking-wide">Một góc Hà Nội xưa — Giữa lòng phố cổ</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-sm text-lg font-medium shadow-2xl hover:translate-y-[-2px] transition-transform">
+                    Đặt phòng ngay
+                </button>
+<button class="border border-surface/30 backdrop-blur-md text-surface px-10 py-4 rounded-sm text-lg font-medium hover:bg-surface/10 transition-all">
+                    Khám phá
+                </button>
+</div>
+</div>
+</header>
+<!-- Introduction Section -->
+<section class="py-24 px-8 md:px-24 bg-surface grid md:grid-cols-2 gap-16 items-center" id="about">
+<div class="space-y-8">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-snug">Về chốn bình yên <span class="italic font-normal">như chính ngôi nhà bạn</span>.</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg max-w-lg">
+                LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà Nội phố cổ.
+            </p>
+<div class="grid grid-cols-2 gap-8 pt-4">
+<div class="border-l border-outline-variant/30 pl-6">
+<span class="block text-4xl font-headline text-primary">3 Tầng</span>
+<span class="text-sm uppercase tracking-widest text-on-surface-variant font-medium">Nhà phố nguyên căn</span>
+</div>
+<div class="border-l border-outline-variant/30 pl-6">
+<span class="block text-4xl font-headline text-primary">7 Khách</span>
+<span class="text-sm uppercase tracking-widest text-on-surface-variant font-medium">Sức chứa tối đa</span>
+</div>
+<div class="border-l border-outline-variant/30 pl-6">
+<span class="block text-4xl font-headline text-primary">5.0 ★</span>
+<span class="text-sm uppercase tracking-widest text-on-surface-variant font-medium">Đánh giá Airbnb</span>
+</div>
+<div class="border-l border-outline-variant/30 pl-6">
+<span class="block text-4xl font-headline text-primary">Host</span>
+<span class="text-sm uppercase tracking-widest text-on-surface-variant font-medium">Superhost tận tâm</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] bg-surface-container-high rounded-sm overflow-hidden">
+<img alt="Cozy living space" class="w-full h-full object-cover" data-alt="Sunlit living room with vintage wooden furniture, linen curtains, and indoor plants in a boutique Hanoi home" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGHNZeVHWiNXZNGhhx75sMkdx1uNizbQjzb_2z77lglW8kpe1j30Q5ZoYvfcIilIVJRwsLUcFMVWUJLEti0TeT3GRofPNIbuSJxSxbAUoRwaMSWuWyq0e-DQjAbizrHkJ5Svj8y0EwJ4MW3LTdLzl-pvOUcg-7XbZQ4Tq7rFz4GXiDTxgVR3hzWGkEmmHEuff-wJqOOWa17URu8pqf4sdezJSI14Du7mNkyww9DTitvEN8PnYseKY3HxDotpvetOmoJYgkh8QeVgI"/>
+</div>
+<!-- Feature Overlap -->
+<div class="absolute -bottom-8 -left-8 bg-primary p-8 text-on-primary max-w-xs shadow-2xl">
+<p class="font-headline text-xl italic italic">"Cảm giác như được trở về nhà sau một ngày dài khám phá phố phường."</p>
+</div>
+</div>
+</section>
+<!-- Highlights Section -->
+<section class="py-24 bg-surface-container-low px-8 md:px-24" id="highlights">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl text-on-surface mb-4">Tiện nghi chọn lọc</h2>
+<div class="w-16 h-px bg-primary mx-auto opacity-40"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Item 1 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="explore">explore</span>
+</div>
+<h3 class="font-headline text-xl">10 phút đi bộ tới Hồ Gươm</h3>
+<p class="text-on-surface-variant leading-relaxed">Vị trí đắc địa ngay trung tâm, dễ dàng tản bộ ra hồ và các điểm tham quan chính.</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="home">home</span>
+</div>
+<h3 class="font-headline text-xl">Nhà phố nguyên căn</h3>
+<p class="text-on-surface-variant leading-relaxed">Sự riêng tư tuyệt đối cho bạn và gia đình, không gian hoàn toàn thuộc về bạn.</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="cooking">cooking</span>
+</div>
+<h3 class="font-headline text-xl">Bếp đầy đủ tiện nghi</h3>
+<p class="text-on-surface-variant leading-relaxed">Trang bị đầy đủ dụng cụ nấu nướng cơ bản cho những bữa ăn ấm cúng tại nhà.</p>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="balcony">balcony</span>
+</div>
+<h3 class="font-headline text-xl">Ban công view mái ngói cổ</h3>
+<p class="text-on-surface-variant leading-relaxed">Góc thư giãn lý tưởng để ngắm nhìn nhịp sống phố cổ trầm mặc mỗi sớm mai.</p>
+</div>
+<!-- Item 5 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="movie">movie</span>
+</div>
+<h3 class="font-headline text-xl">Giải trí đa dạng</h3>
+<p class="text-on-surface-variant leading-relaxed">TV 55" tích hợp Netflix và máy chiếu chất lượng cao cho trải nghiệm điện ảnh.</p>
+</div>
+<!-- Item 6 -->
+<div class="flex flex-col items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container text-primary rounded-full">
+<span class="material-symbols-outlined text-3xl" data-icon="grade" style="font-variation-settings: 'FILL' 1;">grade</span>
+</div>
+<h3 class="font-headline text-xl">5.0★ Superhost</h3>
+<p class="text-on-surface-variant leading-relaxed">Cam kết dịch vụ xuất sắc và sự hài lòng tuyệt đối từ các vị khách đã ghé thăm.</p>
+</div>
+</div>
+</section>
+<!-- Floor Layouts Section -->
+<section class="py-24 px-8 md:px-24 bg-surface" id="floors">
+<h2 class="font-headline text-4xl text-on-surface mb-12 text-center md:text-left">Khám phá không gian</h2>
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Floor 2 -->
+<div class="flex-1 group">
+<div class="overflow-hidden rounded-sm mb-6">
+<img alt="Floor 2 layout" class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant queen bedroom with minimalist decor and warm wooden flooring in a renovated Hanoi townhouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQtwuSf6F-uZq8_jnPHBMuZkkMqagYgW6Oyi7IRJw7fMtdTcQNucjeECc7Zi2YamDfGLy62RzI5i9EYZ7AkVtX_lFAaQbZSUS6Y_SAreqKoMWbLYXlxD-3RYrC3qXQfcPuIY6kwgeXaU5G0sP0TNFC9fshfPxx_vmHuVEPJXmy0Z_5h4O84k9J7eTNfsbz8NvPck1-1Ou2A4UGOb8HT3GdtBRmSQu9seO40qzRfSNel_rk6OVgT3E276o56bGIKICs51IpG84TcnE"/>
+</div>
+<h3 class="font-headline text-2xl mb-4">Tầng 2: Không gian sinh hoạt</h3>
+<ul class="space-y-3 text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Phòng ngủ Queen rộng rãi
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Khu vực phòng khách ấm cúng
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Bàn làm việc yên tĩnh
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Phòng tắm hiện đại
+                    </li>
+</ul>
+</div>
+<!-- Floor 3 -->
+<div class="flex-1 group">
+<div class="overflow-hidden rounded-sm mb-6">
+<img alt="Floor 3 layout" class="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Spacious loft bedroom with a projector and access to a small balcony overlooking traditional Hanoi roofs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4yg7qtTnuEbath7MbRi8Hmj6zvvKf6FuOBAbstFK4VbA15b8TfrGo3XLhIxy5Pbujk1sPKcoiwLnjv79zCVcYvxiV9t_g6swGU5KXVbg6DnVE2VHH91vXUsVrUZgC6IjtUl3Cinh03IJdEQwnpmjLv8Im4YUBRG9H8Bf0F_dJNZGuujjSRIgOt1NUZx6Lt7qCLsIJPWh8-jEdBjVYvB5cdZoZkKdorbUPzc-EdM-cmdHL6cpeB-GW4HQeuq7FUE70DDc4wAMJkSw"/>
+</div>
+<h3 class="font-headline text-2xl mb-4">Tầng 3: Giải trí &amp; Nghỉ ngơi</h3>
+<ul class="space-y-3 text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Phòng King size cao cấp
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Phòng nhỏ (2 người) thêm lựa chọn
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Ban công với máy chiếu ngoài trời
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                        Góc chill buổi tối ngắm phố
+                    </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-24 bg-surface-container px-8 md:px-24" id="location">
+<div class="grid lg:grid-cols-5 gap-12 items-center">
+<div class="lg:col-span-2 space-y-6">
+<span class="text-sm uppercase tracking-widest text-primary font-bold">Vị trí trung tâm</span>
+<h2 class="font-headline text-4xl leading-tight text-on-surface">Sầm uất mà vẫn <span class="italic">yên tĩnh</span></h2>
+<p class="text-on-surface-variant leading-relaxed">Tọa lạc tại Lê Thánh Tông, trung tâm quận Hoàn Kiếm. Xung quanh là hệ sinh thái tiện ích địa phương đa dạng.</p>
+<div class="space-y-4 pt-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">coffee</span>
+<div>
+<p class="font-medium">Cà phê đặc sản</p>
+<p class="text-sm text-on-surface-variant">Hàng loạt quán cà phê "indie" chỉ trong 3 phút đi bộ.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">restaurant</span>
+<div>
+<p class="font-medium">Ẩm thực địa phương</p>
+<p class="text-sm text-on-surface-variant">Từ phở gánh đến các nhà hàng cao cấp xung quanh.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">shopping_basket</span>
+<div>
+<p class="font-medium">Cửa hàng tiện lợi</p>
+<p class="text-sm text-on-surface-variant">Circle K, WinMart cách nhà chưa tới 200m.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3">
+<div class="aspect-square md:aspect-video rounded-sm overflow-hidden shadow-2xl relative">
+<div class="absolute inset-0 bg-stone-200 flex items-center justify-center">
+<img alt="Map placeholder" class="w-full h-full object-cover grayscale opacity-60" data-alt="Stylized minimalist map showing the Hoan Kiem district in Hanoi with key landmarks marked in a soft earthy color palette" data-location="Hoan Kiem, Hanoi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6DmksVYCMK1vpJ3mTWaOTJCbSkxhzp1Mz0iLtghJpuIs6GsdtmHzwIVxTizuKchYUXhD7FnODmksKCDiZWpk-lD_17j54DifKM5TfQWf8_gWAwp1RSlTmNcax0v78FOcU7ijF6QNShof8gegnwRfchiVT0Xahqya1yRgJ_gWUdCs4Si0lcgY5oGDQXs2-fE1rdDIbToCKklzTz0yeeYDamd7c7mokH5Y3Fe98MJDbIOZZ1mFd_PTKaj6kMuueTA9kICLYaSAXi68"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="z-10 bg-surface px-6 py-4 shadow-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-serif">Lê Thánh Tông, Hoàn Kiếm, Hà Nội</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- House Rules Card Design -->
+<section class="py-24 px-8 md:px-24 bg-surface">
+<div class="max-w-4xl mx-auto bg-surface-container-low p-12 md:p-20 rounded-sm relative border border-outline-variant/10 shadow-sm">
+<h2 class="font-headline text-3xl mb-12 text-center">Nội quy nhà nhỏ</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+<div>
+<h4 class="font-bold mb-1">Giờ yên lặng</h4>
+<p class="text-sm text-on-surface-variant">22:00 – 07:00. Vui lòng giữ âm lượng thấp để tránh ảnh hưởng hàng xóm.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">key</span>
+<div>
+<h4 class="font-bold mb-1">Tự nhận phòng</h4>
+<p class="text-sm text-on-surface-variant">Self check-in thuận tiện với mã số được gửi trước giờ nhận phòng.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">smoke_free</span>
+<div>
+<h4 class="font-bold mb-1">Không hút thuốc</h4>
+<p class="text-sm text-on-surface-variant">Tuyệt đối không hút thuốc trong nhà để đảm bảo không khí trong lành.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">soup_kitchen</span>
+<div>
+<h4 class="font-bold mb-1">Nấu ăn nhẹ</h4>
+<p class="text-sm text-on-surface-variant">Vui lòng chỉ nấu các món nhẹ không gây mùi nặng trong không gian kín.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Guest Reviews -->
+<section class="py-24 bg-surface-container-high px-8 md:px-24 overflow-hidden" id="reviews">
+<h2 class="font-headline text-4xl text-center mb-16">Những lời nhắn nhủ</h2>
+<div class="flex flex-col md:flex-row gap-8 overflow-x-auto pb-8 snap-x">
+<div class="min-w-[320px] md:min-w-[400px] bg-surface p-8 rounded-sm snap-center shadow-sm">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Ngôi nhà quá tuyệt vời, trang trí tinh tế và cực kỳ ấm cúng. Host hỗ trợ rất nhiệt tình, vị trí thì không thể chê vào đâu được."</p>
+<p class="font-medium">— Minh Tuấn, TP.HCM</p>
+</div>
+<div class="min-w-[320px] md:min-w-[400px] bg-surface p-8 rounded-sm snap-center shadow-sm">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Mình đã có một kỳ nghỉ cuối tuần hoàn hảo tại LaSiDoHouse. View ban công buổi sáng rất Hà Nội, cảm giác rất bình yên."</p>
+<p class="font-medium">— Lan Hương, Hà Nội</p>
+</div>
+<div class="min-w-[320px] md:min-w-[400px] bg-surface p-8 rounded-sm snap-center shadow-sm">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6 leading-relaxed">"Everything was perfect! The projector setup for movie night was a highlight. Truly felt like a boutique hotel experience."</p>
+<p class="font-medium">— James L., London</p>
+</div>
+</div>
+</section>
+<!-- Host Section -->
+<section class="py-24 px-8 md:px-24 bg-surface">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden flex-shrink-0 shadow-2xl">
+<img alt="Host Pank Nguyen" class="w-full h-full object-cover grayscale contrast-125" data-alt="Close-up portrait of a friendly male host with a warm smile, professional and welcoming atmosphere, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbBcClUjw23LmgyogQUFTJHpnFTruhhVrTxa70dfvi-qPDyjiarmWuv-xgPHp_KgGm1LsgbWubjAieJhpDYKk14DZ1J24I_ax3Oqy1OJJmHy4sz_k7S3GdUx_oqv9BnMMBqVPDy_VwkxVoGVvPa5mdwo-PU1J8B3VwETAkWIi68YqdGzCWhWGvpRpuiXyBgTF8IIGb5h9ocSmsa4W1JvP8dQm9O0YfGCWAazIFATo_nhFfZRRJ10Dp_es4L90oi5Y0vOCsdWmBGMk"/>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<h2 class="font-headline text-4xl">Host Pank Nguyen</h2>
+<span class="bg-primary-container text-on-primary-container text-xs px-3 py-1 rounded-full font-bold uppercase tracking-widest">Superhost</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    Chào bạn, mình là Pank. Một người hướng nội nhưng đam mê kết nối. LaSiDoHouse là nơi mình gửi gắm mong muốn mang lại trải nghiệm "sống như người Hà Nội" thực thụ cho du khách.
+                </p>
+<div class="grid grid-cols-2 gap-4 text-sm font-medium border-y border-outline-variant/20 py-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">forum</span>
+                        Tỉ lệ phản hồi 100%
+                    </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">timer</span>
+                        Phản hồi trong 1 giờ
+                    </div>
+</div>
+<div class="bg-surface-container-low p-6 border-l-4 border-secondary italic">
+                    "Nếu bạn muốn thử dậy lúc 5:30 sáng đi gym và cảm nhận không khí sớm mai của phố cổ, cứ nhắn mình nhé — Sẽ là một trải nghiệm rất khác đấy!"
+                </div>
+</div>
+</div>
+</section>
+<!-- Pricing & Extra Services -->
+<section class="py-24 bg-surface-container-low px-8 md:px-24">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-3xl mb-12 text-center">Dịch vụ bổ sung &amp; Phí</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-surface p-8 rounded-sm shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">local_laundry_service</span>
+<h4 class="font-bold mb-2">Giặt ủi</h4>
+<p class="text-primary font-headline text-xl">40k / kg</p>
+<p class="text-xs text-on-surface-variant mt-4">Sạch sẽ, thơm tho, giao trong ngày.</p>
+</div>
+<div class="bg-surface p-8 rounded-sm shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-primary mb-4">pedal_bike</span>
+<h4 class="font-bold mb-2">Để xe máy</h4>
+<p class="text-primary font-headline text-xl">Miễn phí</p>
+<p class="text-xs text-on-surface-variant mt-4">Hỗ trợ đỗ tối đa 2 xe máy trong nhà.</p>
+</div>
+<div class="bg-surface p-8 rounded-sm shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-3xl text-error mb-4">report</span>
+<h4 class="font-bold mb-2">Mất chìa khóa</h4>
+<p class="text-error font-headline text-xl">100k / lần</p>
+<p class="text-xs text-on-surface-variant mt-4">Phí làm lại thẻ và chìa khóa vật lý.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8 bg-primary relative overflow-hidden text-center">
+<div class="absolute inset-0 opacity-10">
+<img alt="Background texture" class="w-full h-full object-cover" data-alt="Macro texture of hand-woven linen fabric in a deep moss green color with subtle fiber details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJEJkXVag5CGMmbjIUBsyJfQ256MEJiXjo-almWniHWSDGSWOujCpjxPsV_NrUbg2vALj5dxq7s3GKut8k4qRdP3bfnQPolnTAg965-nZJrjaMLHX7ycQmPEAy-paNx7XXuJF6-8wMfHL6vQkZi-2AzvKh2ubbEcP44s_vlS0C5_H_fVeyL7RAOOY5QFP3pogqLae8M-iyu7plgTTlbw0QxPwtEE4yLvSa6oWyXpbrf04EGIjEt4kUJdsEMs_E0aonCATvhVxMUIQ"/>
+</div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-headline text-4xl md:text-5xl text-on-primary mb-6">Hà Nội đang chờ bạn — Đặt chỗ hôm nay</h2>
+<p class="text-on-primary/80 mb-10 text-lg">Trải nghiệm không gian sống tinh tế và ấm cúng giữa lòng phố cổ Hoàn Kiếm.</p>
+<button class="bg-surface text-primary px-12 py-5 rounded-sm font-bold text-lg hover:bg-surface-bright transition-all shadow-2xl">
+                Đặt chỗ trên Airbnb
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a class="text-xl font-serif text-lime-950 dark:text-lime-100" href="#">LaSiDoHouse</a>
+<p class="font-sans text-sm uppercase tracking-widest text-lime-900 dark:text-lime-400">Lê Thánh Tông, Hoàn Kiếm, Hà Nội</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest" href="#">House Rules</a>
+<a class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest" href="#">Contact Host</a>
+</div>
+<div class="flex gap-6">
+<a class="text-lime-900 dark:text-lime-400 hover:opacity-70 transition-opacity" href="#">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</a>
+<a class="text-lime-900 dark:text-lime-400 hover:opacity-70 transition-opacity" href="#">
+<span class="material-symbols-outlined">camera</span>
+</a>
+</div>
+</div>
+<div class="mt-12 text-center text-stone-500 dark:text-stone-500 font-sans text-xs uppercase tracking-widest">
+            © 2024 LaSiDoHouse Hoan Kiem. All rights reserved.
+        </div>
+</footer>
+</body></html>

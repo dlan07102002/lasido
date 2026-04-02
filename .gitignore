@@ -1,0 +1,15 @@
+.codex/*
+.gemini/*
+.idea/*
+.vscode/*
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+*.env
+*.local
+*.cache
+*.dist
+*.backup
