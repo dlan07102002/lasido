@@ -126,10 +126,14 @@
             [lang="en"] .lang-en {
                 display: inline;
             }
-            .lang-switcher-btn.active {
-                color: #50652a !important;
-                opacity: 1 !important;
-            }
+      .lang-switcher-btn {
+        color: #8b7355;
+        opacity: 0.6;
+      }
+      .lang-switcher-btn.active {
+        color: #50652a !important;
+        opacity: 1 !important;
+      }
 
             .material-symbols-outlined {
                 font-variation-settings:
@@ -165,18 +169,118 @@
                     "GRAD" 0,
                     "opsz" 24;
             }
+            .hero-cta-group {
+                width: 100%;
+                align-items: stretch;
+            }
+            .hero-copy {
+                padding-top: clamp(5.5rem, 18vw, 6rem);
+                padding-left: clamp(1.25rem, 5vw, 1.5rem);
+                padding-right: clamp(1.25rem, 5vw, 1.5rem);
+            }
+            .hero-title {
+                margin-bottom: 0.75rem;
+                font-size: clamp(2.9rem, 13vw, 3.75rem);
+                line-height: 0.96;
+            }
+            .hero-subtitle {
+                margin-bottom: clamp(2rem, 7vw, 2.5rem);
+                font-size: clamp(1rem, 5vw, 1.5rem);
+                line-height: 1.35;
+                letter-spacing: 0.02em;
+            }
+            .hero-cta-button {
+                width: 100%;
+                min-height: 56px;
+                padding: 0.875rem 1rem;
+                gap: 0.5rem;
+                font-size: clamp(0.875rem, 3.8vw, 1.125rem);
+                line-height: 1.25;
+                text-align: center;
+                white-space: normal;
+            }
+            .social-card-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            .social-card-link {
+                display: flex;
+                align-items: center;
+                gap: 0.875rem;
+                min-height: 72px;
+                padding: 0.95rem 1rem;
+                border-radius: 1rem;
+                border: 1px solid rgba(127, 117, 107, 0.2);
+                background: rgba(255, 255, 255, 0.72);
+                box-shadow: 0 12px 24px rgba(77, 69, 60, 0.08);
+            }
+            .social-card-logo {
+                display: grid;
+                place-items: center;
+                width: 2.75rem;
+                height: 2.75rem;
+                border-radius: 9999px;
+                flex: 0 0 auto;
+                box-shadow: 0 12px 22px rgba(27, 29, 14, 0.16);
+            }
+            .social-card-logo svg {
+                width: 1.35rem;
+                height: 1.35rem;
+                display: block;
+            }
+            .social-card-logo-facebook {
+                background: #1877f2;
+            }
+            .social-card-logo-instagram {
+                background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 75%, #515bd4 100%);
+            }
+            .social-card-copy {
+                min-width: 0;
+            }
+            .social-card-title {
+                font-size: 0.95rem;
+                font-weight: 700;
+                line-height: 1.15;
+            }
+            .social-card-subtitle {
+                margin-top: 0.2rem;
+                font-size: 0.72rem;
+                line-height: 1.3;
+            }
+            @media (min-width: 420px) {
+                .social-card-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+            @media (max-width: 360px) {
+                .hero-title {
+                    font-size: clamp(2.5rem, 12vw, 2.9rem);
+                }
+                .hero-subtitle {
+                    font-size: 0.95rem;
+                    line-height: 1.4;
+                    letter-spacing: 0.01em;
+                }
+                .hero-cta-button {
+                    min-height: 52px;
+                    padding: 0.75rem 0.875rem;
+                    gap: 0.375rem;
+                }
+            }
         </style>
         <style>
             body {
                 min-height: max(884px, 100dvh);
             }
 
-            #space,
-            #location,
-            #host,
-            #book {
-                scroll-margin-top: 96px;
-            }
+    #about,
+    #highlights,
+    #floors,
+    #location,
+    #reviews {
+      scroll-margin-top: 96px;
+    }
         </style>
     </head>
     <body
@@ -207,12 +311,6 @@
             id="top"
         >
             <div class="flex justify-between items-center px-6 py-4 w-full">
-                <div class="flex items-center gap-3">
-                    <span
-                        class="material-symbols-outlined text-[#50652a] dark:text-[#a3b18a]"
-                        >menu</span
-                    >
-                </div>
                 <h1
                     class="text-2xl font-serif tracking-tight text-[#50652a] dark:text-[#a3b18a]"
                 >
@@ -224,7 +322,7 @@
                         class="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-[#50652a]"
                     >
                         <button
-                            class="lang-switcher-btn opacity-100 transition-opacity duration-300"
+                            class="lang-switcher-btn transition-opacity duration-300"
                             data-lang="en"
                             onclick="setLanguage('en')"
                             type="button"
@@ -233,7 +331,7 @@
                         </button>
                         <span class="text-[#d1c4b9]">|</span>
                         <button
-                            class="lang-switcher-btn text-[#8b7355] opacity-60 transition-opacity duration-300"
+                            class="lang-switcher-btn transition-opacity duration-300"
                             data-lang="vi"
                             onclick="setLanguage('vi')"
                             type="button"
@@ -263,14 +361,14 @@
                         class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/65"
                     ></div>
                 </div>
-                <div class="relative z-10 text-center px-6 pt-24 max-w-xl">
+                <div class="hero-copy relative z-10 text-center max-w-xl">
                     <h2
-                        class="font-headline italic text-6xl text-surface mb-4 leading-tight"
+                        class="hero-title font-headline italic text-surface"
                     >
                         LaSiDoHouse
                     </h2>
                     <p
-                        class="font-headline text-2xl text-surface-container-low mb-10 tracking-wide leading-snug"
+                        class="hero-subtitle font-headline text-surface-container-low"
                     >
                         <span class="lang-en"
                             >A piece of ancient Hanoi - In the heart of the Old
@@ -280,16 +378,19 @@
                         >
                     </p>
                     <div
-                        class="flex flex-col gap-4 justify-center items-center"
+                        class="hero-cta-group flex flex-col gap-3 sm:gap-4 w-full items-center"
                     >
-                        <button
-                            class="w-full max-w-sm bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-4 rounded-sm text-lg font-medium shadow-2xl hover:translate-y-[-2px] transition-transform"
+                        <a
+                            class="hero-cta-button bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full font-bold shadow-2xl hover:translate-y-[-2px] transition-transform flex items-center justify-center"
+                            href="https://www.airbnb.com/rooms/1631858864113952307?source_impression_id=p3_1775236236_P3hsJ-IBm1_HVvOl"
+                            rel="noopener noreferrer"
+                            target="_blank"
                         >
                             <span class="lang-en">Book Your Stay</span
                             ><span class="lang-vi">Đặt phòng ngay</span>
-                        </button>
+                        </a>
                         <button
-                            class="w-full max-w-sm border border-surface/30 backdrop-blur-md text-surface px-10 py-4 rounded-sm text-lg font-medium hover:bg-surface/10 transition-all"
+                            class="hero-cta-button border border-surface/30 backdrop-blur-md text-surface rounded-full font-bold hover:bg-surface/10 transition-all flex items-center justify-center"
                         >
                             <span class="lang-en">Discover More</span
                             ><span class="lang-vi">Khám phá</span>
@@ -298,7 +399,7 @@
                 </div>
             </section>
             <!-- Stats & About -->
-            <section class="px-6 py-12 bg-surface-container-low">
+            <section class="px-6 py-12 bg-surface-container-low" id="about">
                 <div class="grid grid-cols-3 gap-4 mb-12">
                     <div class="bg-surface p-4 text-center">
                         <p class="font-headline text-2xl text-primary">3</p>
@@ -342,7 +443,7 @@
                 </div>
             </section>
             <!-- Amenities -->
-            <section class="px-6 py-16 bg-surface">
+            <section class="px-6 py-16 bg-surface" id="highlights">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-px bg-outline-variant/40 flex-grow"></div>
                     <h4 class="font-headline italic text-lg text-secondary">
@@ -415,7 +516,7 @@
                 </div>
             </section>
             <!-- Space Feature (Asymmetric Overlap) -->
-            <section class="py-16 space-y-24" id="space">
+            <section class="py-16 space-y-24" id="floors">
                 <div class="relative px-6">
                     <div class="relative z-10 w-4/5 ml-auto">
                         <img
@@ -615,7 +716,7 @@
                 </div>
             </section>
             <!-- Reviews & Host -->
-            <section class="px-6 py-16 bg-surface-container" id="host">
+            <section class="px-6 py-16 bg-surface-container" id="reviews">
                 <div class="mb-16 overflow-hidden">
                     <h4 class="font-headline italic text-2xl mb-8 text-center">
                         <span class="lang-en">Guest Kind Words</span
@@ -729,16 +830,95 @@
                     </div>
                 </div>
             </section>
+            <section class="px-6 pb-8 bg-surface-container">
+                <div
+                    class="bg-surface/70 p-5 rounded-xl border border-outline-variant/30 shadow-[0_18px_36px_rgba(77,69,60,0.08)]"
+                >
+                    <p
+                        class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-4"
+                    >
+                        <span class="lang-en">Follow LaSiDoHouse</span
+                        ><span class="lang-vi">Kết nối cùng LaSiDoHouse</span>
+                    </p>
+                    <div class="social-card-grid">
+                        <a
+                            class="social-card-link"
+                            href="https://www.facebook.com/profile.php?id=61584634003772"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-card-logo social-card-logo-facebook"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M13.642 23V13.876H16.703L17.162 10.32H13.642V8.049C13.642 7.02 13.927 6.318 15.403 6.318H17.286V3.138C16.96 3.095 15.84 3 14.538 3C11.82 3 9.958 4.659 9.958 7.705V10.32H7V13.876H9.958V23H13.642Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <div class="social-card-copy">
+                                <p class="social-card-title text-on-surface">
+                                    Facebook
+                                </p>
+                                <p class="social-card-subtitle text-on-surface-variant">
+                                    <span class="lang-en">Updates and stories</span
+                                    ><span class="lang-vi">Cập nhật và tin mới</span>
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="social-card-link"
+                            href="https://www.instagram.com/lasidohomestay/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-card-logo social-card-logo-instagram"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M7.75 2H16.25C19.4256 2 22 4.57436 22 7.75V16.25C22 19.4256 19.4256 22 16.25 22H7.75C4.57436 22 2 19.4256 2 16.25V7.75C2 4.57436 4.57436 2 7.75 2ZM16.25 3.8H7.75C5.56848 3.8 3.8 5.56848 3.8 7.75V16.25C3.8 18.4315 5.56848 20.2 7.75 20.2H16.25C18.4315 20.2 20.2 18.4315 20.2 16.25V7.75C20.2 5.56848 18.4315 3.8 16.25 3.8ZM12 6.75C14.8995 6.75 17.25 9.10051 17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.10051 17.25 6.75 14.8995 6.75 12C6.75 9.10051 9.10051 6.75 12 6.75ZM12 8.55C10.0946 8.55 8.55 10.0946 8.55 12C8.55 13.9054 10.0946 15.45 12 15.45C13.9054 15.45 15.45 13.9054 15.45 12C15.45 10.0946 13.9054 8.55 12 8.55ZM17.575 5.4C18.0507 5.4 18.4364 5.78566 18.4364 6.26136C18.4364 6.73705 18.0507 7.12273 17.575 7.12273C17.0993 7.12273 16.7136 6.73705 16.7136 6.26136C16.7136 5.78566 17.0993 5.4 17.575 5.4Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <div class="social-card-copy">
+                                <p class="social-card-title text-on-surface">
+                                    Instagram
+                                </p>
+                                <p class="social-card-subtitle text-on-surface-variant">
+                                    <span class="lang-en">Photos and moments</span
+                                    ><span class="lang-vi">Hình ảnh và khoảnh khắc</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </main>
         <!-- Footer Sticky CTA -->
         <div class="fixed bottom-[88px] left-0 w-full px-6 z-40" id="book">
-            <button
+            <a
                 class="w-full bg-[#fbfbe2] text-[#934b19] border border-[#934b19] py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-3 backdrop-blur-lg"
+                href="https://www.airbnb.com/rooms/1631858864113952307?source_impression_id=p3_1775236236_P3hsJ-IBm1_HVvOl"
+                rel="noopener noreferrer"
+                target="_blank"
             >
                 <span class="material-symbols-outlined">hotel</span>
                 <span class="lang-en">Book on Airbnb</span
                 ><span class="lang-vi">Đặt trên Airbnb</span>
-            </button>
+            </a>
         </div>
         <!-- BottomNavBar -->
         <nav
@@ -747,7 +927,7 @@
             <a
                 class="bottom-nav-link flex flex-col items-center justify-center"
                 data-nav-link=""
-                href="#top"
+                href="#about"
             >
                 <span
                     class="material-symbols-outlined"
@@ -755,18 +935,29 @@
                     >home</span
                 >
                 <span class="font-serif text-[10px] tracking-wide uppercase"
-                    ><span class="lang-en">Home</span
-                    ><span class="lang-vi">Trang đầu</span></span
+                    ><span class="lang-en">About</span
+                    ><span class="lang-vi">Giới thiệu</span></span
                 >
             </a>
             <a
                 class="bottom-nav-link flex flex-col items-center justify-center"
                 data-nav-link=""
-                href="#space"
+                href="#highlights"
             >
                 <span class="material-symbols-outlined">bed</span>
                 <span class="font-serif text-[10px] tracking-wide uppercase"
-                    ><span class="lang-en">Space</span
+                    ><span class="lang-en">Highlights</span
+                    ><span class="lang-vi">Điểm nổi bật</span></span
+                >
+            </a>
+            <a
+                class="bottom-nav-link flex flex-col items-center justify-center"
+                data-nav-link=""
+                href="#floors"
+            >
+                <span class="material-symbols-outlined">bed</span>
+                <span class="font-serif text-[10px] tracking-wide uppercase"
+                    ><span class="lang-en">Floors</span
                     ><span class="lang-vi">Không gian</span></span
                 >
             </a>
@@ -784,23 +975,12 @@
             <a
                 class="bottom-nav-link flex flex-col items-center justify-center"
                 data-nav-link=""
-                href="#host"
+                href="#reviews"
             >
-                <span class="material-symbols-outlined">account_circle</span>
+                <span class="material-symbols-outlined">reviews</span>
                 <span class="font-serif text-[10px] tracking-wide uppercase"
-                    ><span class="lang-en">Host</span
-                    ><span class="lang-vi">Chủ nhà</span></span
-                >
-            </a>
-            <a
-                class="bottom-nav-link flex flex-col items-center justify-center"
-                data-nav-link=""
-                href="#book"
-            >
-                <span class="material-symbols-outlined">calendar_today</span>
-                <span class="font-serif text-[10px] tracking-wide uppercase"
-                    ><span class="lang-en">Book</span
-                    ><span class="lang-vi">Đặt chỗ</span></span
+                    ><span class="lang-en">Reviews</span
+                    ><span class="lang-vi">Đánh giá</span></span
                 >
             </a>
         </nav>
@@ -810,16 +990,22 @@
                     document.querySelectorAll("[data-nav-link]"),
                 );
                 var sections = [
-                    { id: "top", node: document.getElementById("top") },
-                    { id: "space", node: document.getElementById("space") },
+                    { id: "about", node: document.getElementById("about") },
+                    {
+                        id: "highlights",
+                        node: document.getElementById("highlights"),
+                    },
+                    { id: "floors", node: document.getElementById("floors") },
                     {
                         id: "location",
                         node: document.getElementById("location"),
                     },
-                    { id: "host", node: document.getElementById("host") },
+                    {
+                        id: "reviews",
+                        node: document.getElementById("reviews"),
+                    },
                 ];
                 var headerOffset = 88;
-                var bottomThreshold = 160;
                 var lockedActiveId = null;
                 var lockedScrollTop = null;
                 var unlockTimer = null;
@@ -874,17 +1060,7 @@
                     }
 
                     var scrollPosition = window.scrollY + headerOffset + 24;
-                    var viewportBottom = window.scrollY + window.innerHeight;
-                    var pageBottom = Math.max(
-                        document.body.scrollHeight,
-                        document.documentElement.scrollHeight,
-                    );
-                    var activeId = "top";
-
-                    if (viewportBottom >= pageBottom - bottomThreshold) {
-                        setActiveLink("book");
-                        return;
-                    }
+                    var activeId = "about";
 
                     sections.forEach(function (section) {
                         if (!section.node) return;
@@ -899,22 +1075,15 @@
                 navLinks.forEach(function (link) {
                     link.addEventListener("click", function (event) {
                         var targetId = link.getAttribute("href");
-                        var target =
-                            targetId === "#book"
-                                ? null
-                                : targetId
-                                  ? document.querySelector(targetId)
-                                  : null;
+                        var target = targetId
+                            ? document.querySelector(targetId)
+                            : null;
+
+                        if (!target) return;
 
                         event.preventDefault();
-                        var top = target
-                            ? Math.max(target.offsetTop - headerOffset, 0)
-                            : Math.max(
-                                  document.documentElement.scrollHeight -
-                                      window.innerHeight,
-                                  0,
-                              );
-                        var activeId = target ? target.id : "book";
+                        var top = Math.max(target.offsetTop - headerOffset, 0);
+                        var activeId = target.id;
                         lockActiveLink(activeId, top);
                         window.scrollTo({ top: top, behavior: "smooth" });
                     });
