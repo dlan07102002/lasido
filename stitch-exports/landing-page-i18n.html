@@ -103,6 +103,30 @@
         [lang="en"] .lang-vi { display: none; }
         [lang="en"] .lang-en { display: block; }
         .lang-switcher-btn.active { font-weight: 700; color: #50652a; }
+        .section-anchor-offset { scroll-margin-top: 0; }
+        .header-nav-link {
+            position: relative;
+            display: inline-flex;
+            padding-bottom: 0.35rem;
+        }
+        .header-nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: #50652a;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 250ms ease;
+        }
+        .header-nav-link.is-active {
+            color: #50652a !important;
+        }
+        .header-nav-link.is-active::after {
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
@@ -125,23 +149,23 @@
 <div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
 <a class="text-2xl font-serif italic text-lime-950 dark:text-lime-200" href="#">LaSiDoHouse</a>
 <div class="hidden md:flex items-center space-gap-8 gap-x-8">
-<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#about">
+<a class="header-nav-link font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" data-header-link="" href="#about">
 <span class="lang-en">About</span>
 <span class="lang-vi">Giới thiệu</span>
 </a>
-<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#highlights">
+<a class="header-nav-link font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" data-header-link="" href="#highlights">
 <span class="lang-en">Highlights</span>
 <span class="lang-vi">Tiện ích</span>
 </a>
-<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#floors">
+<a class="header-nav-link font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" data-header-link="" href="#floors">
 <span class="lang-en">Floors</span>
 <span class="lang-vi">Không gian</span>
 </a>
-<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#location">
+<a class="header-nav-link font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" data-header-link="" href="#location">
 <span class="lang-en">Location</span>
 <span class="lang-vi">Vị trí</span>
 </a>
-<a class="font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" href="#reviews">
+<a class="header-nav-link font-serif text-lg tracking-tight text-stone-600 dark:text-stone-400 hover:text-lime-700 dark:hover:text-lime-300 transition-colors duration-500" data-header-link="" href="#reviews">
 <span class="lang-en">Reviews</span>
 <span class="lang-vi">Đánh giá</span>
 </a>
@@ -184,7 +208,7 @@
 </div>
 </header>
 <!-- Introduction Section -->
-<section class="py-24 px-8 md:px-24 bg-surface grid md:grid-cols-2 gap-16 items-center" id="about">
+<section class="section-anchor-offset py-24 px-8 md:px-24 bg-surface grid md:grid-cols-2 gap-16 items-center" id="about">
 <div class="space-y-8">
 <h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-snug">
 <span class="lang-en">Return to a sanctuary <span class="italic font-normal">that feels like home</span>.</span>
@@ -238,7 +262,7 @@
 </div>
 </section>
 <!-- Highlights Section -->
-<section class="py-24 bg-surface-container-low px-8 md:px-24" id="highlights">
+<section class="section-anchor-offset py-24 bg-surface-container-low px-8 md:px-24" id="highlights">
 <div class="text-center mb-16">
 <h2 class="font-headline text-4xl text-on-surface mb-4">
 <span class="lang-en">Curated Amenities</span>
@@ -334,7 +358,7 @@
 </div>
 </section>
 <!-- Floor Layouts Section -->
-<section class="py-24 px-8 md:px-24 bg-surface" id="floors">
+<section class="section-anchor-offset py-24 px-8 md:px-24 bg-surface" id="floors">
 <h2 class="font-headline text-4xl text-on-surface mb-12 text-center md:text-left">
 <span class="lang-en">Explore the Space</span>
 <span class="lang-vi">Khám phá không gian</span>
@@ -407,7 +431,7 @@
 </div>
 </section>
 <!-- Location Section -->
-<section class="py-24 bg-surface-container px-8 md:px-24" id="location">
+<section class="section-anchor-offset py-24 bg-surface-container px-8 md:px-24" id="location">
 <div class="grid lg:grid-cols-5 gap-12 items-center">
 <div class="lg:col-span-2 space-y-6">
 <span class="text-sm uppercase tracking-widest text-primary font-bold">
@@ -542,7 +566,7 @@
 </div>
 </section>
 <!-- Guest Reviews -->
-<section class="py-24 bg-surface-container-high px-8 md:px-24 overflow-hidden" id="reviews">
+<section class="section-anchor-offset py-24 bg-surface-container-high px-8 md:px-24 overflow-hidden" id="reviews">
 <h2 class="font-headline text-4xl text-center mb-16">
 <span class="lang-en">Guest Kind Words</span>
 <span class="lang-vi">Những lời nhắn nhủ</span>
@@ -730,4 +754,90 @@
         © 2024 LaSiDoHouse Hoan Kiem. All rights reserved.
     </div>
 </footer>
+<script>
+    (function () {
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll("[data-header-link]"));
+        var sections = ["about", "highlights", "floors", "location", "reviews"]
+            .map(function (id) {
+                return { id: id, node: document.getElementById(id) };
+            });
+        var headerOffset = 0;
+        var lockedActiveId = null;
+        var lockedScrollTop = null;
+        var unlockTimer = null;
+
+        function setActiveLink(activeId) {
+            navLinks.forEach(function (link) {
+                var isActive = link.getAttribute("href") === "#" + activeId;
+                link.classList.toggle("is-active", isActive);
+                link.setAttribute("aria-current", isActive ? "page" : "false");
+            });
+        }
+
+        function releaseActiveLock() {
+            lockedActiveId = null;
+            lockedScrollTop = null;
+            if (unlockTimer) {
+                window.clearTimeout(unlockTimer);
+                unlockTimer = null;
+            }
+        }
+
+        function lockActiveLink(activeId, scrollTop) {
+            lockedActiveId = activeId;
+            lockedScrollTop = scrollTop;
+            setActiveLink(activeId);
+
+            if (unlockTimer) {
+                window.clearTimeout(unlockTimer);
+            }
+
+            unlockTimer = window.setTimeout(function () {
+                releaseActiveLock();
+                updateActiveSection();
+            }, 700);
+        }
+
+        function updateActiveSection() {
+            if (lockedActiveId !== null) {
+                if (Math.abs(window.scrollY - lockedScrollTop) <= 8) {
+                    releaseActiveLock();
+                } else {
+                    setActiveLink(lockedActiveId);
+                    return;
+                }
+            }
+
+            var scrollPosition = window.scrollY + headerOffset + 24;
+            var activeId = sections[0].id;
+
+            sections.forEach(function (section) {
+                if (!section.node) return;
+                if (section.node.offsetTop <= scrollPosition) {
+                    activeId = section.id;
+                }
+            });
+
+            setActiveLink(activeId);
+        }
+
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                var href = link.getAttribute("href");
+                if (!href || href.charAt(0) !== "#") return;
+                var target = document.querySelector(href);
+                if (!target) return;
+
+                event.preventDefault();
+                var top = Math.max(target.offsetTop - headerOffset, 0);
+                lockActiveLink(href.slice(1), top);
+                window.scrollTo({ top: top, behavior: "smooth" });
+            });
+        });
+
+        window.addEventListener("scroll", updateActiveSection, { passive: true });
+        window.addEventListener("load", updateActiveSection);
+        updateActiveSection();
+    })();
+</script>
 </body></html>
