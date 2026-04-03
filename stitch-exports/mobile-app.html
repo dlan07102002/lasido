@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LaSiDoHouse | The Manor</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed-variant": "#753401",
+              "tertiary": "#765700",
+              "primary-container": "#687f40",
+              "tertiary-fixed": "#ffdea0",
+              "inverse-surface": "#303221",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#321200",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#b6d088",
+              "inverse-on-surface": "#f2f2d9",
+              "surface-container-high": "#eaead1",
+              "error": "#ba1a1a",
+              "outline-variant": "#d1c4b9",
+              "on-background": "#1b1d0e",
+              "surface-tint": "#50652a",
+              "primary": "#50652a",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#131f00",
+              "on-error-container": "#93000a",
+              "secondary": "#934b19",
+              "on-secondary-container": "#783603",
+              "outline": "#7f756b",
+              "tertiary-fixed-dim": "#f6be3b",
+              "on-tertiary-container": "#fffbff",
+              "on-primary-fixed-variant": "#394d14",
+              "secondary-fixed": "#ffdbc9",
+              "primary-fixed-dim": "#b6d088",
+              "on-surface": "#1b1d0e",
+              "primary-fixed": "#d2eca2",
+              "surface-container-highest": "#e4e4cc",
+              "surface-container": "#efefd7",
+              "background": "#fbfbe2",
+              "on-surface-variant": "#4d453c",
+              "surface-dim": "#dbdcc3",
+              "on-error": "#ffffff",
+              "tertiary-container": "#956e00",
+              "on-tertiary-fixed": "#261900",
+              "surface-variant": "#e4e4cc",
+              "surface-container-low": "#f5f5dc",
+              "surface-bright": "#fbfbe2",
+              "surface": "#fbfbe2",
+              "on-primary-container": "#030600",
+              "secondary-fixed-dim": "#ffb68c",
+              "secondary-container": "#ffa26a"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .feature-overlap-text { text-shadow: 0 10px 20px rgba(77, 69, 60, 0.1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 dark:bg-[#1a1a14]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(77,69,60,0.08)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#50652a] dark:text-[#a3b18a]">menu</span>
+</div>
+<h1 class="text-2xl font-serif tracking-tight text-[#50652a] dark:text-[#a3b18a]">The Manor</h1>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-[#50652a]">
+<span>EN</span>
+<span class="text-[#d1c4b9]">|</span>
+<span class="text-[#8b7355] opacity-60">VI</span>
+</div>
+<span class="material-symbols-outlined text-[#50652a] dark:text-[#a3b18a]">language</span>
+</div>
+</div>
+</header>
+<main class="pb-32 pt-0">
+<!-- Hero Section -->
+<section class="relative h-[795px] flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.85]" data-alt="Authentic traditional Vietnamese townhouse interior with dark wood pillars, warm ambient lighting, and heritage architectural details in Hanoi Old Quarter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Gd7XfEPxA5BcUkqQaSPpkmSkUlpZK64r9draY1pLp4bbfBVuIyQrg0RNwH4WG7zdz5Y7Y_4CyropY4K38UpgOjLp_eLROtELQIhs4NtJEGEgZsku7sHdKnx-h6MowSNsEBGMLnFq5n-zC7U6U6ZlrEBja1bvg9JIOkB6ePCFc3uYveD4XvVltoly89_HkYWpfL-sXmBLNk4VOCR9bI0uFr5QCtOED82EI_oKS9fXq0C5HYeew65BOlnhrpwrTP_Ier4sLbSwR7k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 pb-16">
+<p class="font-headline italic text-primary text-xl mb-2">Since 1992</p>
+<h2 class="font-headline text-5xl leading-tight text-on-surface mb-4 tracking-tighter">LaSiDoHouse</h2>
+<p class="text-on-surface-variant font-medium text-lg leading-relaxed max-w-xs mb-8">
+                    A piece of ancient Hanoi — In the heart of the Old Quarter
+                </p>
+<div class="flex flex-col gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 font-bold tracking-wide uppercase text-sm shadow-xl flex items-center justify-center gap-2">
+                        Book Now
+                    </button>
+<button class="border border-outline-variant/40 text-secondary px-8 py-4 font-bold tracking-wide uppercase text-sm flex items-center justify-center gap-2 bg-surface/50 backdrop-blur-sm">
+                        Discover
+                    </button>
+</div>
+</div>
+</section>
+<!-- Stats & About -->
+<section class="px-6 py-12 bg-surface-container-low">
+<div class="grid grid-cols-3 gap-4 mb-12">
+<div class="bg-surface p-4 text-center">
+<p class="font-headline text-2xl text-primary">3</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Floors</p>
+</div>
+<div class="bg-surface p-4 text-center">
+<p class="font-headline text-2xl text-primary">7</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Guests</p>
+</div>
+<div class="bg-surface p-4 text-center">
+<p class="font-headline text-2xl text-primary">5.0</p>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Rating</p>
+</div>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline text-3xl tracking-tight leading-snug">The Heritage Experience</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    Nestled within the labyrinth of Hanoi's historic streets, LaSiDoHouse offers a sanctuary where modern boutique comfort meets the rhythmic pulse of the ancient capital.
+                </p>
+</div>
+</section>
+<!-- Amenities -->
+<section class="px-6 py-16 bg-surface">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-px bg-outline-variant/40 flex-grow"></div>
+<h4 class="font-headline italic text-lg text-secondary">The Highlights</h4>
+<div class="h-px bg-outline-variant/40 flex-grow"></div>
+</div>
+<div class="grid grid-cols-2 gap-y-10 gap-x-6">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">wifi</span>
+<p class="font-bold text-xs uppercase tracking-widest">Hi-Speed Wifi</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">ac_unit</span>
+<p class="font-bold text-xs uppercase tracking-widest">Climate Control</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">kitchen</span>
+<p class="font-bold text-xs uppercase tracking-widest">Gourmet Kitchen</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">local_laundry_service</span>
+<p class="font-bold text-xs uppercase tracking-widest">Laundry Suite</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">coffee_maker</span>
+<p class="font-bold text-xs uppercase tracking-widest">Coffee Ritual</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">security</span>
+<p class="font-bold text-xs uppercase tracking-widest">Private Entry</p>
+</div>
+</div>
+</section>
+<!-- Space Feature (Asymmetric Overlap) -->
+<section class="py-16 space-y-24">
+<div class="relative px-6">
+<div class="relative z-10 w-4/5 ml-auto">
+<img class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl" data-alt="Minimalist modern bedroom with exposed brick walls, soft linen bedding, and large windows overlooking Hanoi street scene" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHq-kQ0uPFsF-MVPDwlJ0SpeNl2zajEOIi99Yu56Pxu-zhkvmOgCr1h513XGC4NVThNMHt6u5fJ08ZGwPlXLqorrgN7y39p-YsV7rB8pws8L6zlCViMDG6WqzoXP01NfHEw6eBNSkXkawiR272bdFbtjedvtcck3vbB4-armESky3NTX7NfgXvhLiEvdTZ72TIWZ7Vhhq4rX7t6znj67_UcnFnPjqIDSjXusXtG9uTWNo4_CVjklk7M95bs2UZSIDfP6hQ1O5L38g"/>
+</div>
+<div class="absolute top-1/2 left-6 -translate-y-1/2 z-20 max-w-[60%]">
+<div class="bg-surface-container p-6 shadow-sm border-l-4 border-primary">
+<p class="font-headline italic text-secondary text-sm mb-1">Second Floor</p>
+<h5 class="font-headline text-2xl mb-3">Master Suite</h5>
+<p class="text-xs leading-relaxed text-on-surface-variant">Sun-drenched spaces with historic balcony views and premium artisanal linens.</p>
+</div>
+</div>
+</div>
+<div class="relative px-6">
+<div class="relative z-10 w-4/5 mr-auto">
+<img class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl" data-alt="A cozy top floor attic loft with warm wood flooring, bookshelf, and traditional decorative items" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWsmWk0KAQSsIT7HdNFeOPK-9AG0ewFSxCrxFSusIVi_Lxcz37Mi9cAP_WpfrIiziu0VfDspgXkBpFbW-O0Ww-0FL5Bbb-iZmShr7DTaPwKtax5DSrvpXSQh3r7w-Rue6XcOxqvOs84bahxnB9cazFRq0egkRBapkSGuvSt-nVn6UknpDg6rao6x2mHkd9Qpvyh2B-tgqhlBtEPWNUEuFvhg7D2xvkvZLStH6eg7C_gdzwipUyLuu1FCxOSxy2JEpo9tTuop_Qmgs"/>
+</div>
+<div class="absolute top-1/2 right-6 -translate-y-1/2 z-20 max-w-[60%] text-right">
+<div class="bg-surface-container p-6 shadow-sm border-r-4 border-primary">
+<p class="font-headline italic text-secondary text-sm mb-1">Third Floor</p>
+<h5 class="font-headline text-2xl mb-3">Attic Loft</h5>
+<p class="text-xs leading-relaxed text-on-surface-variant">Quiet meditation corner and guest quarters under the ancient wooden beams.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location -->
+<section class="px-6 py-16 bg-surface-container-high">
+<h4 class="font-headline text-3xl mb-8 tracking-tight">The Neighborhood</h4>
+<div class="rounded-sm overflow-hidden shadow-lg mb-8 aspect-video relative">
+<img class="w-full h-full object-cover" data-alt="Stylized map of Hanoi Old Quarter highlighting proximity to Hoan Kiem Lake and street food hubs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUpzRLd-F46VNpoS9flCosGnr0hVYo778MGgDbTJRbS8VRPPKGbr4ePtLAjFrKrFJHOR3iwcwAzhm46TK7S2oS7bis0TjX2Yx9MUUysneSogHKsFSGQCcMj4nUJpcZMXjzjEhJy8qSwOVLPK18d_57jEvP3IAoxfoYBlqcglXe49kBVzJxkYLKSKPPDjUODggZy8yDudrdD42QY1WO9QqkujU1-lFkmF8N4M71dI-r-4_WzF0EqWwJ1R10Mpt3T2wPAlgx8E7rCY"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+<div class="absolute bottom-4 left-4 bg-surface px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-outline-variant/20 shadow-sm">
+                    Hanoi Old Quarter
+                </div>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1">location_on</span>
+<div>
+<p class="font-bold text-sm">Hoan Kiem Lake</p>
+<p class="text-xs text-on-surface-variant">5-minute gentle stroll</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1">local_cafe</span>
+<div>
+<p class="font-bold text-sm">Phan Dinh Phung St.</p>
+<p class="text-xs text-on-surface-variant">Hanoi's most poetic avenue</p>
+</div>
+</div>
+</div>
+</section>
+<!-- House Rules & Fees -->
+<section class="px-6 py-16 bg-surface">
+<h4 class="font-headline text-3xl mb-8 tracking-tight">House Protocol</h4>
+<div class="space-y-6">
+<div class="bg-surface-container-low p-6 border-l-2 border-outline-variant/40">
+<h6 class="font-bold text-xs uppercase tracking-widest text-primary mb-3">Guidelines</h6>
+<ul class="space-y-3 text-sm text-on-surface-variant italic">
+<li>— Check-in: 2:00 PM onwards</li>
+<li>— Tranquil hours after 10:00 PM</li>
+<li>— No smoking within the heritage walls</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-6 border-l-2 border-outline-variant/40">
+<h6 class="font-bold text-xs uppercase tracking-widest text-secondary mb-3">Additional Services</h6>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li class="flex justify-between"><span>Airport Transfer</span> <span class="font-bold text-on-surface">$20</span></li>
+<li class="flex justify-between"><span>Morning Laundry</span> <span class="font-bold text-on-surface">$5</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Reviews & Host -->
+<section class="px-6 py-16 bg-surface-container">
+<div class="mb-16 overflow-hidden">
+<h4 class="font-headline italic text-2xl mb-8 text-center">Guest Whispers</h4>
+<div class="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory">
+<div class="min-w-[85%] snap-center bg-surface p-8 shadow-sm">
+<span class="material-symbols-outlined text-primary/30 text-5xl block mb-4">format_quote</span>
+<p class="font-headline text-lg italic leading-relaxed mb-6">"An atmospheric dream. Staying here felt like living inside a piece of history but with five-star comforts."</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-secondary">— Sarah J., London</p>
+</div>
+<div class="min-w-[85%] snap-center bg-surface p-8 shadow-sm">
+<span class="material-symbols-outlined text-primary/30 text-5xl block mb-4">format_quote</span>
+<p class="font-headline text-lg italic leading-relaxed mb-6">"The location is unbeatable. We could walk to everything and then retreat to this peaceful sanctuary."</p>
+<p class="text-[10px] font-bold uppercase tracking-widest text-secondary">— Marc L., Paris</p>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/40">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden ring-4 ring-surface ring-offset-4 ring-offset-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Portrait of a friendly Vietnamese male host in professional yet casual attire with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoLP0_YuwlQul86sPqqEdFMx4FvTcNffyd5ONd0bl5M6zNYBXwugl_7JOe0v4LpUmr1xjlQVOPgLwu2G-6brwgO3fdGCklM3qDxbNAD-zPUJksXjgN_3TZTNv-Q42k2j_06857uVXPQkhorgt85ai0k0L4DjhVXj1E_4C4M6L2smO9vqRPzIVolIgZnWYPjgspJUmq8-H8z_LLw3jLjKa8O9Z1YJqxu9WZTdo66fPHz6yJTLefnz04dPY_1alfQ-JGJ32jeLOHFxs"/>
+</div>
+<div>
+<h5 class="font-headline text-xl">Meet Minh</h5>
+<p class="text-xs text-on-surface-variant font-medium">Your Local Curator</p>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed text-sm mb-8">
+                    I've spent my life exploring the hidden corners of Hanoi. My goal is to ensure your stay at LaSiDoHouse is as rich in culture as it is in comfort.
+                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface/60 p-4 rounded-sm">
+<p class="text-lg font-bold text-primary">100%</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Response Rate</p>
+</div>
+<div class="bg-surface/60 p-4 rounded-sm">
+<p class="text-lg font-bold text-primary">&lt; 1hr</p>
+<p class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Reply Time</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Sticky CTA -->
+<div class="fixed bottom-[88px] left-0 w-full px-6 z-40">
+<button class="w-full bg-[#fbfbe2] text-[#934b19] border border-[#934b19] py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-3 backdrop-blur-lg">
+<span class="material-symbols-outlined">hotel</span>
+            Book on Airbnb
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fbfbe2]/90 dark:bg-[#1a1a14]/90 backdrop-blur-md z-50 border-t border-[#d1c4b9]/20 shadow-[0_-10px_30px_rgba(77,69,60,0.05)]">
+<a class="flex flex-col items-center justify-center text-[#50652a] dark:text-[#a3b18a] font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-serif text-[10px] tracking-wide uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8b7355] dark:text-[#d1c4b9] opacity-70" href="#">
+<span class="material-symbols-outlined">bed</span>
+<span class="font-serif text-[10px] tracking-wide uppercase">Space</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8b7355] dark:text-[#d1c4b9] opacity-70" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-serif text-[10px] tracking-wide uppercase">Location</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8b7355] dark:text-[#d1c4b9] opacity-70" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-serif text-[10px] tracking-wide uppercase">Host</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#8b7355] dark:text-[#d1c4b9] opacity-70" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-serif text-[10px] tracking-wide uppercase">Book</span>
+</a>
+</nav>
+</body></html>
