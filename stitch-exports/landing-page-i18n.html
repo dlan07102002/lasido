@@ -4,6 +4,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>LaSiDoHouse | Boutique Hotel Hoan Kiem</title>
+<script>
+      (function () {
+        var mobileQuery = window.matchMedia("(max-width: 767.98px)");
+
+        function syncViewport(event) {
+          if (event.matches) {
+            window.location.replace("mobile-app.html");
+          }
+        }
+
+        syncViewport(mobileQuery);
+
+        if (typeof mobileQuery.addEventListener === "function") {
+          mobileQuery.addEventListener("change", syncViewport);
+        } else {
+          mobileQuery.addListener(syncViewport);
+        }
+      })();
+    </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>

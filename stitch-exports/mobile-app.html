@@ -4,6 +4,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>LaSiDoHouse | The Manor</title>
+<script>
+      (function () {
+        var desktopQuery = window.matchMedia("(min-width: 768px)");
+
+        function syncViewport(event) {
+          if (event.matches) {
+            window.location.replace("landing-page-i18n.html");
+          }
+        }
+
+        syncViewport(desktopQuery);
+
+        if (typeof desktopQuery.addEventListener === "function") {
+          desktopQuery.addEventListener("change", syncViewport);
+        } else {
+          desktopQuery.addListener(syncViewport);
+        }
+      })();
+    </script>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- Icons -->

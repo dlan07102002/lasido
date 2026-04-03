@@ -1,7 +1,0 @@
-# UI metadata for the landing-expert skill.
-interface:
-  display_name: "Landing Page Expert"
-  short_description: "Tạo landing page SEO-ready với config tách biệt"
-  brand_color: "#1D9E75"
-policy:
-  allow_implicit_invocation: true
