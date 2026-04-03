@@ -1,0 +1,261 @@
+{
+  "language": "en",
+  "brand": {
+    "name": "LaSiDoHouse",
+    "tagline": "A heritage townhouse stay in the heart of Hanoi's Old Quarter",
+    "logo_url": "",
+    "primary_color": "#50652a",
+    "secondary_color": "#934b19"
+  },
+  "contact": {
+    "phone": "",
+    "phone_display": "",
+    "email": "",
+    "address": "Le Thanh Tong, Hoan Kiem, Hanoi, Vietnam",
+    "zalo": "",
+    "facebook": ""
+  },
+  "hero": {
+    "eyebrow": "Boutique Hanoi Stay",
+    "headline": "Stay inside a restored Hanoi townhouse, moments from the Old Quarter's quietest rituals.",
+    "subheadline": "LaSiDoHouse pairs heritage details, whole-home privacy, and warm host energy for travelers who want more soul than a standard hotel room.",
+    "cta_text": "Check Availability",
+    "cta_url": "#booking",
+    "secondary_cta_text": "Explore The Space",
+    "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAq6UjMHoZ2ANI5YBuskEeK3-iyWyAKuEVt-GI9zw74hb60It7Ou9-Kafm8AeXOEKBD8ZC6xWT46JkLMTipCkSIsBaNwH1n9E9m22NirEFhScZ5Tns524qcSj4h7hpdG8_6r6__oZVAT7oXRhEXeuWr9NUARNCSXitGgqCyXOaNSOrylCu5izduKtDzJOldPj7QrqEQaldkQGQhaJC1O9UwXLGgZiN-9VE1pfuuta9kpsovTEMDEe-699YaCGvTHhuDvvP8TZ7Ijw0",
+    "image_alt": "Warm boutique townhouse interior in Hanoi with heritage materials and soft natural light"
+  },
+  "product": {
+    "name": "Private 3-floor boutique townhouse",
+    "description": "A design-led Hanoi stay built for slow mornings, family gatherings, and evenings that still feel local once the city quiets down.",
+    "price": "",
+    "original_price": "",
+    "currency": "USD",
+    "features": [
+      "Whole-townhouse privacy for couples, families, or small groups",
+      "A short walk to Hoan Kiem Lake and the Old Quarter's food and culture",
+      "Projector and 55-inch TV for relaxed movie nights after exploring",
+      "Kitchen, climate control, laundry, and practical comforts for longer stays",
+      "Balcony views and layered interiors with unmistakably Hanoi character",
+      "A guest experience shaped by care, pace, and thoughtful hosting"
+    ]
+  },
+  "social_proof": {
+    "reviews": [
+      {
+        "name": "Anna R.",
+        "title": "Guest from Melbourne",
+        "quote": "Everything was perfect. The projector setup for movie night was a highlight. It genuinely felt like a boutique hotel experience inside a real home.",
+        "rating": 5
+      },
+      {
+        "name": "Minh Chau",
+        "title": "Weekend family stay",
+        "quote": "It felt like returning home after a long day in the city. Quiet, warm, and beautifully arranged without losing the character of old Hanoi.",
+        "rating": 5
+      },
+      {
+        "name": "Daniel T.",
+        "title": "Remote-working traveler",
+        "quote": "The layout gave our group space to work, cook, and rest. It was private, practical, and still had the atmosphere we came to Hanoi for.",
+        "rating": 5
+      }
+    ],
+    "partner_logos": [],
+    "trust_badges": [
+      "5.0 guest rating",
+      "Up to 7 guests",
+      "Private 3-floor stay",
+      "Old Quarter location"
+    ]
+  },
+  "seo": {
+    "title": "LaSiDoHouse Hanoi | Heritage Stay in Hoan Kiem",
+    "description": "Discover LaSiDoHouse, a heritage townhouse stay in Hoan Kiem with whole-home privacy, curated amenities, and a warm base for exploring Hanoi.",
+    "keywords": [
+      "Hanoi boutique stay",
+      "Hoan Kiem townhouse",
+      "Old Quarter accommodation",
+      "heritage stay Hanoi",
+      "LaSiDoHouse"
+    ],
+    "og_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAq6UjMHoZ2ANI5YBuskEeK3-iyWyAKuEVt-GI9zw74hb60It7Ou9-Kafm8AeXOEKBD8ZC6xWT46JkLMTipCkSIsBaNwH1n9E9m22NirEFhScZ5Tns524qcSj4h7hpdG8_6r6__oZVAT7oXRhEXeuWr9NUARNCSXitGgqCyXOaNSOrylCu5izduKtDzJOldPj7QrqEQaldkQGQhaJC1O9UwXLGgZiN-9VE1pfuuta9kpsovTEMDEe-699YaCGvTHhuDvvP8TZ7Ijw0",
+    "canonical_url": "https://example.com/lasidohouse/",
+    "schema_type": "LodgingBusiness",
+    "robots": "noindex,nofollow"
+  },
+  "navigation": [
+    {
+      "label": "Story",
+      "href": "#story"
+    },
+    {
+      "label": "Highlights",
+      "href": "#highlights"
+    },
+    {
+      "label": "Spaces",
+      "href": "#spaces"
+    },
+    {
+      "label": "Reviews",
+      "href": "#reviews"
+    },
+    {
+      "label": "Location",
+      "href": "#location"
+    }
+  ],
+  "stats": [
+    {
+      "value": "3",
+      "label": "floors of private townhouse living"
+    },
+    {
+      "value": "7",
+      "label": "guests across the full stay"
+    },
+    {
+      "value": "5.0",
+      "label": "guest-rated boutique experience"
+    },
+    {
+      "value": "10 min",
+      "label": "walk to Hoan Kiem Lake"
+    }
+  ],
+  "story": {
+    "eyebrow": "Why Lasido feels different",
+    "headline": "Old Hanoi character, reframed for travelers who want calm without leaving the city behind.",
+    "body": "LaSiDoHouse is more than accommodation. It is a carefully restored townhouse shaped around quiet textures, natural light, and the sense of returning to a lived-in neighborhood instead of a generic room. The experience borrows the strongest cues from the exported concepts: heritage materials, layered amenities, and a pace that suits both short city breaks and longer stays.",
+    "quote": "It feels like returning home after a long day exploring the city.",
+    "quote_author": "Guest impression"
+  },
+  "highlights_intro": {
+    "eyebrow": "Curated amenities",
+    "headline": "The details that turn a city stay into a place you actually want to come back to.",
+    "body": "These highlights pull directly from the exported Lasido concepts and focus on what matters most for a boutique townhouse stay: privacy, walkability, comfort, and atmosphere."
+  },
+  "highlights": [
+    {
+      "icon": "01",
+      "title": "Walkable Old Quarter access",
+      "description": "Start mornings with a short walk to Hoan Kiem Lake, then come back to a calmer residential rhythm."
+    },
+    {
+      "icon": "02",
+      "title": "Whole-home privacy",
+      "description": "The entire townhouse stays yours, which makes the experience feel personal rather than transactional."
+    },
+    {
+      "icon": "03",
+      "title": "Kitchen and practical comforts",
+      "description": "Cook simple meals, stay longer, and keep the trip flexible without losing boutique character."
+    },
+    {
+      "icon": "04",
+      "title": "Balcony and layered interiors",
+      "description": "Warm wood, soft light, and balcony moments keep the property rooted in a recognizably Hanoi mood."
+    },
+    {
+      "icon": "05",
+      "title": "Movie-night setup",
+      "description": "A projector and lounge-ready atmosphere give the space a distinctive evening ritual after the city."
+    },
+    {
+      "icon": "06",
+      "title": "Host-led warmth",
+      "description": "The stay is designed to feel supported and thoughtful, not automated or overbuilt."
+    }
+  ],
+  "gallery_intro": {
+    "eyebrow": "Explore the spaces",
+    "headline": "Each floor carries a different mood while keeping the same quiet boutique language.",
+    "body": "The section flow references the asymmetry and image-led storytelling from the Stitch exports, but translates it into a lighter, production-ready landing page."
+  },
+  "gallery": [
+    {
+      "eyebrow": "Arrival experience",
+      "title": "A living space that feels edited, not staged",
+      "description": "The central gathering floor sets the tone with heritage touches, soft ambient light, and the kind of layout that works for conversation as well as downtime.",
+      "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAGHNZeVHWiNXZNGhhx75sMkdx1uNizbQjzb_2z77lglW8kpe1j30Q5ZoYvfcIilIVJRwsLUcFMVWUJLEti0TeT3GRofPNIbuSJxSxbAUoRwaMSWuWyq0e-DQjAbizrHkJ5Svj8y0EwJ4MW3LTdLzl-pvOUcg-7XbZQ4Tq7rFz4GXiDTxgVR3hzWGkEmmHEuff-wJqOOWa17URu8pqf4sdezJSI14Du7mNkyww9DTitvEN8PnYseKY3HxDotpvetOmoJYgkh8QeVgI",
+      "alt": "Sunlit boutique living room inside LaSiDoHouse with warm wood and soft textiles"
+    },
+    {
+      "eyebrow": "Second floor",
+      "title": "Master suite energy with room to slow down",
+      "description": "A brighter bedroom zone, made for deep rest, unhurried mornings, and longer stays that need more than just a bed.",
+      "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAHq-kQ0uPFsF-MVPDwlJ0SpeNl2zajEOIi99Yu56Pxu-zhkvmOgCr1h513XGC4NVThNMHt6u5fJ08ZGwPlXLqorrgN7y39p-YsV7rB8pws8L6zlCViMDG6WqzoXP01NfHEw6eBNSkXkawiR272bdFbtjedvtcck3vbB4-armESky3NTX7NfgXvhLiEvdTZ72TIWZ7Vhhq4rX7t6znj67_UcnFnPjqIDSjXusXtG9uTWNo4_CVjklk7M95bs2UZSIDfP6hQ1O5L38g",
+      "alt": "Boutique bedroom with exposed brick and calm natural light inside a Hanoi townhouse"
+    },
+    {
+      "eyebrow": "Top floor",
+      "title": "A loft-like retreat under the old structure",
+      "description": "The upper level leans quieter and more introspective, ideal for reading, extra guests, or simply taking the pace down.",
+      "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDWsmWk0KAQSsIT7HdNFeOPK-9AG0ewFSxCrxFSusIVi_Lxcz37Mi9cAP_WpfrIiziu0VfDspgXkBpFbW-O0Ww-0FL5Bbb-iZmShr7DTaPwKtax5DSrvpXSQh3r7w-Rue6XcOxqvOs84bahxnB9cazFRq0egkRBapkSGuvSt-nVn6UknpDg6rao6x2mHkd9Qpvyh2B-tgqhlBtEPWNUEuFvhg7D2xvkvZLStH6eg7C_gdzwipUyLuu1FCxOSxy2JEpo9tTuop_Qmgs",
+      "alt": "Cozy attic-inspired loft with warm wood flooring and boutique styling"
+    }
+  ],
+  "reviews_intro": {
+    "eyebrow": "Guest proof",
+    "headline": "Trust matters more when the stay is personal.",
+    "body": "The exported concepts consistently leaned on warmth, host care, and the feeling of staying somewhere memorable. These reviews support that positioning without turning the page into noise."
+  },
+  "location": {
+    "eyebrow": "Neighborhood",
+    "headline": "A calm base near the movement of Hoan Kiem.",
+    "body": "Lasido's location works because it keeps you close to Hanoi's major rhythms without forcing you to sleep inside the busiest version of them. That balance is one of the property's strongest conversion points.",
+    "image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAAUpzRLd-F46VNpoS9flCosGnr0hVYo778MGgDbTJRbS8VRPPKGbr4ePtLAjFrKrFJHOR3iwcwAzhm46TK7S2oS7bis0TjX2Yx9MUUysneSogHKsFSGQCcMj4nUJpcZMXjzjEhJy8qSwOVLPK18d_57jEvP3IAoxfoYBlqcglXe49kBVzJxkYLKSKPPDjUODggZy8yDudrdD42QY1WO9QqkujU1-lFkmF8N4M71dI-r-4_WzF0EqWwJ1R10Mpt3T2wPAlgx8E7rCY",
+    "image_alt": "Stylized map view of Hanoi's Old Quarter and the Hoan Kiem area",
+    "facts": [
+      {
+        "label": "Hoan Kiem Lake",
+        "value": "Around a 10-minute walk from the townhouse"
+      },
+      {
+        "label": "Street character",
+        "value": "Historic lanes, cafes, and local food woven into the neighborhood"
+      },
+      {
+        "label": "Ideal for",
+        "value": "Couples, families, and small groups who want both access and calm"
+      }
+    ]
+  },
+  "faq_intro": {
+    "eyebrow": "Stay planning",
+    "headline": "Key questions guests usually ask before booking.",
+    "body": "This FAQ keeps the page practical and conversion-focused without overloading the main story sections."
+  },
+  "faq": [
+    {
+      "question": "Is LaSiDoHouse a private stay or shared accommodation?",
+      "answer": "The exported concept positions Lasido as a full private townhouse experience, designed for guests who want more space and control than a typical room booking."
+    },
+    {
+      "question": "Who is the stay best suited for?",
+      "answer": "It fits couples, families, and small groups who value atmosphere, walkable location, and time together in a lived-in boutique setting."
+    },
+    {
+      "question": "How close is the property to Hanoi's main attractions?",
+      "answer": "The strongest location cue in the exports is proximity to Hoan Kiem Lake and the Old Quarter, making it easy to explore on foot."
+    },
+    {
+      "question": "Can the booking details be updated later?",
+      "answer": "Yes. The landing page is built from site.config.json, so booking links, phone numbers, pricing, and social channels can be swapped without changing the page structure."
+    }
+  ],
+  "booking": {
+    "eyebrow": "Ready to convert",
+    "headline": "Start your Hanoi stay with a home that already feels personal.",
+    "body": "LaSiDoHouse is built for guests who want privacy, atmosphere, and a better base for walking the city at their own pace.",
+    "primary_cta_text": "Plan Your Stay",
+    "primary_cta_url": "#contact",
+    "secondary_cta_text": "See Location",
+    "secondary_cta_url": "#location"
+  },
+  "footer": {
+    "note": "Heritage townhouse character with boutique comfort and Old Quarter access.",
+    "copyright": "© 2026 LaSiDoHouse. All rights reserved."
+  }
+}

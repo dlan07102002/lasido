@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaSiDoHouse</title>
+  <meta name="description" content="Config-driven landing page for LaSiDoHouse.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#50652a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LaSiDoHouse">
+  <meta property="og:description" content="Config-driven landing page for LaSiDoHouse.">
+  <meta property="og:url" content="https://example.com/lasidohouse/">
+  <meta property="og:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://example.com/lasidohouse/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="app" class="app-shell" aria-live="polite">
+    <div class="loading-state">Loading Lasido landing page...</div>
+  </div>
+
+  <script type="module">
+    const app = document.getElementById("app");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function isFilled(value) {
+      return typeof value === "string" ? value.trim().length > 0 : Boolean(value);
+    }
+
+    function formatPrice(value, currency) {
+      if (!isFilled(value)) return "";
+      const raw = String(value).trim();
+      if (!/^\d+(\.\d+)?$/.test(raw)) return raw;
+      const number = Number(raw);
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: currency || "USD",
+        maximumFractionDigits: 0
+      }).format(number);
+    }
+
+    function renderLogo(brand) {
+      if (isFilled(brand.logo_url)) {
+        return `<img class="brand-logo" src="${escapeHtml(brand.logo_url)}" alt="${escapeHtml(brand.name)} logo" width="180" height="56">`;
+      }
+      return `<span class="wordmark">${escapeHtml(brand.name)}</span>`;
+    }
+
+    function renderNav(items = []) {
+      return items.map((item) => `<a class="nav-link" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a>`).join("");
+    }
+
+    function renderStats(items = []) {
+      return items.map((item) => `
+        <article class="stat-card">
+          <strong>${escapeHtml(item.value)}</strong>
+          <span>${escapeHtml(item.label)}</span>
+        </article>
+      `).join("");
+    }
+
+    function renderTrustBadges(items = []) {
+      return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    }
+
+    function renderHighlights(items = []) {
+      return items.map((item) => `
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">${escapeHtml(item.icon || "*")}</div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderGallery(items = []) {
+      return items.map((item, index) => `
+        <article class="gallery-card ${index % 2 === 0 ? "gallery-card-left" : "gallery-card-right"}">
+          <div class="gallery-media">
+            <img src="${escapeHtml(item.image_url)}" alt="${escapeHtml(item.alt || item.title)}" width="1200" height="1500" loading="lazy" decoding="async">
+          </div>
+          <div class="gallery-copy">
+            <p class="section-eyebrow">${escapeHtml(item.eyebrow || "")}</p>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.description)}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderReviews(reviews = []) {
+      return reviews.map((review) => `
+        <article class="review-card">
+          <div class="review-rating" aria-label="${escapeHtml(review.rating || 5)} out of 5 rating">${escapeHtml(review.rating || 5)}/5</div>
+          <blockquote>${escapeHtml(review.quote)}</blockquote>
+          <p class="review-author">${escapeHtml(review.name)}</p>
+          <p class="review-role">${escapeHtml(review.title)}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderFaq(items = []) {
+      return items.map((item) => `
+        <details class="faq-item">
+          <summary>${escapeHtml(item.question)}</summary>
+          <p>${escapeHtml(item.answer)}</p>
+        </details>
+      `).join("");
+    }
+
+    function renderLocationFacts(items = []) {
+      return items.map((item) => `
+        <li>
+          <strong>${escapeHtml(item.label)}</strong>
+          <span>${escapeHtml(item.value)}</span>
+        </li>
+      `).join("");
+    }
+
+    function renderSocialLinks(contact) {
+      const links = [];
+      if (isFilled(contact.facebook)) links.push(`<a href="${escapeHtml(contact.facebook)}" target="_blank" rel="noreferrer">Facebook</a>`);
+      if (isFilled(contact.zalo)) links.push(`<a href="${escapeHtml(contact.zalo)}" target="_blank" rel="noreferrer">Zalo</a>`);
+      if (isFilled(contact.email)) links.push(`<a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a>`);
+      if (isFilled(contact.phone)) links.push(`<a href="tel:${escapeHtml(contact.phone)}">${escapeHtml(contact.phone_display || contact.phone)}</a>`);
+      return links.length ? `<div class="footer-links">${links.join("")}</div>` : "";
+    }
+
+    function buildSchema(config) {
+      const sameAs = [config.contact.facebook, config.contact.zalo].filter(isFilled);
+      return JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": config.seo.schema_type || "LodgingBusiness",
+        "name": config.brand.name,
+        "description": config.seo.description,
+        "image": config.seo.og_image || config.hero.image_url,
+        "url": config.seo.canonical_url,
+        "address": config.contact.address || undefined,
+        "telephone": config.contact.phone || undefined,
+        "email": config.contact.email || undefined,
+        "sameAs": sameAs.length ? sameAs : undefined
+      });
+    }
+
+    function applyTheme(config) {
+      const root = document.documentElement;
+      root.lang = config.language || "en";
+      root.style.setProperty("--primary-color", config.brand.primary_color || "#50652a");
+      root.style.setProperty("--secondary-color", config.brand.secondary_color || "#934b19");
+    }
+
+    function upsertMeta(selector, attr, value) {
+      const el = document.querySelector(selector);
+      if (el && isFilled(value)) el.setAttribute(attr, value);
+    }
+
+    function updateSeo(config) {
+      document.title = config.seo.title || config.brand.name;
+      upsertMeta('meta[name="description"]', "content", config.seo.description);
+      upsertMeta('meta[name="robots"]', "content", config.seo.robots || "index,follow");
+      upsertMeta('meta[name="theme-color"]', "content", config.brand.primary_color);
+      upsertMeta('meta[property="og:title"]', "content", config.seo.title || config.brand.name);
+      upsertMeta('meta[property="og:description"]', "content", config.seo.description);
+      upsertMeta('meta[property="og:url"]', "content", config.seo.canonical_url);
+      upsertMeta('meta[property="og:image"]', "content", config.seo.og_image || config.hero.image_url);
+      upsertMeta('link[rel="canonical"]', "href", config.seo.canonical_url);
+
+      if (Array.isArray(config.seo.keywords) && config.seo.keywords.length) {
+        let keywordsMeta = document.querySelector('meta[name="keywords"]');
+        if (!keywordsMeta) {
+          keywordsMeta = document.createElement("meta");
+          keywordsMeta.name = "keywords";
+          document.head.appendChild(keywordsMeta);
+        }
+        keywordsMeta.content = config.seo.keywords.join(", ");
+      }
+
+      if (isFilled(config.hero.image_url)) {
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = config.hero.image_url;
+        document.head.appendChild(preload);
+      }
+
+      const existingSchema = document.getElementById("structured-data");
+      if (existingSchema) existingSchema.remove();
+      const script = document.createElement("script");
+      script.id = "structured-data";
+      script.type = "application/ld+json";
+      script.textContent = buildSchema(config);
+      document.head.appendChild(script);
+    }
+
+    function initActiveNav() {
+      const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+      if (!navLinks.length) return;
+
+      const linkMap = new Map(
+        navLinks
+          .map((link) => [link.getAttribute("href"), link])
+          .filter(([href]) => href && href.startsWith("#"))
+      );
+
+      const setActive = (id) => {
+        linkMap.forEach((link, href) => {
+          const isActive = href === `#${id}`;
+          link.classList.toggle("active", isActive);
+          if (isActive) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const sections = Array.from(linkMap.keys())
+        .map((href) => document.querySelector(href))
+        .filter(Boolean);
+
+      if (!sections.length) return;
+
+      const header = document.querySelector(".site-header");
+      let ticking = false;
+
+      const updateActiveFromScroll = () => {
+        const headerHeight = header ? header.offsetHeight : 0;
+        const marker = window.scrollY + headerHeight + 24;
+
+        let currentSection = sections[0];
+        for (const section of sections) {
+          if (section.offsetTop <= marker) {
+            currentSection = section;
+          } else {
+            break;
+          }
+        }
+
+        setActive(currentSection.id);
+        ticking = false;
+      };
+
+      const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateActiveFromScroll);
+      };
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const href = link.getAttribute("href");
+          if (href && href.startsWith("#")) {
+            setActive(href.slice(1));
+          }
+        });
+      });
+
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate);
+      window.addEventListener("hashchange", requestUpdate);
+
+      requestUpdate();
+    }
+
+    function renderPage(config) {
+      const heroCtaUrl = isFilled(config.hero.cta_url) ? config.hero.cta_url : "#booking";
+      const primaryBookingUrl = isFilled(config.booking.primary_cta_url) ? config.booking.primary_cta_url : heroCtaUrl;
+      const secondaryBookingUrl = isFilled(config.booking.secondary_cta_url) ? config.booking.secondary_cta_url : "#location";
+      const price = formatPrice(config.product.price, config.product.currency);
+      const originalPrice = formatPrice(config.product.original_price, config.product.currency);
+      const phoneHref = isFilled(config.contact.phone) ? `tel:${escapeHtml(config.contact.phone)}` : "";
+
+      app.innerHTML = `
+        <header class="site-header">
+          <div class="container nav-bar">
+            <a class="brand-lockup" href="#hero" aria-label="${escapeHtml(config.brand.name)} home">${renderLogo(config.brand)}</a>
+            <nav class="desktop-nav" aria-label="Primary navigation">${renderNav(config.navigation)}</nav>
+            <a class="button button-solid nav-cta" href="${escapeHtml(heroCtaUrl)}">${escapeHtml(config.hero.cta_text)}</a>
+          </div>
+        </header>
+
+        <main id="main-content">
+          <section class="hero-section" id="hero">
+            <div class="hero-media">
+              <img src="${escapeHtml(config.hero.image_url)}" alt="${escapeHtml(config.hero.image_alt || config.hero.headline)}" width="1600" height="2000" loading="eager" fetchpriority="high" decoding="async">
+              <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-grid">
+              <div class="hero-copy">
+                <p class="section-eyebrow">${escapeHtml(config.hero.eyebrow || config.brand.tagline)}</p>
+                <h1>${escapeHtml(config.hero.headline)}</h1>
+                <p class="hero-subhead">${escapeHtml(config.hero.subheadline)}</p>
+                <div class="hero-actions">
+                  <a class="button button-solid" href="${escapeHtml(heroCtaUrl)}">${escapeHtml(config.hero.cta_text)}</a>
+                  <a class="button button-ghost" href="#story">${escapeHtml(config.hero.secondary_cta_text || "Discover the space")}</a>
+                </div>
+                <ul class="trust-badges" aria-label="Trust signals">${renderTrustBadges(config.social_proof.trust_badges)}</ul>
+              </div>
+              <aside class="hero-note">
+                <p>${escapeHtml(config.story.quote)}</p>
+                <span>${escapeHtml(config.story.quote_author)}</span>
+              </aside>
+            </div>
+          </section>
+
+          <section class="stats-section">
+            <div class="container stats-grid">${renderStats(config.stats)}</div>
+          </section>
+
+          <section class="story-section section-block" id="story">
+            <div class="container story-grid">
+              <div class="story-copy">
+                <p class="section-eyebrow">${escapeHtml(config.story.eyebrow)}</p>
+                <h2>${escapeHtml(config.story.headline)}</h2>
+                <p>${escapeHtml(config.story.body)}</p>
+              </div>
+              <article class="product-card" id="experience">
+                <p class="section-eyebrow">${escapeHtml(config.product.name)}</p>
+                <h3>${escapeHtml(config.product.description)}</h3>
+                ${(price || originalPrice) ? `<div class="price-stack">${price ? `<strong>${escapeHtml(price)}</strong>` : ""}${originalPrice ? `<span>${escapeHtml(originalPrice)}</span>` : ""}</div>` : ""}
+                <ul class="feature-list">${config.product.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block section-tinted" id="highlights">
+            <div class="container">
+              <div class="section-heading">
+                <p class="section-eyebrow">${escapeHtml(config.highlights_intro.eyebrow)}</p>
+                <h2>${escapeHtml(config.highlights_intro.headline)}</h2>
+                <p>${escapeHtml(config.highlights_intro.body)}</p>
+              </div>
+              <div class="features-grid">${renderHighlights(config.highlights)}</div>
+            </div>
+          </section>
+
+          <section class="section-block gallery-section" id="spaces">
+            <div class="container">
+              <div class="section-heading">
+                <p class="section-eyebrow">${escapeHtml(config.gallery_intro.eyebrow)}</p>
+                <h2>${escapeHtml(config.gallery_intro.headline)}</h2>
+                <p>${escapeHtml(config.gallery_intro.body)}</p>
+              </div>
+              <div class="gallery-stack">${renderGallery(config.gallery)}</div>
+            </div>
+          </section>
+
+          <section class="section-block reviews-section" id="reviews">
+            <div class="container">
+              <div class="section-heading">
+                <p class="section-eyebrow">${escapeHtml(config.reviews_intro.eyebrow)}</p>
+                <h2>${escapeHtml(config.reviews_intro.headline)}</h2>
+                <p>${escapeHtml(config.reviews_intro.body)}</p>
+              </div>
+              <div class="reviews-grid">${renderReviews(config.social_proof.reviews)}</div>
+            </div>
+          </section>
+
+          <section class="section-block location-section" id="location">
+            <div class="container location-grid">
+              <div class="location-copy">
+                <p class="section-eyebrow">${escapeHtml(config.location.eyebrow)}</p>
+                <h2>${escapeHtml(config.location.headline)}</h2>
+                <p>${escapeHtml(config.location.body)}</p>
+                <ul class="location-facts">${renderLocationFacts(config.location.facts)}</ul>
+              </div>
+              <div class="location-card">
+                <img src="${escapeHtml(config.location.image_url)}" alt="${escapeHtml(config.location.image_alt || config.location.headline)}" width="1280" height="960" loading="lazy" decoding="async">
+                <div class="location-badge">${escapeHtml(config.contact.address)}</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-block faq-section" id="faq">
+            <div class="container faq-grid">
+              <div class="section-heading faq-copy">
+                <p class="section-eyebrow">${escapeHtml(config.faq_intro.eyebrow)}</p>
+                <h2>${escapeHtml(config.faq_intro.headline)}</h2>
+                <p>${escapeHtml(config.faq_intro.body)}</p>
+              </div>
+              <div class="faq-list">${renderFaq(config.faq)}</div>
+            </div>
+          </section>
+
+          <section class="section-block booking-section" id="booking">
+            <div class="container booking-panel">
+              <div class="booking-copy">
+                <p class="section-eyebrow">${escapeHtml(config.booking.eyebrow)}</p>
+                <h2>${escapeHtml(config.booking.headline)}</h2>
+                <p>${escapeHtml(config.booking.body)}</p>
+              </div>
+              <div class="booking-actions">
+                <a class="button button-solid" href="${escapeHtml(primaryBookingUrl)}">${escapeHtml(config.booking.primary_cta_text)}</a>
+                <a class="button button-ghost" href="${escapeHtml(secondaryBookingUrl)}">${escapeHtml(config.booking.secondary_cta_text)}</a>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="site-footer" id="contact">
+          <div class="container footer-grid">
+            <div>
+              ${renderLogo(config.brand)}
+              <p class="footer-tagline">${escapeHtml(config.brand.tagline)}</p>
+            </div>
+            <div class="footer-contact">
+              <p class="footer-label">Address</p>
+              <p>${escapeHtml(config.contact.address)}</p>
+              ${renderSocialLinks(config.contact)}
+            </div>
+            <div class="footer-meta">
+              <p class="footer-label">Stay Intent</p>
+              <p>${escapeHtml(config.footer.note)}</p>
+            </div>
+          </div>
+          <div class="container footer-bottom">
+            <small>${escapeHtml(config.footer.copyright)}</small>
+          </div>
+        </footer>
+
+        <div class="mobile-sticky-cta">
+          ${phoneHref ? `<a class="button button-ghost" href="${phoneHref}">${escapeHtml(config.contact.phone_display || config.contact.phone)}</a>` : ""}
+          <a class="button button-solid" href="${escapeHtml(heroCtaUrl)}">${escapeHtml(config.hero.cta_text)}</a>
+        </div>
+      `;
+    }
+
+    async function init() {
+      try {
+        const response = await fetch("./site.config.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`Failed to load config: ${response.status}`);
+        const config = await response.json();
+        applyTheme(config);
+        updateSeo(config);
+        renderPage(config);
+        initActiveNav();
+      } catch (error) {
+        app.innerHTML = `
+          <div class="loading-state error-state">
+            <h1>Unable to load the Lasido page</h1>
+            <p>${escapeHtml(error.message)}</p>
+            <p>Serve this folder with a local web server so <code>site.config.json</code> can be fetched.</p>
+          </div>
+        `;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
