@@ -1,7 +1,5 @@
 {
-    "name": "static-site",
+    "name": "lasido",
     "compatibility_date": "2026-01-08",
-    "assets": {
-        "directory": "./public"
-    }
+    "pages_build_output_dir": "./public"
 }
