@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>LaSiDoHouse</title>
+        <script>
+            (function () {
+                var isMobile = window.matchMedia(
+                    "(max-width: 767.98px)",
+                ).matches;
+                var target = isMobile
+                    ? "public/mobile-app.html"
+                    : "public/landing-page-i18n.html";
+
+                window.location.replace(target);
+            })();
+        </script>
+    </head>
+    <body></body>
+</html>
