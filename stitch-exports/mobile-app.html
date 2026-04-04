@@ -126,14 +126,14 @@
             [lang="en"] .lang-en {
                 display: inline;
             }
-      .lang-switcher-btn {
-        color: #8b7355;
-        opacity: 0.6;
-      }
-      .lang-switcher-btn.active {
-        color: #50652a !important;
-        opacity: 1 !important;
-      }
+            .lang-switcher-btn {
+                color: #8b7355;
+                opacity: 0.6;
+            }
+            .lang-switcher-btn.active {
+                color: #50652a !important;
+                opacity: 1 !important;
+            }
 
             .material-symbols-outlined {
                 font-variation-settings:
@@ -233,7 +233,13 @@
                 background: #1877f2;
             }
             .social-card-logo-instagram {
-                background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 75%, #515bd4 100%);
+                background: linear-gradient(
+                    135deg,
+                    #f58529 0%,
+                    #dd2a7b 48%,
+                    #8134af 75%,
+                    #515bd4 100%
+                );
             }
             .social-card-copy {
                 min-width: 0;
@@ -274,13 +280,13 @@
                 min-height: max(884px, 100dvh);
             }
 
-    #about,
-    #highlights,
-    #floors,
-    #location,
-    #reviews {
-      scroll-margin-top: 96px;
-    }
+            #about,
+            #highlights,
+            #floors,
+            #location,
+            #reviews {
+                scroll-margin-top: 96px;
+            }
         </style>
     </head>
     <body
@@ -311,12 +317,7 @@
             id="top"
         >
             <div class="flex justify-between items-center px-6 py-4 w-full">
-                <h1
-                    class="text-2xl font-serif tracking-tight text-[#50652a] dark:text-[#a3b18a]"
-                >
-                    <span class="lang-en">LaSiDoHouse</span>
-                    <span class="lang-vi">LaSiDoHouse</span>
-                </h1>
+                <img src="../logo.svg" width="64" />
                 <div class="flex items-center gap-3">
                     <div
                         class="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-[#50652a]"
@@ -362,9 +363,7 @@
                     ></div>
                 </div>
                 <div class="hero-copy relative z-10 text-center max-w-xl">
-                    <h2
-                        class="hero-title font-headline italic text-surface"
-                    >
+                    <h2 class="hero-title font-headline italic text-surface">
                         LaSiDoHouse
                     </h2>
                     <p
@@ -433,12 +432,28 @@
                     <h3
                         class="font-headline text-3xl tracking-tight leading-snug"
                     >
-                        <span class="lang-en">Return to a sanctuary that feels like home.</span>
-                        <span class="lang-vi">Về chốn bình yên như chính ngôi nhà bạn.</span>
+                        <span class="lang-en"
+                            >Return to a sanctuary that feels like home.</span
+                        >
+                        <span class="lang-vi"
+                            >Về chốn bình yên như chính ngôi nhà bạn.</span
+                        >
                     </h3>
                     <p class="text-on-surface-variant leading-relaxed text-lg">
-                        <span class="lang-en">LaSiDoHouse is more than just accommodation; it is our passion for preserving the rustic, quiet charm amidst the bustle of Hoan Kiem. A private, cozy space where every small corner carries the breath of Hanoi's old streets.</span>
-                        <span class="lang-vi">LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà Nội phố cổ.</span>
+                        <span class="lang-en"
+                            >LaSiDoHouse is more than just accommodation; it is
+                            our passion for preserving the rustic, quiet charm
+                            amidst the bustle of Hoan Kiem. A private, cozy
+                            space where every small corner carries the breath of
+                            Hanoi's old streets.</span
+                        >
+                        <span class="lang-vi"
+                            >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
+                            huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh
+                            lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng
+                            tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà
+                            Nội phố cổ.</span
+                        >
                     </p>
                 </div>
             </section>
@@ -615,8 +630,12 @@
                     <div
                         class="absolute bottom-4 left-4 bg-surface px-3 py-1 text-[10px] font-bold uppercase tracking-widest border border-outline-variant/20 shadow-sm"
                     >
-                        <span class="lang-en">Le Thanh Tong, Hoan Kiem, Hanoi</span>
-                        <span class="lang-vi">Lê Thánh Tông, Hoàn Kiếm, Hà Nội</span>
+                        <span class="lang-en"
+                            >Le Thanh Tong, Hoan Kiem, Hanoi</span
+                        >
+                        <span class="lang-vi"
+                            >Lê Thánh Tông, Hoàn Kiếm, Hà Nội</span
+                        >
                     </div>
                 </div>
                 <div class="space-y-4">
@@ -631,8 +650,12 @@
                                 <span class="lang-vi">Hồ Gươm</span>
                             </p>
                             <p class="text-xs text-on-surface-variant">
-                                <span class="lang-en">10-min walk to the lake</span>
-                                <span class="lang-vi">10 phút đi bộ tới hồ</span>
+                                <span class="lang-en"
+                                    >10-min walk to the lake</span
+                                >
+                                <span class="lang-vi"
+                                    >10 phút đi bộ tới hồ</span
+                                >
                             </p>
                         </div>
                     </div>
@@ -647,8 +670,13 @@
                                 <span class="lang-vi">Cà phê đặc sản</span>
                             </p>
                             <p class="text-xs text-on-surface-variant">
-                                <span class="lang-en">"Indie" cafes within 3-min walk</span>
-                                <span class="lang-vi">Quán cà phê "indie" chỉ trong 3 phút đi bộ</span>
+                                <span class="lang-en"
+                                    >"Indie" cafes within 3-min walk</span
+                                >
+                                <span class="lang-vi"
+                                    >Quán cà phê "indie" chỉ trong 3 phút đi
+                                    bộ</span
+                                >
                             </p>
                         </div>
                     </div>
@@ -736,9 +764,14 @@
                                 class="font-headline text-lg italic leading-relaxed mb-6"
                             >
                                 <span class="lang-en"
-                                    >"Wonderful house, delicately decorated and extremely cozy. The host is very helpful, and the location is unbeatable."</span
+                                    >"Wonderful house, delicately decorated and
+                                    extremely cozy. The host is very helpful,
+                                    and the location is unbeatable."</span
                                 ><span class="lang-vi"
-                                    >"Ngôi nhà quá tuyệt vời, trang trí tinh tế và cực kỳ ấm cúng. Host hỗ trợ rất nhiệt tình, vị trí thì không thể chê vào đâu được."</span
+                                    >"Ngôi nhà quá tuyệt vời, trang trí tinh tế
+                                    và cực kỳ ấm cúng. Host hỗ trợ rất nhiệt
+                                    tình, vị trí thì không thể chê vào đâu
+                                    được."</span
                                 >
                             </p>
                             <p
@@ -758,9 +791,13 @@
                                 class="font-headline text-lg italic leading-relaxed mb-6"
                             >
                                 <span class="lang-en"
-                                    >"I had a perfect weekend getaway at LaSiDoHouse. The morning balcony view is very Hanoi, very peaceful."</span
+                                    >"I had a perfect weekend getaway at
+                                    LaSiDoHouse. The morning balcony view is
+                                    very Hanoi, very peaceful."</span
                                 ><span class="lang-vi"
-                                    >"Mình đã có một kỳ nghỉ cuối tuần hoàn hảo tại LaSiDoHouse. View ban công buổi sáng rất Hà Nội, cảm giác rất bình yên."</span
+                                    >"Mình đã có một kỳ nghỉ cuối tuần hoàn hảo
+                                    tại LaSiDoHouse. View ban công buổi sáng rất
+                                    Hà Nội, cảm giác rất bình yên."</span
                                 >
                             </p>
                             <p
@@ -791,9 +828,7 @@
                                 class="text-xs text-on-surface-variant font-medium"
                             >
                                 <span class="lang-en">Dedicated Superhost</span
-                                ><span class="lang-vi"
-                                    >Superhost tận tâm</span
-                                >
+                                ><span class="lang-vi">Superhost tận tâm</span>
                             </p>
                         </div>
                     </div>
@@ -801,9 +836,15 @@
                         class="text-on-surface-variant leading-relaxed text-sm mb-8"
                     >
                         <span class="lang-en"
-                            >Hello, I'm Pank. An introvert with a passion for connection. LaSiDoHouse is where I share my desire to bring a true "live like a Hanoian" experience to travelers.</span
+                            >Hello, I'm Pank. An introvert with a passion for
+                            connection. LaSiDoHouse is where I share my desire
+                            to bring a true "live like a Hanoian" experience to
+                            travelers.</span
                         ><span class="lang-vi"
-                            >Chào bạn, mình là Pank. Một người hướng nội nhưng đam mê kết nối. LaSiDoHouse là nơi mình gửi gắm mong muốn mang lại trải nghiệm "sống như người Hà Nội" thực thụ cho du khách.</span
+                            >Chào bạn, mình là Pank. Một người hướng nội nhưng
+                            đam mê kết nối. LaSiDoHouse là nơi mình gửi gắm mong
+                            muốn mang lại trải nghiệm "sống như người Hà Nội"
+                            thực thụ cho du khách.</span
                         >
                     </p>
                     <div class="grid grid-cols-2 gap-4">
@@ -866,9 +907,14 @@
                                 <p class="social-card-title text-on-surface">
                                     Facebook
                                 </p>
-                                <p class="social-card-subtitle text-on-surface-variant">
-                                    <span class="lang-en">Updates and stories</span
-                                    ><span class="lang-vi">Cập nhật và tin mới</span>
+                                <p
+                                    class="social-card-subtitle text-on-surface-variant"
+                                >
+                                    <span class="lang-en"
+                                        >Updates and stories</span
+                                    ><span class="lang-vi"
+                                        >Cập nhật và tin mới</span
+                                    >
                                 </p>
                             </div>
                         </a>
@@ -897,9 +943,14 @@
                                 <p class="social-card-title text-on-surface">
                                     Instagram
                                 </p>
-                                <p class="social-card-subtitle text-on-surface-variant">
-                                    <span class="lang-en">Photos and moments</span
-                                    ><span class="lang-vi">Hình ảnh và khoảnh khắc</span>
+                                <p
+                                    class="social-card-subtitle text-on-surface-variant"
+                                >
+                                    <span class="lang-en"
+                                        >Photos and moments</span
+                                    ><span class="lang-vi"
+                                        >Hình ảnh và khoảnh khắc</span
+                                    >
                                 </p>
                             </div>
                         </a>
