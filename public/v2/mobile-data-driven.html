@@ -93,6 +93,92 @@
                 scrollbar-width: none;
             }
 
+            [lang="vi"] .lang-vi {
+                display: inline;
+            }
+
+            [lang="vi"] .lang-en {
+                display: none;
+            }
+
+            [lang="en"] .lang-vi {
+                display: none;
+            }
+
+            [lang="en"] .lang-en {
+                display: inline;
+            }
+
+            .social-card-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .social-card-link {
+                display: flex;
+                align-items: center;
+                gap: 0.875rem;
+                min-height: 72px;
+                padding: 0.95rem 1rem;
+                border-radius: 1rem;
+                border: 1px solid rgba(127, 117, 107, 0.2);
+                background: rgba(255, 255, 255, 0.72);
+                box-shadow: 0 12px 24px rgba(77, 69, 60, 0.08);
+            }
+
+            .social-card-logo {
+                display: grid;
+                place-items: center;
+                width: 2.75rem;
+                height: 2.75rem;
+                border-radius: 9999px;
+                flex: 0 0 auto;
+                box-shadow: 0 12px 22px rgba(27, 29, 14, 0.16);
+            }
+
+            .social-card-logo svg {
+                width: 1.35rem;
+                height: 1.35rem;
+                display: block;
+            }
+
+            .social-card-logo-facebook {
+                background: #1877f2;
+            }
+
+            .social-card-logo-instagram {
+                background: linear-gradient(
+                    135deg,
+                    #f58529 0%,
+                    #dd2a7b 48%,
+                    #8134af 75%,
+                    #515bd4 100%
+                );
+            }
+
+            .social-card-copy {
+                min-width: 0;
+            }
+
+            .social-card-title {
+                font-size: 0.95rem;
+                font-weight: 700;
+                line-height: 1.15;
+            }
+
+            .social-card-subtitle {
+                margin-top: 0.2rem;
+                font-size: 0.72rem;
+                line-height: 1.3;
+            }
+
+            @media (min-width: 420px) {
+                .social-card-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
             .bottom-nav-link {
                 color: #8b7355;
                 opacity: 0.72;
@@ -187,29 +273,63 @@
                 </div>
             </section>
 
-            <section class="px-4 pt-6">
-                <div
-                    class="rounded-3xl bg-surface-container px-4 py-5 shadow-sm"
-                >
-                    <div class="flex items-start justify-between gap-4">
-                        <div>
-                            <p
-                                class="text-[11px] uppercase tracking-[0.24em] text-primary/70"
-                                id="intro-kicker"
-                            ></p>
-                            <h2
-                                class="mt-2 font-headline text-2xl leading-tight"
-                                id="intro-title"
-                            ></h2>
-                        </div>
-                        <span class="material-symbols-outlined text-primary/50"
-                            >travel</span
+            <section class="px-6 py-12 bg-surface-container-low" id="about">
+                <div class="grid grid-cols-3 gap-4 mb-12">
+                    <div class="bg-surface p-4 text-center">
+                        <p class="font-headline text-2xl text-primary">3</p>
+                        <p
+                            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
                         >
+                            <span class="lang-en">Floors</span
+                            ><span class="lang-vi">Tầng</span>
+                        </p>
                     </div>
-                    <p
-                        class="mt-3 text-sm leading-6 text-on-surface-variant"
-                        id="intro-copy"
-                    ></p>
+                    <div class="bg-surface p-4 text-center">
+                        <p class="font-headline text-2xl text-primary">7</p>
+                        <p
+                            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
+                        >
+                            <span class="lang-en">Guests</span
+                            ><span class="lang-vi">Khách</span>
+                        </p>
+                    </div>
+                    <div class="bg-surface p-4 text-center">
+                        <p class="font-headline text-2xl text-primary">5.0 ★</p>
+                        <p
+                            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
+                        >
+                            <span class="lang-en">Airbnb Rating</span
+                            ><span class="lang-vi">Đánh giá Airbnb</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3
+                        class="font-headline text-3xl tracking-tight leading-snug"
+                    >
+                        <span class="lang-en"
+                            >Return to a sanctuary that feels like home.</span
+                        >
+                        <span class="lang-vi"
+                            >Về chốn bình yên như chính ngôi nhà bạn.</span
+                        >
+                    </h3>
+                    <p class="text-on-surface-variant leading-relaxed text-lg">
+                        <span class="lang-en"
+                            >LaSiDoHouse is more than just accommodation; it is
+                            our passion for preserving the rustic, quiet charm
+                            amidst the bustle of Hoan Kiem. A private, cozy
+                            space where every small corner carries the breath of
+                            Hanoi's old streets.</span
+                        >
+                        <span class="lang-vi"
+                            >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
+                            huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh
+                            lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng
+                            tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà
+                            Nội phố cổ.</span
+                        >
+                    </p>
                 </div>
             </section>
 
@@ -279,10 +399,97 @@
             </section>
 
             <footer class="mt-12 border-t border-primary/10 px-4 pb-32 pt-8">
-                <div class="text-center">
-                    <div class="font-headline text-xl italic text-primary">
-                        LaSiDoHouse
+                <div
+                    class="rounded-3xl bg-surface-container px-5 py-5 shadow-sm"
+                >
+                    <p
+                        class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-4"
+                    >
+                        <span class="lang-en">Follow LaSiDoHouse</span
+                        ><span class="lang-vi">Kết nối cùng LaSiDoHouse</span>
+                    </p>
+                    <div class="social-card-grid">
+                        <a
+                            class="social-card-link"
+                            href="https://www.facebook.com/profile.php?id=61584634003772"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-card-logo social-card-logo-facebook"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M13.642 23V13.876H16.703L17.162 10.32H13.642V8.049C13.642 7.02 13.927 6.318 15.403 6.318H17.286V3.138C16.96 3.095 15.84 3 14.538 3C11.82 3 9.958 4.659 9.958 7.705V10.32H7V13.876H9.958V23H13.642Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <div class="social-card-copy">
+                                <p class="social-card-title text-on-surface">
+                                    Facebook
+                                </p>
+                                <p
+                                    class="social-card-subtitle text-on-surface-variant"
+                                >
+                                    <span class="lang-en"
+                                        >Updates and stories</span
+                                    ><span class="lang-vi"
+                                        >Cập nhật và tin mới</span
+                                    >
+                                </p>
+                            </div>
+                        </a>
+                        <a
+                            class="social-card-link"
+                            href="https://www.instagram.com/lasidohomestay/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-card-logo social-card-logo-instagram"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M7.75 2H16.25C19.4256 2 22 4.57436 22 7.75V16.25C22 19.4256 19.4256 22 16.25 22H7.75C4.57436 22 2 19.4256 2 16.25V7.75C2 4.57436 4.57436 2 7.75 2ZM16.25 3.8H7.75C5.56848 3.8 3.8 5.56848 3.8 7.75V16.25C3.8 18.4315 5.56848 20.2 7.75 20.2H16.25C18.4315 20.2 20.2 18.4315 20.2 16.25V7.75C20.2 5.56848 18.4315 3.8 16.25 3.8ZM12 6.75C14.8995 6.75 17.25 9.10051 17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.10051 17.25 6.75 14.8995 6.75 12C6.75 9.10051 9.10051 6.75 12 6.75ZM12 8.55C10.0946 8.55 8.55 10.0946 8.55 12C8.55 13.9054 10.0946 15.45 12 15.45C13.9054 15.45 15.45 13.9054 15.45 12C15.45 10.0946 13.9054 8.55 12 8.55ZM17.575 5.4C18.0507 5.4 18.4364 5.78566 18.4364 6.26136C18.4364 6.73705 18.0507 7.12273 17.575 7.12273C17.0993 7.12273 16.7136 6.73705 16.7136 6.26136C16.7136 5.78566 17.0993 5.4 17.575 5.4Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <div class="social-card-copy">
+                                <p class="social-card-title text-on-surface">
+                                    Instagram
+                                </p>
+                                <p
+                                    class="social-card-subtitle text-on-surface-variant"
+                                >
+                                    <span class="lang-en"
+                                        >Photos and moments</span
+                                    ><span class="lang-vi"
+                                        >Hình ảnh và khoảnh khắc</span
+                                    >
+                                </p>
+                            </div>
+                        </a>
                     </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <a
+                        class="inline-flex items-center justify-center"
+                        href="#"
+                    >
+                        <img src="../assets/logo.svg" width="90" />
+                    </a>
                     <p
                         class="mt-3 text-[11px] uppercase tracking-[0.24em] text-on-surface-variant"
                         id="footer-copy"
@@ -291,9 +498,18 @@
                 <div
                     class="mt-6 flex items-center justify-center gap-6 text-sm uppercase tracking-[0.18em] text-on-surface-variant"
                 >
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Contact</a>
+                    <a href="#">
+                        <span class="lang-en">Privacy</span>
+                        <span class="lang-vi">Bảo mật</span>
+                    </a>
+                    <a href="#">
+                        <span class="lang-en">Terms</span>
+                        <span class="lang-vi">Điều khoản</span>
+                    </a>
+                    <a href="#">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-vi">Liên hệ</span>
+                    </a>
                 </div>
             </footer>
         </main>
@@ -693,12 +909,6 @@
                     copy.heroSubtitle;
                 document.getElementById("hero-ctas").innerHTML =
                     renderHeroCtas();
-                document.getElementById("intro-kicker").textContent =
-                    copy.introKicker;
-                document.getElementById("intro-title").textContent =
-                    copy.introTitle;
-                document.getElementById("intro-copy").textContent =
-                    copy.introCopy;
                 document.getElementById("quote-text").textContent = copy.quote;
                 document.getElementById("reviews-kicker").textContent =
                     copy.reviewsKicker;
