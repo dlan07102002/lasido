@@ -405,7 +405,10 @@
             </div>
         </section>
         <!-- Social Proof -->
-        <section class="section-anchor-offset py-24 bg-surface-container" id="reviews">
+        <section
+            class="section-anchor-offset py-24 bg-surface-container"
+            id="reviews"
+        >
             <div class="max-w-7xl mx-auto px-8">
                 <div class="flex justify-between items-end mb-16 reveal">
                     <div>
@@ -621,7 +624,7 @@
                     <p
                         class="font-sans text-sm uppercase tracking-widest text-lime-900 dark:text-lime-400"
                     >
-                        Hoàn Kiếm & Tây Hồ, Hanoi
+                        Hoan Kiem, Hanoi
                     </p>
                 </div>
                 <div class="flex gap-8">
@@ -731,22 +734,28 @@
         <script>
             const PROPERTIES = [
                 {
-                    id: "hk",
-                    accent: "#C9A96E",
-                    btnColor: "#C9A96E",
+                    id: "ltt",
+                    accent: "#50652a",
+                    btnColor: "#50652a",
                     label: {
-                        en: "Hoàn Kiếm Collection",
-                        vi: "Cơ sở Hoàn Kiếm",
+                        en: "Le Thanh Tong Collection",
+                        vi: "Cơ sở Lê Thánh Tông",
                     },
-                    title: { en: "Heritage Loft", vi: "Heritage Loft" },
-                    district: { en: "Old Quarter", vi: "Hoàn Kiếm" },
+                    title: { en: "Heritage House", vi: "Heritage House" },
+                    district: {
+                        en: "Hoan Kiem District",
+                        vi: "Quận Hoàn Kiếm",
+                    },
                     address: {
-                        en: "📍 12 Ngõ Trạm, Hoàn Kiếm, Hanoi (10' Hoan Kiem Lake)",
-                        vi: "📍 12 Ngõ Trạm, Hoàn Kiếm, Hà Nội (10' đi bộ ra Hồ Gươm)",
+                        en: "📍 Le Thanh Tong St, Hoan Kiem, Hanoi (10' Lake Walk)",
+                        vi: "📍 Phố Lê Thánh Tông, Hoàn Kiếm, Hà Nội (10' đi bộ ra hồ)",
                     },
                     badge: { en: "5.0 Airbnb", vi: "5.0 Airbnb" },
                     stats: [
-                        { icon: "bed", text: { en: "3 Beds", vi: "3 Giường" } },
+                        {
+                            icon: "bed",
+                            text: { en: "3 Bedrooms", vi: "3 Phòng ngủ" },
+                        },
                         {
                             icon: "group",
                             text: { en: "7 Guests", vi: "7 Khách" },
@@ -757,85 +766,91 @@
                         },
                     ],
                     desc: {
-                        en: "Nestled in a tranquil alleyway just steps from the Opera House, this three-story townhouse blends French colonial charm with modern industrial minimalism. Perfect for families seeking an authentic Hanoi experience.",
-                        vi: "Nằm trong một con ngõ yên tĩnh chỉ cách Nhà hát Lớn vài bước chân, căn nhà 3 tầng này là sự kết hợp hoàn hảo giữa nét quyến rũ thời Pháp thuộc và phong cách tối giản hiện đại.",
+                        en: "A quiet 3-story house filled with light, featuring an elegant style with old Hanoi vibes. Nestled in a peaceful alley in the intellectual quarter, just a short walk to the Lake.",
+                        vi: "Ngôi nhà 3 tầng yên tĩnh, ánh sáng ngập tràn, phong cách sang trọng mang nét Hà Nội xưa. Tọa lạc trong con ngõ nhỏ khu phố tri thức, chỉ vài phút đi bộ ra Hồ Gươm.",
                     },
                     features: [
                         {
-                            icon: "layers",
-                            label: { en: "3 Floors", vi: "3 Tầng" },
+                            icon: "key",
+                            label: { en: "Self Check-in", vi: "Tự Check-in" },
                         },
                         {
-                            icon: "videocam",
-                            label: { en: "Projector", vi: "Máy chiếu" },
+                            icon: "location_on",
+                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
                         },
                         {
-                            icon: "balcony",
-                            label: { en: "Balcony", vi: "Ban công" },
+                            icon: "kitchen",
+                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
                         },
                     ],
                     cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
                     ctaIcon: "arrow_forward",
                     images: [
-                        "https://picsum.photos/seed/hk-main/1200/800",
-                        "https://picsum.photos/seed/hk-1/400/600",
-                        "https://picsum.photos/seed/hk-2/400/600",
-                        "https://picsum.photos/seed/hk-3/400/600",
-                        "https://picsum.photos/seed/hk-4/400/600",
+                        "https://picsum.photos/seed/ltt-main/1200/800",
+                        "https://picsum.photos/seed/ltt-1/400/600",
+                        "https://picsum.photos/seed/ltt-2/400/600",
+                        "https://picsum.photos/seed/ltt-3/400/600",
+                        "https://picsum.photos/seed/ltt-4/400/600",
                     ],
                 },
                 {
-                    id: "cs2",
-                    accent: "#5C7A5C",
-                    btnColor: "#5C7A5C",
-                    label: { en: "Green Garden Suites", vi: "Cơ sở Tây Hồ" },
-                    title: { en: "Botanical Suite", vi: "Botanical Suite" },
-                    district: { en: "West Lake District", vi: "Quận Tây Hồ" },
-                    address: {
-                        en: "📍 45 Quảng An, Tây Hồ, Hanoi (5' Lake Walk)",
-                        vi: "📍 45 Quảng An, Tây Hồ, Hà Nội (5' đi bộ ra hồ)",
+                    id: "tt",
+                    accent: "#8b7355",
+                    btnColor: "#8b7355",
+                    label: {
+                        en: "Trang Tien Collection",
+                        vi: "Cơ sở Tràng Tiền",
                     },
-                    badge: { en: "Superhost", vi: "Superhost" },
+                    title: {
+                        en: "French Quarter Home",
+                        vi: "French Quarter Home",
+                    },
+                    district: { en: "Old Quarter", vi: "Phố Cổ / Hoàn Kiếm" },
+                    address: {
+                        en: "📍 Trang Tien Alley, Hoan Kiem, Hanoi (2' Lake Walk)",
+                        vi: "📍 Ngõ Tràng Tiền, Hoàn Kiếm, Hà Nội (2' đi bộ ra hồ)",
+                    },
+                    badge: { en: "4.74 Airbnb", vi: "4.74 Airbnb" },
                     stats: [
                         {
                             icon: "king_bed",
                             text: { en: "2 Bedrooms", vi: "2 Phòng ngủ" },
                         },
                         {
-                            icon: "deck",
-                            text: { en: "Terrace", vi: "Sân vườn" },
+                            icon: "group",
+                            text: { en: "5-6 Guests", vi: "5-6 Khách" },
                         },
                         {
-                            icon: "kayaking",
-                            text: { en: "5' Lake Walk", vi: "5' Hồ Tây" },
+                            icon: "waves",
+                            text: { en: "2' Lake Walk", vi: "2' Hồ Gươm" },
                         },
                     ],
                     desc: {
-                        en: "An oasis of calm by the West Lake. This suite features private garden terraces and an abundance of natural light, designed with a soothing olive palette and organic textures.",
-                        vi: "Một ốc đảo bình yên bên Hồ Tây. Căn hộ có sân vườn riêng và ngập tràn ánh sáng tự nhiên, được thiết kế với tông màu xanh lá dịu nhẹ và chất liệu hữu cơ.",
+                        en: "Experience local living in the French Quarter, just 15m from Trang Tien Street. A traditional cozy home offering 5-star care for those seeking local charm over luxury.",
+                        vi: "Trải nghiệm sống như người địa phương tại Khu Phố Pháp, cách phố Tràng Tiền chỉ 15m. Một ngôi nhà truyền thống ấm cúng với dịch vụ chu đáo cho du khách yêu nét quyến rũ bản địa.",
                     },
                     features: [
                         {
+                            icon: "key",
+                            label: { en: "Self Check-in", vi: "Tự Check-in" },
+                        },
+                        {
+                            icon: "location_on",
+                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
+                        },
+                        {
                             icon: "kitchen",
-                            label: { en: "Chef Kit", vi: "Bếp xịn" },
-                        },
-                        {
-                            icon: "local_laundry_service",
-                            label: { en: "Laundry", vi: "Máy giặt" },
-                        },
-                        {
-                            icon: "connected_tv",
-                            label: { en: "Netflix", vi: "Netflix" },
+                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
                         },
                     ],
                     cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
                     ctaIcon: "eco",
                     images: [
-                        "https://picsum.photos/seed/cs2-main/1200/800",
-                        "https://picsum.photos/seed/cs2-1/400/600",
-                        "https://picsum.photos/seed/cs2-2/400/600",
-                        "https://picsum.photos/seed/cs2-3/400/600",
-                        "https://picsum.photos/seed/cs2-4/400/600",
+                        "https://picsum.photos/seed/tt-main/1200/800",
+                        "https://picsum.photos/seed/tt-1/400/600",
+                        "https://picsum.photos/seed/tt-2/400/600",
+                        "https://picsum.photos/seed/tt-3/400/600",
+                        "https://picsum.photos/seed/tt-4/400/600",
                     ],
                 },
             ];
@@ -866,7 +881,7 @@
                 const nav = document.getElementById("nav-links");
                 nav.innerHTML = `
             <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#about">${currentLang === "en" ? "About" : "Giới thiệu"}</a>
-            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#hk">${currentLang === "en" ? "Spaces" : "Không gian"}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#ltt">${currentLang === "en" ? "Spaces" : "Không gian"}</a>
             <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#reviews">${currentLang === "en" ? "Reviews" : "Đánh giá"}</a>
         `;
             }
@@ -1061,7 +1076,7 @@
                 const navLinks = Array.from(
                     document.querySelectorAll("[data-header-link]"),
                 );
-                const sections = ["about", "hk", "reviews"].map((id) => ({
+                const sections = ["about", "ltt", "reviews"].map((id) => ({
                     id,
                     node: document.getElementById(id),
                 }));
@@ -1121,7 +1136,8 @@
                         }
                     }
 
-                    const scrollPosition = window.scrollY + getHeaderOffset() + 24;
+                    const scrollPosition =
+                        window.scrollY + getHeaderOffset() + 24;
                     let activeId = sections[0].id;
 
                     sections.forEach((section) => {
