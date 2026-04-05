@@ -1,0 +1,877 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>LaSiDoHouse | Boutique Stays in Hanoi</title>
+        <script>
+            (function () {
+                var desktopQuery = window.matchMedia("(min-width: 768px)");
+
+                function syncViewport(event) {
+                    if (event.matches) {
+                        window.location.replace("desktop-data-driven.html");
+                    }
+                }
+
+                syncViewport(desktopQuery);
+
+                if (typeof desktopQuery.addEventListener === "function") {
+                    desktopQuery.addEventListener("change", syncViewport);
+                } else {
+                    desktopQuery.addListener(syncViewport);
+                }
+            })();
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#50652a",
+                            "primary-container": "#687f40",
+                            surface: "#fbfbe2",
+                            "surface-bright": "#fbfbe2",
+                            "surface-container": "#efefd7",
+                            "surface-container-low": "#f5f5dc",
+                            "surface-container-high": "#eaead1",
+                            "on-surface": "#1b1d0e",
+                            "on-surface-variant": "#4d453c",
+                            "outline-variant": "#d1c4b9",
+                            "on-primary": "#ffffff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "9999px",
+                        },
+                        fontFamily: {
+                            headline: ["Noto Serif"],
+                            body: ["Inter"],
+                            label: ["Inter"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 350,
+                    "GRAD" 0,
+                    "opsz" 24;
+                vertical-align: middle;
+            }
+
+            .hero-gradient {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(27, 29, 14, 0.28),
+                    rgba(27, 29, 14, 0.7)
+                );
+            }
+
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            .bottom-nav-link {
+                color: #8b7355;
+                opacity: 0.72;
+                transition:
+                    color 180ms ease,
+                    opacity 180ms ease,
+                    transform 180ms ease;
+            }
+
+            .bottom-nav-link-active {
+                color: #50652a;
+                opacity: 1;
+                transform: translateY(-1px);
+            }
+
+            .bottom-nav-link-active .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 1,
+                    "wght" 350,
+                    "GRAD" 0,
+                    "opsz" 24;
+            }
+
+            #properties-container,
+            #reviews,
+            #booking {
+                scroll-margin-top: 88px;
+            }
+        </style>
+    </head>
+    <body class="bg-surface text-on-surface font-body">
+        <header
+            class="fixed top-0 left-0 right-0 z-50 bg-[#fbfbe2]/85 backdrop-blur-md border-b border-primary/10"
+        >
+            <div class="flex items-center justify-between px-4 py-3">
+                <div>
+                    <div class="font-headline text-lg italic text-primary">
+                        <a
+                            class="text-2xl font-serif italic text-lime-950 dark:text-lime-200"
+                            href="#"
+                        >
+                            <img src="./public/assets/logo.svg" width="90"
+                        /></a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="h-9 min-w-9 px-3 rounded-full border border-primary/15 text-[11px] font-bold uppercase tracking-[0.2em] text-primary"
+                        id="lang-btn"
+                        type="button"
+                    >
+                        EN
+                    </button>
+                    <a
+                        class="h-9 px-4 inline-flex items-center rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary text-[11px] font-semibold uppercase tracking-[0.14em]"
+                        href="#booking"
+                    >
+                        <span id="top-cta"></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="pb-28">
+            <section class="relative min-h-[620px] flex items-end pt-16">
+                <div class="absolute inset-0">
+                    <img
+                        alt="Boutique Hotel Hero"
+                        class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzxg6MUA69w94U8w_pxbkxDevKAAF8HMvYbbaYIaq5bWI4wrcW7qw7X443uaH8-SbCb5VUEdE4-QV_P2uDMhZR8RQRIVZuVssbczQRoaUOqOZZdXZ6KpkhaM3rJ9q8OFquglpi4oFh7VAjK4dCuMQWIXrWIPgygpWFu-Ecxn6qGZR07d2XYjNQA9ba-KnoOe13owWSAJMX3aqzQxOQYIPQZLeN1KE64Anb1Ur3E0lgyebbvBs46p3I-tXtBLNYm0bNyA3xtbcSI0"
+                    />
+                    <div class="absolute inset-0 hero-gradient"></div>
+                </div>
+                <div class="relative z-10 px-4 pb-10 pt-12 text-white">
+                    <p
+                        class="mb-3 text-[11px] uppercase tracking-[0.35em] text-white/75"
+                        id="hero-kicker"
+                    ></p>
+                    <h1
+                        class="font-headline text-5xl italic leading-none tracking-tight"
+                    >
+                        LaSiDoHouse
+                    </h1>
+                    <p
+                        class="mt-4 max-w-sm text-sm leading-6 text-surface-bright/90"
+                        id="hero-subtitle"
+                    ></p>
+                    <div
+                        class="mt-6 flex gap-3 overflow-x-auto pb-2 hide-scrollbar"
+                        id="hero-ctas"
+                    ></div>
+                </div>
+            </section>
+
+            <section class="px-4 pt-6">
+                <div
+                    class="rounded-3xl bg-surface-container px-4 py-5 shadow-sm"
+                >
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <p
+                                class="text-[11px] uppercase tracking-[0.24em] text-primary/70"
+                                id="intro-kicker"
+                            ></p>
+                            <h2
+                                class="mt-2 font-headline text-2xl leading-tight"
+                                id="intro-title"
+                            ></h2>
+                        </div>
+                        <span class="material-symbols-outlined text-primary/50"
+                            >travel</span
+                        >
+                    </div>
+                    <p
+                        class="mt-3 text-sm leading-6 text-on-surface-variant"
+                        id="intro-copy"
+                    ></p>
+                </div>
+            </section>
+
+            <section
+                class="mt-8 px-4 space-y-8"
+                id="properties-container"
+            ></section>
+
+            <section class="mt-10 px-4">
+                <div
+                    class="rounded-[2rem] bg-surface-container-low px-6 py-10 text-center"
+                >
+                    <span
+                        class="material-symbols-outlined text-5xl text-primary/25"
+                        >format_quote</span
+                    >
+                    <h2
+                        class="mt-4 font-headline text-3xl italic leading-tight text-on-surface-variant"
+                        id="quote-text"
+                    ></h2>
+                </div>
+            </section>
+
+            <section class="mt-10 px-4" id="reviews">
+                <div class="flex items-end justify-between gap-4">
+                    <div>
+                        <p
+                            class="text-[11px] uppercase tracking-[0.24em] text-primary/70"
+                            id="reviews-kicker"
+                        ></p>
+                        <h3
+                            class="mt-2 font-headline text-2xl"
+                            id="reviews-title"
+                        ></h3>
+                    </div>
+                    <a
+                        class="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"
+                        href="#booking"
+                        id="reviews-link"
+                    ></a>
+                </div>
+                <p
+                    class="mt-2 text-sm leading-6 text-on-surface-variant"
+                    id="reviews-subtitle"
+                ></p>
+                <div class="mt-6 space-y-4" id="reviews-container"></div>
+            </section>
+
+            <section class="mt-10 px-4" id="booking">
+                <div
+                    class="rounded-[2rem] bg-gradient-to-br from-primary to-primary-container px-6 py-8 text-white"
+                >
+                    <p
+                        class="text-[11px] uppercase tracking-[0.24em] text-white/70"
+                        id="booking-kicker"
+                    ></p>
+                    <h4
+                        class="mt-2 font-headline text-3xl italic leading-tight"
+                        id="booking-title"
+                    ></h4>
+                    <p
+                        class="mt-3 text-sm leading-6 text-white/85"
+                        id="booking-copy"
+                    ></p>
+                    <div class="mt-5 space-y-3" id="booking-links"></div>
+                </div>
+            </section>
+
+            <footer class="mt-12 border-t border-primary/10 px-4 pb-32 pt-8">
+                <div class="text-center">
+                    <div class="font-headline text-xl italic text-primary">
+                        LaSiDoHouse
+                    </div>
+                    <p
+                        class="mt-3 text-[11px] uppercase tracking-[0.24em] text-on-surface-variant"
+                        id="footer-copy"
+                    ></p>
+                </div>
+                <div
+                    class="mt-6 flex items-center justify-center gap-6 text-sm uppercase tracking-[0.18em] text-on-surface-variant"
+                >
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Contact</a>
+                </div>
+            </footer>
+        </main>
+
+        <nav
+            class="fixed bottom-0 left-0 right-0 z-50 border-t border-primary/10 bg-[#fbfbe2]/92 px-4 pb-6 pt-3 backdrop-blur-md"
+        >
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <a
+                    class="bottom-nav-link bottom-nav-link-active flex flex-col items-center gap-1"
+                    data-nav-link=""
+                    href="#properties-container"
+                >
+                    <span class="material-symbols-outlined">bed</span>
+                    <span
+                        class="text-[11px] uppercase tracking-[0.18em]"
+                        id="nav-stays"
+                    ></span>
+                </a>
+                <a
+                    class="bottom-nav-link flex flex-col items-center gap-1"
+                    data-nav-link=""
+                    href="#reviews"
+                >
+                    <span class="material-symbols-outlined">star</span>
+                    <span
+                        class="text-[11px] uppercase tracking-[0.18em]"
+                        id="nav-reviews"
+                    ></span>
+                </a>
+                <a
+                    class="bottom-nav-link flex flex-col items-center gap-1"
+                    data-nav-link=""
+                    href="#booking"
+                >
+                    <span class="material-symbols-outlined"
+                        >calendar_month</span
+                    >
+                    <span
+                        class="text-[11px] uppercase tracking-[0.18em]"
+                        id="nav-booking"
+                    ></span>
+                </a>
+            </div>
+        </nav>
+
+        <div
+            class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4"
+            id="lightbox"
+        >
+            <button
+                class="absolute right-4 top-4 text-white"
+                id="lightbox-close"
+                type="button"
+            >
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <img
+                alt=""
+                class="max-h-[88vh] max-w-full rounded-xl object-contain"
+                id="lightbox-img"
+                src=""
+            />
+        </div>
+
+        <script>
+            const COPY = {
+                en: {
+                    topCta: "Book Now",
+                    heroKicker: "Curated Stays",
+                    heroSubtitle:
+                        "A collection of curated stays in the heart of historic Hanoi.",
+                    introKicker: "Stay Collection",
+                    introTitle:
+                        "Two distinct homes, one LaSiDoHouse experience.",
+                    introCopy:
+                        "Browse each property, compare the atmosphere, and choose the stay that fits your trip best.",
+                    quote: "“Every house - its own unique story.”",
+                    reviewsKicker: "Social Proof",
+                    reviewsTitle: "Loved by Travelers",
+                    reviewsSubtitle:
+                        "Over 500+ five-star reviews on Airbnb and Booking.com",
+                    reviewsLink: "Book a stay",
+                    bookingKicker: "Direct Action",
+                    bookingTitle: "Choose your house and secure your stay.",
+                    bookingCopy:
+                        "Each property has its own style, mood, and neighborhood rhythm. Start with the one that feels right.",
+                    footerCopy: "© 2024 LASIDOHOUSE. ALL RIGHTS RESERVED.",
+                    navStays: "Spaces",
+                    navReviews: "Reviews",
+                    navBooking: "Booking",
+                },
+                vi: {
+                    topCta: "Đặt ngay",
+                    heroKicker: "Không Gian Tuyển Chọn",
+                    heroSubtitle:
+                        "Chuỗi không gian lưu trú tinh tế giữa lòng Hà Nội cổ kính.",
+                    introKicker: "Bộ Sưu Tập",
+                    introTitle:
+                        "Hai cơ sở riêng biệt, cùng một trải nghiệm LaSiDoHouse.",
+                    introCopy:
+                        "Xem từng cơ sở, so sánh phong cách và chọn nơi ở phù hợp nhất cho chuyến đi của bạn.",
+                    quote: "“Mỗi căn nhà - một câu chuyện riêng.”",
+                    reviewsKicker: "Trải Nghiệm Khách Hàng",
+                    reviewsTitle: "Khách hàng nói về chúng tôi",
+                    reviewsSubtitle:
+                        "Hơn 500 đánh giá 5 sao trên Airbnb và Booking.com",
+                    reviewsLink: "Đặt chỗ ngay",
+                    bookingKicker: "Đặt Phòng",
+                    bookingTitle:
+                        "Chọn căn phù hợp và giữ chỗ cho chuyến đi của bạn.",
+                    bookingCopy:
+                        "Mỗi cơ sở có nhịp sống, phong cách và cảm xúc riêng. Bắt đầu từ nơi bạn thấy hợp nhất.",
+                    footerCopy: "© 2024 LASIDOHOUSE. ALL RIGHTS RESERVED.",
+                    navStays: "Không Gian",
+                    navReviews: "Đánh Giá",
+                    navBooking: "Đặt Phòng",
+                },
+            };
+
+            const PROPERTIES = [
+                {
+                    id: "hk",
+                    accent: "#C9A96E",
+                    label: {
+                        en: "Hoàn Kiếm Collection",
+                        vi: "Cơ sở Hoàn Kiếm",
+                    },
+                    title: { en: "Heritage Loft", vi: "Heritage Loft" },
+                    district: { en: "Old Quarter", vi: "Hoàn Kiếm" },
+                    address: {
+                        en: "12 Ngõ Trạm, Hoàn Kiếm, Hanoi (10' Hoan Kiem Lake)",
+                        vi: "12 Ngõ Trạm, Hoàn Kiếm, Hà Nội (10' đi bộ ra Hồ Gươm)",
+                    },
+                    badge: { en: "5.0 Airbnb", vi: "5.0 Airbnb" },
+                    stats: [
+                        { icon: "bed", text: { en: "3 Beds", vi: "3 Giường" } },
+                        {
+                            icon: "group",
+                            text: { en: "7 Guests", vi: "7 Khách" },
+                        },
+                        {
+                            icon: "distance",
+                            text: { en: "10' Hoan Kiem", vi: "10' Hồ Gươm" },
+                        },
+                    ],
+                    desc: {
+                        en: "Nestled in a tranquil alleyway just steps from the Opera House, this three-story townhouse blends French colonial charm with modern industrial minimalism. Perfect for families seeking an authentic Hanoi experience.",
+                        vi: "Nằm trong một con ngõ yên tĩnh chỉ cách Nhà hát Lớn vài bước chân, căn nhà 3 tầng này là sự kết hợp hài hòa giữa nét quyến rũ thời Pháp thuộc và phong cách tối giản hiện đại. Phù hợp cho gia đình muốn trải nghiệm Hà Nội một cách chân thực.",
+                    },
+                    features: [
+                        {
+                            icon: "layers",
+                            label: { en: "3 Floors", vi: "3 Tầng" },
+                        },
+                        {
+                            icon: "videocam",
+                            label: { en: "Projector", vi: "Máy chiếu" },
+                        },
+                        {
+                            icon: "balcony",
+                            label: { en: "Balcony", vi: "Ban công" },
+                        },
+                    ],
+                    cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
+                    ctaHref: "https://www.airbnb.com/rooms/1631858864113952307",
+                    images: [
+                        "https://picsum.photos/seed/hk-main/1200/800",
+                        "https://picsum.photos/seed/hk-1/400/600",
+                        "https://picsum.photos/seed/hk-2/400/600",
+                        "https://picsum.photos/seed/hk-3/400/600",
+                        "https://picsum.photos/seed/hk-4/400/600",
+                    ],
+                },
+                {
+                    id: "cs2",
+                    accent: "#5C7A5C",
+                    label: { en: "Green Garden Suites", vi: "Cơ sở Tây Hồ" },
+                    title: { en: "Botanical Suite", vi: "Botanical Suite" },
+                    district: { en: "West Lake District", vi: "Quận Tây Hồ" },
+                    address: {
+                        en: "45 Quảng An, Tây Hồ, Hanoi (5' Lake Walk)",
+                        vi: "45 Quảng An, Tây Hồ, Hà Nội (5' đi bộ ra hồ)",
+                    },
+                    badge: { en: "Superhost", vi: "Superhost" },
+                    stats: [
+                        {
+                            icon: "king_bed",
+                            text: { en: "2 Bedrooms", vi: "2 Phòng ngủ" },
+                        },
+                        {
+                            icon: "deck",
+                            text: { en: "Terrace", vi: "Sân vườn" },
+                        },
+                        {
+                            icon: "kayaking",
+                            text: { en: "5' Lake Walk", vi: "5' Hồ Tây" },
+                        },
+                    ],
+                    desc: {
+                        en: "An oasis of calm by the West Lake. This suite features private garden terraces and an abundance of natural light, designed with a soothing olive palette and organic textures.",
+                        vi: "Một ốc đảo bình yên bên Hồ Tây. Căn hộ có sân vườn riêng và ngập tràn ánh sáng tự nhiên, được thiết kế với tông xanh olive dịu nhẹ và chất liệu hữu cơ.",
+                    },
+                    features: [
+                        {
+                            icon: "kitchen",
+                            label: { en: "Chef Kit", vi: "Bếp xịn" },
+                        },
+                        {
+                            icon: "local_laundry_service",
+                            label: { en: "Laundry", vi: "Máy giặt" },
+                        },
+                        {
+                            icon: "connected_tv",
+                            label: { en: "Netflix", vi: "Netflix" },
+                        },
+                    ],
+                    cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
+                    ctaHref: "https://www.airbnb.com/rooms/1631858864113952307",
+                    images: [
+                        "https://picsum.photos/seed/cs2-main/1200/800",
+                        "https://picsum.photos/seed/cs2-1/400/600",
+                        "https://picsum.photos/seed/cs2-2/400/600",
+                        "https://picsum.photos/seed/cs2-3/400/600",
+                        "https://picsum.photos/seed/cs2-4/400/600",
+                    ],
+                },
+            ];
+
+            const REVIEWS = [
+                {
+                    name: "Sarah Jenkins",
+                    place: { en: "London, UK", vi: "London, UK" },
+                    text: {
+                        en: '"The most beautiful house I\'ve stayed in Hanoi. Every corner is a piece of art."',
+                        vi: '"Căn nhà đẹp nhất tôi từng ở Hà Nội. Mỗi góc ngách đều là một tác phẩm nghệ thuật."',
+                    },
+                },
+                {
+                    name: "Minh Anh",
+                    place: { en: "HCMC, VN", vi: "TP.HCM, VN" },
+                    text: {
+                        en: '"Great location, very quiet but close to the action. The cinema room was a highlight."',
+                        vi: '"Vị trí tuyệt vời, rất yên tĩnh nhưng lại gần trung tâm. Phòng xem phim là điểm nhấn."',
+                    },
+                },
+                {
+                    name: "David Chen",
+                    place: { en: "Singapore", vi: "Singapore" },
+                    text: {
+                        en: '"Exceptional design. The botanical theme in the West Lake property is so relaxing."',
+                        vi: '"Thiết kế xuất sắc. Chủ đề thực vật ở cơ sở Hồ Tây rất thư giãn."',
+                    },
+                },
+            ];
+
+            let currentLang = localStorage.getItem("preferred-lang") || "en";
+
+            function setLanguage(lang) {
+                currentLang = lang;
+                document.documentElement.lang = lang;
+                localStorage.setItem("preferred-lang", lang);
+                renderPage();
+            }
+
+            function renderHeroCtas() {
+                return PROPERTIES.map(
+                    (property, index) => `
+            <a class="${index === 0 ? "bg-white text-on-surface" : "border border-white/30 bg-white/10 text-white"} inline-flex items-center rounded-full px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur-md" href="#${property.id}">
+                ${property.label[currentLang]}
+            </a>
+        `,
+                ).join("");
+            }
+
+            function renderProperties() {
+                const container = document.getElementById(
+                    "properties-container",
+                );
+                container.innerHTML = PROPERTIES.map(
+                    (property) => `
+            <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-sm" id="${property.id}">
+                <div class="relative h-[280px]">
+                    <img alt="${property.title.en}" class="h-full w-full object-cover" src="${property.images[0]}"/>
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em]" style="background-color: ${property.accent}22; color: ${property.accent}">
+                                ${property.district[currentLang]}
+                            </span>
+                            <span class="flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface">
+                                <span class="material-symbols-outlined !text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                ${property.badge[currentLang]}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-[11px] uppercase tracking-[0.24em]" style="color: ${property.accent}">${property.label[currentLang]}</p>
+                    <h2 class="mt-2 font-headline text-3xl leading-tight text-on-surface">${property.title[currentLang]}</h2>
+                    <p class="mt-3 text-sm leading-6 text-on-surface-variant">${property.address[currentLang]}</p>
+                    <div class="mt-4 grid grid-cols-1 gap-2 rounded-2xl bg-surface-container p-4 text-sm text-on-surface-variant">
+                        ${property.stats
+                            .map(
+                                (stat) => `
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">${stat.icon}</span>
+                                <span>${stat.text[currentLang]}</span>
+                            </div>
+                        `,
+                            )
+                            .join("")}
+                    </div>
+                    <p class="mt-4 text-sm leading-6 text-on-surface-variant">${property.desc[currentLang]}</p>
+                    <div class="mt-5 flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
+                        ${property.images
+                            .map(
+                                (image, imageIndex) => `
+                            <button class="shrink-0 ${imageIndex === 0 ? "w-32" : "w-24"} h-24 overflow-hidden rounded-2xl" onclick="openLightbox('${image}')" type="button">
+                                <img alt="" class="h-full w-full object-cover" src="${image}"/>
+                            </button>
+                        `,
+                            )
+                            .join("")}
+                    </div>
+                    <div class="mt-5 grid grid-cols-3 gap-3">
+                        ${property.features
+                            .map(
+                                (feature) => `
+                            <div class="rounded-2xl bg-surface-container-low px-3 py-4 text-center">
+                                <span class="material-symbols-outlined" style="color: ${property.accent}">${feature.icon}</span>
+                                <p class="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface">${feature.label[currentLang]}</p>
+                            </div>
+                        `,
+                            )
+                            .join("")}
+                    </div>
+                    <a class="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white" href="${property.ctaHref}" style="background: linear-gradient(135deg, ${property.accent}, ${property.accent}dd)">
+                        <span>${property.cta[currentLang]}</span>
+                        <span class="material-symbols-outlined !text-base">arrow_forward</span>
+                    </a>
+                </div>
+            </article>
+        `,
+                ).join("");
+            }
+
+            function renderReviews() {
+                const container = document.getElementById("reviews-container");
+                container.innerHTML = REVIEWS.map(
+                    (review, index) => `
+            <article class="rounded-[2rem] border border-primary/10 bg-white px-5 py-5 shadow-sm">
+                <div class="flex items-center gap-1 text-primary">
+                    ${Array.from({ length: 5 }, () => '<span class="material-symbols-outlined !text-base" style="font-variation-settings: \'FILL\' 1;">star</span>').join("")}
+                </div>
+                <p class="mt-4 font-headline text-lg italic leading-7 text-on-surface-variant">${review.text[currentLang]}</p>
+                <div class="mt-5 flex items-center gap-3">
+                    <div class="flex h-11 w-11 items-center justify-center rounded-full ${index % 2 === 0 ? "bg-surface-container" : "bg-surface-container-high"} font-semibold text-primary">
+                        ${review.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("")
+                            .slice(0, 2)}
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-on-surface">${review.name}</p>
+                        <p class="text-[11px] uppercase tracking-[0.18em] text-on-surface-variant">${review.place[currentLang]}</p>
+                    </div>
+                </div>
+            </article>
+        `,
+                ).join("");
+            }
+
+            function renderBookingLinks() {
+                const container = document.getElementById("booking-links");
+                container.innerHTML = PROPERTIES.map(
+                    (property) => `
+            <a class="flex items-center justify-between rounded-2xl bg-white/12 px-4 py-4 backdrop-blur-sm" href="${property.ctaHref}">
+                <div>
+                    <p class="text-[11px] uppercase tracking-[0.22em] text-white/60">${property.label[currentLang]}</p>
+                    <p class="mt-1 font-headline text-xl">${property.title[currentLang]}</p>
+                </div>
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        `,
+                ).join("");
+            }
+
+            function renderStaticCopy() {
+                const copy = COPY[currentLang];
+                document.getElementById("lang-btn").textContent =
+                    currentLang.toUpperCase();
+                document.getElementById("top-cta").textContent = copy.topCta;
+                document.getElementById("hero-kicker").textContent =
+                    copy.heroKicker;
+                document.getElementById("hero-subtitle").textContent =
+                    copy.heroSubtitle;
+                document.getElementById("hero-ctas").innerHTML =
+                    renderHeroCtas();
+                document.getElementById("intro-kicker").textContent =
+                    copy.introKicker;
+                document.getElementById("intro-title").textContent =
+                    copy.introTitle;
+                document.getElementById("intro-copy").textContent =
+                    copy.introCopy;
+                document.getElementById("quote-text").textContent = copy.quote;
+                document.getElementById("reviews-kicker").textContent =
+                    copy.reviewsKicker;
+                document.getElementById("reviews-title").textContent =
+                    copy.reviewsTitle;
+                document.getElementById("reviews-subtitle").textContent =
+                    copy.reviewsSubtitle;
+                document.getElementById("reviews-link").textContent =
+                    copy.reviewsLink;
+                document.getElementById("booking-kicker").textContent =
+                    copy.bookingKicker;
+                document.getElementById("booking-title").textContent =
+                    copy.bookingTitle;
+                document.getElementById("booking-copy").textContent =
+                    copy.bookingCopy;
+                document.getElementById("footer-copy").textContent =
+                    copy.footerCopy;
+                document.getElementById("nav-stays").textContent =
+                    copy.navStays;
+                document.getElementById("nav-reviews").textContent =
+                    copy.navReviews;
+                document.getElementById("nav-booking").textContent =
+                    copy.navBooking;
+            }
+
+            function renderPage() {
+                renderStaticCopy();
+                renderProperties();
+                renderReviews();
+                renderBookingLinks();
+            }
+
+            function openLightbox(src) {
+                const lightbox = document.getElementById("lightbox");
+                document.getElementById("lightbox-img").src = src;
+                lightbox.classList.remove("hidden");
+                lightbox.classList.add("flex");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeLightbox() {
+                const lightbox = document.getElementById("lightbox");
+                lightbox.classList.add("hidden");
+                lightbox.classList.remove("flex");
+                document.body.style.overflow = "";
+            }
+
+            document
+                .getElementById("lang-btn")
+                .addEventListener("click", () => {
+                    setLanguage(currentLang === "en" ? "vi" : "en");
+                });
+
+            document
+                .getElementById("lightbox")
+                .addEventListener("click", closeLightbox);
+            document
+                .getElementById("lightbox-close")
+                .addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    closeLightbox();
+                });
+
+            (function initBottomNav() {
+                const navLinks = Array.from(
+                    document.querySelectorAll("[data-nav-link]"),
+                );
+                const sections = [
+                    {
+                        id: "properties-container",
+                        node: document.getElementById("properties-container"),
+                    },
+                    { id: "reviews", node: document.getElementById("reviews") },
+                    { id: "booking", node: document.getElementById("booking") },
+                ];
+                const headerOffset = 88;
+                let lockedActiveId = null;
+                let lockedScrollTop = null;
+                let unlockTimer = null;
+
+                function setActiveLink(activeId) {
+                    navLinks.forEach((link) => {
+                        const isActive =
+                            link.getAttribute("href") === `#${activeId}`;
+                        link.classList.toggle(
+                            "bottom-nav-link-active",
+                            isActive,
+                        );
+                        link.setAttribute(
+                            "aria-current",
+                            isActive ? "page" : "false",
+                        );
+                    });
+                }
+
+                function releaseActiveLock() {
+                    lockedActiveId = null;
+                    lockedScrollTop = null;
+                    if (unlockTimer) {
+                        window.clearTimeout(unlockTimer);
+                        unlockTimer = null;
+                    }
+                }
+
+                function lockActiveLink(activeId, scrollTop) {
+                    lockedActiveId = activeId;
+                    lockedScrollTop = scrollTop;
+                    setActiveLink(activeId);
+
+                    if (unlockTimer) {
+                        window.clearTimeout(unlockTimer);
+                    }
+
+                    unlockTimer = window.setTimeout(() => {
+                        releaseActiveLock();
+                        updateActiveSection();
+                    }, 700);
+                }
+
+                function updateActiveSection() {
+                    if (lockedActiveId !== null) {
+                        if (Math.abs(window.scrollY - lockedScrollTop) <= 8) {
+                            releaseActiveLock();
+                        } else {
+                            setActiveLink(lockedActiveId);
+                            return;
+                        }
+                    }
+
+                    const scrollPosition = window.scrollY + headerOffset + 24;
+                    let activeId = "properties-container";
+
+                    sections.forEach((section) => {
+                        if (
+                            section.node &&
+                            section.node.offsetTop <= scrollPosition
+                        ) {
+                            activeId = section.id;
+                        }
+                    });
+
+                    setActiveLink(activeId);
+                }
+
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", (event) => {
+                        const targetSelector = link.getAttribute("href");
+                        const target = targetSelector
+                            ? document.querySelector(targetSelector)
+                            : null;
+
+                        if (!target) {
+                            return;
+                        }
+
+                        event.preventDefault();
+                        const top = Math.max(
+                            target.offsetTop - headerOffset,
+                            0,
+                        );
+                        lockActiveLink(target.id, top);
+                        window.scrollTo({ top, behavior: "smooth" });
+                    });
+                });
+
+                window.addEventListener("scroll", updateActiveSection, {
+                    passive: true,
+                });
+                window.addEventListener("load", updateActiveSection);
+                updateActiveSection();
+            })();
+
+            renderPage();
+        </script>
+    </body>
+</html>
