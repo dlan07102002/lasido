@@ -660,8 +660,9 @@
                         },
                     ],
                     desc: {
-                        en: "A quiet 3-story house filled with light, featuring an elegant style with old Hanoi vibes. Nestled in a peaceful alley in the intellectual quarter, just a short walk to the Lake.",
-                        vi: "Ngôi nhà 3 tầng yên tĩnh, ánh sáng ngập tràn, phong cách sang trọng mang nét Hà Nội xưa. Tọa lạc trong con ngõ nhỏ khu phố tri thức, chỉ vài phút đi bộ ra Hồ Gươm.",
+                        en: "A peaceful home in the heart of Hanoi, tucked in a quiet alley within the intellectual quarter. Refined yet understated, it captures the timeless charm of old Hanoi. Calm, private, and just a 10-minute walk from Hoan Kiem Lake, LaSiDo offers a warm, thoughtful space where every return feels like coming home.",
+
+                        vi: "Một ngôi nhà bình yên giữa trung tâm Hà Nội, nằm trong con ngõ nhỏ của khu phố tri thức. Cao cấp nhưng giản dị, mang đậm nét Hà Nội xưa. Không gian riêng tư, yên tĩnh, chỉ cách Hồ Gươm 10 phút đi bộ—LaSiDo là nơi mỗi lần trở về đều là cảm giác “là nhà”.",
                     },
                     features: [
                         {
@@ -719,8 +720,9 @@
                         },
                     ],
                     desc: {
-                        en: "Experience local living in the French Quarter, just 15m from Trang Tien Street. A traditional cozy home offering 5-star care for those seeking local charm over luxury.",
-                        vi: "Trải nghiệm sống như người địa phương tại Khu Phố Pháp, cách phố Tràng Tiền chỉ 15m. Một ngôi nhà truyền thống ấm cúng với dịch vụ chu đáo cho du khách yêu nét quyến rũ bản địa.",
+                        en: "LaSiDo Home is tucked in a quiet alley just 15m from Trang Tien Street, offering a peaceful stay with easy access to Hanoi’s vibrant center. Located in the French Quarter near the Old Quarter, we provide a warm, local living experience with thoughtful, 5-star hospitality in a cozy traditional home—perfect for those seeking charm over luxury.",
+
+                        vi: "LaSiDo Home nằm trong con ngõ yên tĩnh, chỉ cách phố Tràng Tiền 15m, mang đến không gian nghỉ ngơi thư thái ngay giữa trung tâm sôi động. Tọa lạc tại khu phố Pháp, gần phố cổ, chúng tôi mang đến trải nghiệm sống bản địa với sự chăm sóc tinh tế chuẩn 5 sao trong một ngôi nhà truyền thống ấm cúng—lý tưởng cho những ai tìm kiếm nét duyên thay vì sự xa hoa.",
                     },
                     features: [
                         {
@@ -787,10 +789,10 @@
             function renderHeroCtas() {
                 return PROPERTIES.map(
                     (property, index) => `
-            <a class="${index === 0 ? "bg-white text-on-surface" : "border border-white/30 bg-white/10 text-white"} inline-flex items-center rounded-full px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur-md" href="#${property.id}">
-                ${property.label[currentLang]}
-            </a>
-        `,
+                <a class="${index === 0 ? "bg-white text-on-surface" : "border border-white/30 bg-white/10 text-white"} inline-flex items-center rounded-full px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] backdrop-blur-md" href="#${property.id}">
+                    ${property.label[currentLang]}
+                </a>
+            `,
                 ).join("");
             }
 
@@ -800,68 +802,68 @@
                 );
                 container.innerHTML = PROPERTIES.map(
                     (property) => `
-            <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-sm" id="${property.id}">
-                <div class="relative h-[280px]">
-                    <img alt="${property.title.en}" class="h-full w-full object-cover" src="${property.images[0]}"/>
-                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em]" style="background-color: ${property.accent}22; color: ${property.accent}">
-                                ${property.district[currentLang]}
-                            </span>
-                            <span class="flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface">
-                                <span class="material-symbols-outlined !text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
-                                ${property.badge[currentLang]}
-                            </span>
+                <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-sm" id="${property.id}">
+                    <div class="relative h-[280px]">
+                        <img alt="${property.title.en}" class="h-full w-full object-cover" src="${property.images[0]}"/>
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em]" style="background-color: ${property.accent}22; color: ${property.accent}">
+                                    ${property.district[currentLang]}
+                                </span>
+                                <span class="flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-on-surface">
+                                    <span class="material-symbols-outlined !text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    ${property.badge[currentLang]}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="p-5">
-                    <p class="text-[11px] uppercase tracking-[0.24em]" style="color: ${property.accent}">${property.label[currentLang]}</p>
-                    <h2 class="mt-2 font-headline text-3xl leading-tight text-on-surface">${property.title[currentLang]}</h2>
-                    <p class="mt-3 text-sm leading-6 text-on-surface-variant">${property.address[currentLang]}</p>
-                    <div class="mt-4 grid grid-cols-1 gap-2 rounded-2xl bg-surface-container p-4 text-sm text-on-surface-variant">
-                        ${property.stats
-                            .map(
-                                (stat) => `
-                            <div class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-primary">${stat.icon}</span>
-                                <span>${stat.text[currentLang]}</span>
-                            </div>
-                        `,
-                            )
-                            .join("")}
+                    <div class="p-5">
+                        <p class="text-[11px] uppercase tracking-[0.24em]" style="color: ${property.accent}">${property.label[currentLang]}</p>
+                        <h2 class="mt-2 font-headline text-3xl leading-tight text-on-surface">${property.title[currentLang]}</h2>
+                        <p class="mt-3 text-sm leading-6 text-on-surface-variant">${property.address[currentLang]}</p>
+                        <div class="mt-4 grid grid-cols-1 gap-2 rounded-2xl bg-surface-container p-4 text-sm text-on-surface-variant">
+                            ${property.stats
+                                .map(
+                                    (stat) => `
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary">${stat.icon}</span>
+                                    <span>${stat.text[currentLang]}</span>
+                                </div>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                        <p class="mt-4 text-sm leading-6 text-on-surface-variant">${property.desc[currentLang]}</p>
+                        <div class="mt-5 flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
+                            ${property.images
+                                .map(
+                                    (image, imageIndex) => `
+                                <button class="shrink-0 ${imageIndex === 0 ? "w-32" : "w-24"} h-24 overflow-hidden rounded-2xl" onclick="openLightbox('${image}')" type="button">
+                                    <img alt="" class="h-full w-full object-cover" src="${image}"/>
+                                </button>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                        <div class="mt-5 grid grid-cols-3 gap-3">
+                            ${property.features
+                                .map(
+                                    (feature) => `
+                                <div class="rounded-2xl bg-surface-container-low px-3 py-4 text-center">
+                                    <span class="material-symbols-outlined" style="color: ${property.accent}">${feature.icon}</span>
+                                    <p class="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface">${feature.label[currentLang]}</p>
+                                </div>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                        <a class="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white" href="${property.ctaHref}" style="background: linear-gradient(135deg, ${property.accent}, ${property.accent}dd)">
+                            <span>${property.cta[currentLang]}</span>
+                            <span class="material-symbols-outlined !text-base">arrow_forward</span>
+                        </a>
                     </div>
-                    <p class="mt-4 text-sm leading-6 text-on-surface-variant">${property.desc[currentLang]}</p>
-                    <div class="mt-5 flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
-                        ${property.images
-                            .map(
-                                (image, imageIndex) => `
-                            <button class="shrink-0 ${imageIndex === 0 ? "w-32" : "w-24"} h-24 overflow-hidden rounded-2xl" onclick="openLightbox('${image}')" type="button">
-                                <img alt="" class="h-full w-full object-cover" src="${image}"/>
-                            </button>
-                        `,
-                            )
-                            .join("")}
-                    </div>
-                    <div class="mt-5 grid grid-cols-3 gap-3">
-                        ${property.features
-                            .map(
-                                (feature) => `
-                            <div class="rounded-2xl bg-surface-container-low px-3 py-4 text-center">
-                                <span class="material-symbols-outlined" style="color: ${property.accent}">${feature.icon}</span>
-                                <p class="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-on-surface">${feature.label[currentLang]}</p>
-                            </div>
-                        `,
-                            )
-                            .join("")}
-                    </div>
-                    <a class="mt-5 flex w-full items-center justify-center gap-2 rounded-full px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white" href="${property.ctaHref}" style="background: linear-gradient(135deg, ${property.accent}, ${property.accent}dd)">
-                        <span>${property.cta[currentLang]}</span>
-                        <span class="material-symbols-outlined !text-base">arrow_forward</span>
-                    </a>
-                </div>
-            </article>
-        `,
+                </article>
+            `,
                 ).join("");
             }
 
@@ -869,26 +871,26 @@
                 const container = document.getElementById("reviews-container");
                 container.innerHTML = REVIEWS.map(
                     (review, index) => `
-            <article class="rounded-[2rem] border border-primary/10 bg-white px-5 py-5 shadow-sm">
-                <div class="flex items-center gap-1 text-primary">
-                    ${Array.from({ length: 5 }, () => '<span class="material-symbols-outlined !text-base" style="font-variation-settings: \'FILL\' 1;">star</span>').join("")}
-                </div>
-                <p class="mt-4 font-headline text-lg italic leading-7 text-on-surface-variant">${review.text[currentLang]}</p>
-                <div class="mt-5 flex items-center gap-3">
-                    <div class="flex h-11 w-11 items-center justify-center rounded-full ${index % 2 === 0 ? "bg-surface-container" : "bg-surface-container-high"} font-semibold text-primary">
-                        ${review.name
-                            .split(" ")
-                            .map((part) => part[0])
-                            .join("")
-                            .slice(0, 2)}
+                <article class="rounded-[2rem] border border-primary/10 bg-white px-5 py-5 shadow-sm">
+                    <div class="flex items-center gap-1 text-primary">
+                        ${Array.from({ length: 5 }, () => '<span class="material-symbols-outlined !text-base" style="font-variation-settings: \'FILL\' 1;">star</span>').join("")}
                     </div>
-                    <div>
-                        <p class="text-sm font-semibold text-on-surface">${review.name}</p>
-                        <p class="text-[11px] uppercase tracking-[0.18em] text-on-surface-variant">${review.place[currentLang]}</p>
+                    <p class="mt-4 font-headline text-lg italic leading-7 text-on-surface-variant">${review.text[currentLang]}</p>
+                    <div class="mt-5 flex items-center gap-3">
+                        <div class="flex h-11 w-11 items-center justify-center rounded-full ${index % 2 === 0 ? "bg-surface-container" : "bg-surface-container-high"} font-semibold text-primary">
+                            ${review.name
+                                .split(" ")
+                                .map((part) => part[0])
+                                .join("")
+                                .slice(0, 2)}
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-on-surface">${review.name}</p>
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-on-surface-variant">${review.place[currentLang]}</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-        `,
+                </article>
+            `,
                 ).join("");
             }
 
@@ -896,14 +898,14 @@
                 const container = document.getElementById("booking-links");
                 container.innerHTML = PROPERTIES.map(
                     (property) => `
-            <a class="flex items-center justify-between rounded-2xl bg-white/12 px-4 py-4 backdrop-blur-sm" href="${property.ctaHref}">
-                <div>
-                    <p class="text-[11px] uppercase tracking-[0.22em] text-white/60">${property.label[currentLang]}</p>
-                    <p class="mt-1 font-headline text-xl">${property.title[currentLang]}</p>
-                </div>
-                <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-        `,
+                <a class="flex items-center justify-between rounded-2xl bg-white/12 px-4 py-4 backdrop-blur-sm" href="${property.ctaHref}">
+                    <div>
+                        <p class="text-[11px] uppercase tracking-[0.22em] text-white/60">${property.label[currentLang]}</p>
+                        <p class="mt-1 font-headline text-xl">${property.title[currentLang]}</p>
+                    </div>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            `,
                 ).join("");
             }
 
