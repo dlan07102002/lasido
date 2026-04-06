@@ -95,22 +95,6 @@
                 scrollbar-width: none;
             }
 
-            [lang="vi"] .lang-vi {
-                display: inline;
-            }
-
-            [lang="vi"] .lang-en {
-                display: none;
-            }
-
-            [lang="en"] .lang-vi {
-                display: none;
-            }
-
-            [lang="en"] .lang-en {
-                display: inline;
-            }
-
             .social-card-grid {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -248,8 +232,9 @@
             <section class="relative min-h-[620px] flex items-end pt-16">
                 <div class="absolute inset-0">
                     <img
-                        alt="Boutique Hotel Hero"
+                        alt=""
                         class="h-full w-full object-cover"
+                        id="hero-image"
                         src="/assets/images/hero-section.jpg"
                     />
 
@@ -282,59 +267,38 @@
                         <p class="font-headline text-2xl text-primary">3</p>
                         <p
                             class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                        >
-                            <span class="lang-en">Floors</span
-                            ><span class="lang-vi">Tầng</span>
-                        </p>
+                            id="about-floors-unit"
+                        ></p>
                     </div>
 
                     <div class="bg-surface p-4 text-center">
                         <p class="font-headline text-2xl text-primary">4.8 ★</p>
                         <p
                             class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                        >
-                            <span class="lang-en">Airbnb Rating</span
-                            ><span class="lang-vi">Đánh giá Airbnb</span>
-                        </p>
+                            id="about-rating-label"
+                        ></p>
                     </div>
 
                     <div class="bg-surface p-4 text-center">
-                        <p class="font-headline text-2xl text-primary">Host</p>
+                        <p
+                            class="font-headline text-2xl text-primary"
+                            id="about-host-value"
+                        ></p>
                         <p
                             class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                        >
-                            <span class="lang-en">Dedicated Superhost</span
-                            ><span class="lang-vi">Superhost tận tâm</span>
-                        </p>
+                            id="about-host-label"
+                        ></p>
                     </div>
                 </div>
                 <div class="space-y-6">
                     <h3
                         class="font-headline text-3xl tracking-tight leading-snug"
-                    >
-                        <span class="lang-en"
-                            >Return to a sanctuary that feels like home.</span
-                        >
-                        <span class="lang-vi"
-                            >Về chốn bình yên như chính ngôi nhà bạn.</span
-                        >
-                    </h3>
-                    <p class="text-on-surface-variant leading-relaxed text-lg">
-                        <span class="lang-en" id="about-copy-en"
-                            >LaSiDoHouse is more than just accommodation; it is
-                            our passion for preserving the rustic, quiet charm
-                            amidst the bustle of Hoan Kiem. A private, cozy
-                            space where every small corner carries the breath of
-                            Hanoi's old streets.</span
-                        >
-                        <span class="lang-vi" id="about-copy-vi"
-                            >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
-                            huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh
-                            lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng
-                            tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà
-                            Nội phố cổ.</span
-                        >
-                    </p>
+                        id="about-title"
+                    ></h3>
+                    <p
+                        class="text-on-surface-variant leading-relaxed text-lg"
+                        id="about-copy"
+                    ></p>
                 </div>
             </section>
 
@@ -409,10 +373,8 @@
                 >
                     <p
                         class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary mb-4"
-                    >
-                        <span class="lang-en">Follow LaSiDoHouse</span
-                        ><span class="lang-vi">Kết nối cùng LaSiDoHouse</span>
-                    </p>
+                        id="footer-follow"
+                    ></p>
                     <div class="social-card-grid">
                         <a
                             class="social-card-link"
@@ -441,13 +403,8 @@
                                 </p>
                                 <p
                                     class="social-card-subtitle text-on-surface-variant"
-                                >
-                                    <span class="lang-en"
-                                        >Updates and stories</span
-                                    ><span class="lang-vi"
-                                        >Cập nhật và tin mới</span
-                                    >
-                                </p>
+                                    id="social-facebook-subtitle"
+                                ></p>
                             </div>
                         </a>
                         <a
@@ -477,13 +434,8 @@
                                 </p>
                                 <p
                                     class="social-card-subtitle text-on-surface-variant"
-                                >
-                                    <span class="lang-en"
-                                        >Photos and moments</span
-                                    ><span class="lang-vi"
-                                        >Hình ảnh và khoảnh khắc</span
-                                    >
-                                </p>
+                                    id="social-instagram-subtitle"
+                                ></p>
                             </div>
                         </a>
                     </div>
@@ -500,18 +452,9 @@
                 <div
                     class="mt-6 flex items-center justify-center gap-6 text-sm uppercase tracking-[0.18em] text-on-surface-variant"
                 >
-                    <a href="#">
-                        <span class="lang-en">Privacy</span>
-                        <span class="lang-vi">Bảo mật</span>
-                    </a>
-                    <a href="#">
-                        <span class="lang-en">Terms</span>
-                        <span class="lang-vi">Điều khoản</span>
-                    </a>
-                    <a href="#">
-                        <span class="lang-en">Contact</span>
-                        <span class="lang-vi">Liên hệ</span>
-                    </a>
+                    <a href="#" id="footer-privacy"></a>
+                    <a href="#" id="footer-terms"></a>
+                    <a href="#" id="footer-contact"></a>
                 </div>
             </footer>
         </main>
@@ -610,7 +553,7 @@
                     (property) => `
                 <article class="overflow-hidden rounded-[2rem] border border-primary/10 bg-white shadow-sm" id="${property.id}">
                     <div class="relative h-[280px]">
-                        <img alt="${property.title.en}" class="h-full w-full object-cover" src="${property.images[0]}"/>
+                        <img alt="${property.title[currentLang]}" class="h-full w-full object-cover" src="${property.images[0]}"/>
                         <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-4">
                             <div class="flex flex-wrap gap-2">
                                 <span class="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em]" style="background-color: ${property.accent}22; color: ${property.accent}">
@@ -720,14 +663,23 @@
                 document.getElementById("lang-btn").textContent =
                     currentLang.toUpperCase();
                 document.getElementById("top-cta").textContent = copy.topCta;
+                document.getElementById("hero-image").alt = copy.heroImageAlt;
                 document.getElementById("hero-kicker").textContent =
                     copy.heroKicker;
                 document.getElementById("hero-subtitle").textContent =
                     copy.heroSubtitle;
-                document.getElementById("about-copy-en").textContent =
-                    COPY.en.aboutCopy;
-                document.getElementById("about-copy-vi").textContent =
-                    COPY.vi.aboutCopy;
+                document.getElementById("about-floors-unit").textContent =
+                    copy.aboutFloorsUnit;
+                document.getElementById("about-rating-label").textContent =
+                    copy.aboutRatingLabel;
+                document.getElementById("about-host-value").textContent =
+                    copy.aboutHostValue;
+                document.getElementById("about-host-label").textContent =
+                    copy.aboutHostLabel;
+                document.getElementById("about-title").textContent =
+                    copy.aboutTitle;
+                document.getElementById("about-copy").textContent =
+                    copy.aboutCopy;
                 document.getElementById("hero-ctas").innerHTML =
                     renderHeroCtas();
                 document.getElementById("quote-text").textContent = copy.quote;
@@ -745,6 +697,18 @@
                     copy.bookingTitle;
                 document.getElementById("booking-copy").textContent =
                     copy.bookingCopy;
+                document.getElementById("footer-follow").textContent =
+                    copy.footerFollow;
+                document.getElementById("social-facebook-subtitle").textContent =
+                    copy.socialFacebookSubtitle;
+                document.getElementById("social-instagram-subtitle").textContent =
+                    copy.socialInstagramSubtitle;
+                document.getElementById("footer-privacy").textContent =
+                    copy.footerPrivacy;
+                document.getElementById("footer-terms").textContent =
+                    copy.footerTerms;
+                document.getElementById("footer-contact").textContent =
+                    copy.footerContact;
                 document.getElementById("footer-copy").textContent =
                     copy.footerCopy;
                 document.getElementById("nav-stays").textContent =
