@@ -180,39 +180,39 @@ window.LASIDO_CONTENT = {
         ],
         reviews: [
             {
-                name: "Sarah Jenkins",
+                name: "Trần Anh Ngọc",
                 place: {
-                    en: "London, UK",
-                    vi: "London, UK",
+                    en: "Vietnam",
+                    vi: "Việt Nam",
                 },
                 text: {
-                    en: '"The most beautiful house I\'ve stayed in Hanoi. Every corner is a piece of art."',
-                    vi: '"Căn nhà đẹp nhất tôi từng ở Hà Nội. Mọi ngóc ngách đều là một tác phẩm nghệ thuật."',
+                    en: `"Booked during soft opening so the price was great. The house is brand new, super clean, with a minimalist and elegant design. The host was very nice. Highly recommended."`,
+                    vi: `"Book được giá dịp soft opening nên khá rẻ. Nhà rất mới và sạch, thiết kế tối giản nhưng sang. Chủ nhà thân thiện, rất đáng trải nghiệm."`,
                 },
             },
             {
-                name: "Minh Anh",
+                name: "Nhật Đỗ",
                 place: {
-                    en: "HCMC, VN",
-                    vi: "TP.HCM, VN",
+                    en: "Vietnam",
+                    vi: "Việt Nam",
                 },
                 text: {
-                    en: '"Great location, very quiet but close to the action. The cinema room was a highlight."',
-                    vi: '"Vị trí tuyệt vời, rất yên tĩnh nhưng lại gần trung tâm. Phòng xem phim là điểm nhấn."',
+                    en: `"Had a great stay. The room was clean and airy, price was reasonable. Close to the center and easy to get around. Fully equipped. Would come back again."`,
+                    vi: `"Trải nghiệm rất tốt. Phòng sạch, thoáng, giá hợp lý. Gần trung tâm, dễ đi các điểm tham quan. Tiện ích đầy đủ, sẽ quay lại."`,
                 },
             },
             {
-                name: "David Chen",
+                name: "Tùng Trần Anh",
                 place: {
-                    en: "Singapore",
-                    vi: "Singapore",
+                    en: "Vietnam",
+                    vi: "Việt Nam",
                 },
                 text: {
-                    en: '"Exceptional design. The botanical theme in the West Lake property is so relaxing."',
-                    vi: '"Thiết kế xuất sắc. Chủ đề thực vật ở cơ sở Hồ Tây rất thư giãn."',
+                    en: `"The host was incredibly friendly, helpful, and responsive throughout my stay."`,
+                    vi: `"Chủ nhà cực kỳ thân thiện, hỗ trợ nhanh và nhiệt tình trong suốt thời gian lưu trú."`,
                 },
             },
-        ],
+        ]
     },
     mobile: {
         copy: {
