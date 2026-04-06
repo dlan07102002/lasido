@@ -12,8 +12,8 @@ window.LASIDO_CONTENT = {
                     vi: "Cơ sở Lê Thánh Tông",
                 },
                 title: {
-                    en: "Heritage House",
-                    vi: "Heritage House",
+                    en: "Modern House",
+                    vi: "Modern House",
                 },
                 district: {
                     en: "Hoan Kiem District",
@@ -119,15 +119,15 @@ window.LASIDO_CONTENT = {
                     {
                         icon: "king_bed",
                         text: {
-                            en: "2 Bedrooms",
-                            vi: "2 Phòng ngủ",
+                            en: "4 Bedrooms",
+                            vi: "4 Phòng ngủ",
                         },
                     },
                     {
                         icon: "group",
                         text: {
-                            en: "5-6 Guests",
-                            vi: "5-6 Khách",
+                            en: "8-10 Guests",
+                            vi: "8-10 Khách",
                         },
                     },
                     {
