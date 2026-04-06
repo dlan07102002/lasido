@@ -39,17 +39,19 @@
                 theme: {
                     extend: {
                         colors: {
-                            primary: "#50652a",
-                            "primary-container": "#687f40",
-                            surface: "#fbfbe2",
-                            "surface-bright": "#fbfbe2",
-                            "surface-container": "#efefd7",
-                            "surface-container-low": "#f5f5dc",
-                            "surface-container-high": "#eaead1",
-                            "on-surface": "#1b1d0e",
-                            "on-surface-variant": "#4d453c",
-                            "outline-variant": "#d1c4b9",
+                            primary: "#8b7355",
+                            "primary-container": "#a08c6d",
+
+                            surface: "#faf7f2",
+                            "surface-bright": "#faf7f2",
+
+                            "surface-container": "#f0e9df",
+                            "surface-container-low": "#f6f1e8",
+
                             "on-primary": "#ffffff",
+
+                            "on-surface": "#1f1b16",
+                            "on-surface-variant": "#5c5145",
                         },
                         borderRadius: {
                             DEFAULT: "0.125rem",
@@ -189,7 +191,7 @@
             }
 
             .bottom-nav-link-active {
-                color: #50652a;
+                color: #8b7355;
                 opacity: 1;
                 transform: translateY(-1px);
             }
@@ -211,7 +213,7 @@
     </head>
     <body class="bg-surface text-on-surface font-body">
         <header
-            class="fixed top-0 left-0 right-0 z-50 bg-[#fbfbe2]/85 backdrop-blur-md border-b border-primary/10"
+            class="fixed top-0 left-0 right-0 z-50 bg-[#faf5eb]/85 backdrop-blur-md border-b border-primary/10"
         >
             <div class="flex items-center justify-between px-4 py-3">
                 <div>
@@ -220,7 +222,7 @@
                             class="text-2xl font-serif italic text-lime-950 dark:text-lime-200"
                             href="#"
                         >
-                            <img src="../assets/logo.svg" width="90"
+                            <img src="/public/assets/logo.svg" width="90"
                         /></a>
                     </div>
                 </div>
@@ -248,8 +250,9 @@
                     <img
                         alt="Boutique Hotel Hero"
                         class="h-full w-full object-cover"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzxg6MUA69w94U8w_pxbkxDevKAAF8HMvYbbaYIaq5bWI4wrcW7qw7X443uaH8-SbCb5VUEdE4-QV_P2uDMhZR8RQRIVZuVssbczQRoaUOqOZZdXZ6KpkhaM3rJ9q8OFquglpi4oFh7VAjK4dCuMQWIXrWIPgygpWFu-Ecxn6qGZR07d2XYjNQA9ba-KnoOe13owWSAJMX3aqzQxOQYIPQZLeN1KE64Anb1Ur3E0lgyebbvBs46p3I-tXtBLNYm0bNyA3xtbcSI0"
+                        src="/public/assets/images/hero-section.jpg"
                     />
+
                     <div class="absolute inset-0 hero-gradient"></div>
                 </div>
                 <div class="relative z-10 px-4 pb-10 pt-12 text-white">
@@ -485,7 +488,7 @@
                 </div>
                 <div class="mt-8 text-center">
                     <a class="inline-flex items-center justify-center" href="#">
-                        <img src="../assets/logo.svg" width="90" />
+                        <img src="/public/assets/logo.svg" width="90" />
                     </a>
                     <p
                         class="mt-3 text-[11px] uppercase tracking-[0.24em] text-on-surface-variant"
@@ -630,7 +633,7 @@
             const PROPERTIES = [
                 {
                     id: "ltt",
-                    accent: "#50652a",
+                    accent: "#8b7355",
                     label: {
                         en: "Le Thanh Tong Collection",
                         vi: "Cơ sở Lê Thánh Tông",
@@ -677,11 +680,11 @@
                     cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
                     ctaHref: "https://www.airbnb.com/rooms/1631858864113952307",
                     images: [
-                        "../assets/images/le-thanh-tong/ltt-1.avif",
-                        "../assets/images/le-thanh-tong/ltt-2.avif",
-                        "../assets/images/le-thanh-tong/ltt-3.avif",
-                        "../assets/images/le-thanh-tong/ltt-4.avif",
-                        "../assets/images/le-thanh-tong/ltt-5.avif",
+                        "/public/assets/images/le-thanh-tong/ltt-1.avif",
+                        "/public/assets/images/le-thanh-tong/ltt-2.avif",
+                        "/public/assets/images/le-thanh-tong/ltt-3.avif",
+                        "/public/assets/images/le-thanh-tong/ltt-4.avif",
+                        "/public/assets/images/le-thanh-tong/ltt-5.avif",
                     ],
                 },
                 {
@@ -736,11 +739,11 @@
                     cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
                     ctaHref: "https://www.airbnb.com/rooms/1573691839272635733",
                     images: [
-                        "../assets/images/trang-tien/tt-1.avif",
-                        "../assets/images/trang-tien/tt-2.avif",
-                        "../assets/images/trang-tien/tt-3.webp",
-                        "../assets/images/trang-tien/tt-4.avif",
-                        "../assets/images/trang-tien/tt-5.avif",
+                        "/public/assets/images/trang-tien/tt-1.avif",
+                        "/public/assets/images/trang-tien/tt-2.avif",
+                        "/public/assets/images/trang-tien/tt-3.webp",
+                        "/public/assets/images/trang-tien/tt-4.avif",
+                        "/public/assets/images/trang-tien/tt-5.avif",
                     ],
                 },
             ];
