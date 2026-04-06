@@ -214,7 +214,7 @@
                     class="text-2xl font-serif italic text-lime-950 dark:text-lime-200"
                     href="#"
                 >
-                    <img src="/public/assets/logo.svg" width="90"
+                    <img src="/assets/logo.svg" width="90"
                 /></a>
             </div>
             <div
@@ -246,7 +246,7 @@
                 <img
                     alt="Boutique Hotel Hero"
                     class="w-full h-full object-cover scale-105"
-                    src="/public/assets/images/hero-section.jpg"
+                    src="/assets/images/hero-section.jpg"
                 />
                 <div class="absolute inset-0 hero-gradient"></div>
             </div>
@@ -367,7 +367,7 @@
                     <img
                         alt="Cozy living space"
                         class="w-full h-full object-cover"
-                        src="/public/assets/images/le-thanh-tong/ltt-1.avif"
+                        src="/assets/images/le-thanh-tong/ltt-1.avif"
                     />
                 </div>
                 <div
@@ -436,7 +436,10 @@
                         >View all reviews</a
                     >
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    id="reviews-container"
+                >
                     <!-- Static Reviews as per source -->
                     <div class="bg-surface p-10 rounded-sm shadow-sm reveal">
                         <div class="flex text-primary mb-4">
@@ -623,7 +626,7 @@
                         class="text-xl font-serif text-lime-950 dark:text-lime-100"
                         href="#"
                     >
-                        <img src="/public/assets/logo.svg" width="90" />
+                        <img src="/assets/logo.svg" width="90" />
                     </a>
                     <p
                         class="font-sans text-sm uppercase tracking-widest text-lime-900 dark:text-lime-400"
@@ -790,11 +793,11 @@
                     cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
                     ctaIcon: "arrow_forward",
                     images: [
-                        "/public/assets/images/le-thanh-tong/ltt-1.avif",
-                        "/public/assets/images/le-thanh-tong/ltt-2.avif",
-                        "/public/assets/images/le-thanh-tong/ltt-3.avif",
-                        "/public/assets/images/le-thanh-tong/ltt-4.avif",
-                        "/public/assets/images/le-thanh-tong/ltt-5.avif",
+                        "/assets/images/le-thanh-tong/ltt-1.avif",
+                        "/assets/images/le-thanh-tong/ltt-2.avif",
+                        "/assets/images/le-thanh-tong/ltt-3.avif",
+                        "/assets/images/le-thanh-tong/ltt-4.avif",
+                        "/assets/images/le-thanh-tong/ltt-5.avif",
                     ],
                 },
                 {
@@ -850,12 +853,39 @@
                     cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
                     ctaIcon: "eco",
                     images: [
-                        "/public/assets/images/trang-tien/tt-1.avif",
-                        "/public/assets/images/trang-tien/tt-2.avif",
-                        "/public/assets/images/trang-tien/tt-3.webp",
-                        "/public/assets/images/trang-tien/tt-4.avif",
-                        "/public/assets/images/trang-tien/tt-5.avif",
+                        "/assets/images/trang-tien/tt-1.avif",
+                        "/assets/images/trang-tien/tt-2.avif",
+                        "/assets/images/trang-tien/tt-3.webp",
+                        "/assets/images/trang-tien/tt-4.avif",
+                        "/assets/images/trang-tien/tt-5.avif",
                     ],
+                },
+            ];
+
+            const REVIEWS = [
+                {
+                    name: "Sarah Jenkins",
+                    place: { en: "London, UK", vi: "London, UK" },
+                    text: {
+                        en: '"The most beautiful house I\'ve stayed in Hanoi. Every corner is a piece of art."',
+                        vi: '"C\u0103n nh\u00e0 \u0111\u1eb9p nh\u1ea5t t\u00f4i t\u1eebng \u1edf H\u00e0 N\u1ed9i. M\u1ecdi ng\u00f3c ng\u00e1ch \u0111\u1ec1u l\u00e0 m\u1ed9t t\u00e1c ph\u1ea9m ngh\u1ec7 thu\u1eadt."',
+                    },
+                },
+                {
+                    name: "Minh Anh",
+                    place: { en: "HCMC, VN", vi: "TP.HCM, VN" },
+                    text: {
+                        en: '"Great location, very quiet but close to the action. The cinema room was a highlight."',
+                        vi: '"V\u1ecb tr\u00ed tuy\u1ec7t v\u1eddi, r\u1ea5t y\u00ean t\u0129nh nh\u01b0ng l\u1ea1i g\u1ea7n trung t\u00e2m. Ph\u00f2ng xem phim l\u00e0 \u0111i\u1ec3m nh\u1ea5n."',
+                    },
+                },
+                {
+                    name: "David Chen",
+                    place: { en: "Singapore", vi: "Singapore" },
+                    text: {
+                        en: '"Exceptional design. The botanical theme in the West Lake property is so relaxing."',
+                        vi: '"Thi\u1ebft k\u1ebf xu\u1ea5t s\u1eafc. Ch\u1ee7 \u0111\u1ec1 th\u1ef1c v\u1eadt \u1edf c\u01a1 s\u1edf H\u1ed3 T\u00e2y r\u1ea5t th\u01b0 gi\u00e3n."',
+                    },
                 },
             ];
 
@@ -866,6 +896,7 @@
                 renderNav();
                 renderHero();
                 renderProperties();
+                renderReviews();
                 setupHeaderNavigation();
                 updateTranslations();
                 observeElements();
@@ -878,6 +909,7 @@
                     currentLang.toUpperCase();
                 renderNav();
                 setupHeaderNavigation();
+                renderReviews();
                 updateTranslations();
             }
 
@@ -972,6 +1004,35 @@
                 ).join("");
             }
 
+            function renderReviews() {
+                const container = document.getElementById("reviews-container");
+                container.innerHTML = REVIEWS.map(
+                    (review, index) => `
+            <article class="bg-surface p-10 rounded-sm shadow-sm reveal active">
+                <div class="flex text-primary mb-4">
+                    ${Array.from({ length: 5 }, () => '<span class="material-symbols-outlined" style="font-variation-settings: \'FILL\' 1;">star</span>').join("")}
+                </div>
+                <p class="italic text-on-surface-variant mb-6 leading-relaxed">${review.text[currentLang]}</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full ${index % 2 === 0 ? "bg-surface-container-high" : "bg-surface-container"} flex items-center justify-center text-xs font-bold text-primary">
+                        ${review.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .join("")
+                            .slice(0, 2)}
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold">${review.name}</p>
+                        <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">
+                            ${review.place[currentLang]}
+                        </p>
+                    </div>
+                </div>
+            </article>
+        `,
+                ).join("");
+            }
+
             function updateTranslations() {
                 // Hero
                 document.getElementById("hero-subtitle").textContent =
@@ -1029,11 +1090,6 @@
                         `.prop-cta[data-id="${p.id}"]`,
                     );
                     ctas.forEach((el) => (el.textContent = p.cta[currentLang]));
-                });
-
-                // Reviews
-                document.querySelectorAll(".review-text").forEach((el) => {
-                    el.textContent = el.getAttribute(`data-${currentLang}`);
                 });
             }
 
