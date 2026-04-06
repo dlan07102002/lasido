@@ -661,7 +661,7 @@
                     class="flex flex-col items-center md:items-end gap-3 w-full md:w-auto"
                 >
                     <p
-                        class="font-sans text-[11px] uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500"
+                        class="font-sans text-[11px] uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500 w-full text-center"
                     >
                         <span class="lang-en">Follow Us</span>
                         <span class="lang-vi">Kết nối</span>
@@ -738,158 +738,11 @@
                 src=""
             />
         </div>
+        <script src="/content-config.js"></script>
         <script>
-            const PROPERTIES = [
-                {
-                    id: "ltt",
-                    accent: "#8b7355",
-                    btnColor: "#8b7355",
-                    label: {
-                        en: "Le Thanh Tong Collection",
-                        vi: "Cơ sở Lê Thánh Tông",
-                    },
-                    title: { en: "Heritage House", vi: "Heritage House" },
-                    district: {
-                        en: "Hoan Kiem District",
-                        vi: "Quận Hoàn Kiếm",
-                    },
-                    address: {
-                        en: "📍 Le Thanh Tong St, Hoan Kiem, Hanoi (10' Lake Walk)",
-                        vi: "📍 Phố Lê Thánh Tông, Hoàn Kiếm, Hà Nội (10' đi bộ ra hồ)",
-                    },
-                    badge: { en: "5.0 Airbnb", vi: "5.0 Airbnb" },
-                    stats: [
-                        {
-                            icon: "bed",
-                            text: { en: "3 Bedrooms", vi: "3 Phòng ngủ" },
-                        },
-                        {
-                            icon: "group",
-                            text: { en: "7 Guests", vi: "7 Khách" },
-                        },
-                        {
-                            icon: "distance",
-                            text: { en: "10' Hoan Kiem", vi: "10' Hồ Gươm" },
-                        },
-                    ],
-                    desc: {
-                        en: "A peaceful home in the heart of Hanoi, tucked in a quiet alley within the intellectual quarter. Refined yet understated, it captures the timeless charm of old Hanoi. Calm, private, and just a 10-minute walk from Hoan Kiem Lake, LaSiDo offers a warm, thoughtful space where every return feels like coming home.",
-
-                        vi: "Một ngôi nhà bình yên giữa trung tâm Hà Nội, nằm trong con ngõ nhỏ của khu phố tri thức. Cao cấp nhưng giản dị, mang đậm nét Hà Nội xưa. Không gian riêng tư, yên tĩnh, chỉ cách Hồ Gươm 10 phút đi bộ—LaSiDo là nơi mỗi lần trở về đều là cảm giác “là nhà”.",
-                    },
-                    features: [
-                        {
-                            icon: "key",
-                            label: { en: "Self Check-in", vi: "Tự Check-in" },
-                        },
-                        {
-                            icon: "location_on",
-                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
-                        },
-                        {
-                            icon: "kitchen",
-                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
-                        },
-                    ],
-                    cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
-                    ctaIcon: "arrow_forward",
-                    images: [
-                        "/assets/images/le-thanh-tong/ltt-1.avif",
-                        "/assets/images/le-thanh-tong/ltt-2.avif",
-                        "/assets/images/le-thanh-tong/ltt-3.avif",
-                        "/assets/images/le-thanh-tong/ltt-4.avif",
-                        "/assets/images/le-thanh-tong/ltt-5.avif",
-                    ],
-                },
-                {
-                    id: "tt",
-                    accent: "#8b7355",
-                    btnColor: "#8b7355",
-                    label: {
-                        en: "Trang Tien Collection",
-                        vi: "Cơ sở Tràng Tiền",
-                    },
-                    title: {
-                        en: "French Quarter Home",
-                        vi: "French Quarter Home",
-                    },
-                    district: { en: "Old Quarter", vi: "Phố Cổ / Hoàn Kiếm" },
-                    address: {
-                        en: "📍 Trang Tien Alley, Hoan Kiem, Hanoi (2' Lake Walk)",
-                        vi: "📍 Ngõ Tràng Tiền, Hoàn Kiếm, Hà Nội (2' đi bộ ra hồ)",
-                    },
-                    badge: { en: "4.74 Airbnb", vi: "4.74 Airbnb" },
-                    stats: [
-                        {
-                            icon: "king_bed",
-                            text: { en: "2 Bedrooms", vi: "2 Phòng ngủ" },
-                        },
-                        {
-                            icon: "group",
-                            text: { en: "5-6 Guests", vi: "5-6 Khách" },
-                        },
-                        {
-                            icon: "waves",
-                            text: { en: "2' Lake Walk", vi: "2' Hồ Gươm" },
-                        },
-                    ],
-                    desc: {
-                        en: "LaSiDo Home is tucked in a quiet alley just 15m from Trang Tien Street, offering a peaceful stay with easy access to Hanoi’s vibrant center. Located in the French Quarter near the Old Quarter, we provide a warm, local living experience with thoughtful, 5-star hospitality in a cozy traditional home—perfect for those seeking charm over luxury.",
-
-                        vi: "LaSiDo Home nằm trong con ngõ yên tĩnh, chỉ cách phố Tràng Tiền 15m, mang đến không gian nghỉ ngơi thư thái ngay giữa trung tâm sôi động. Tọa lạc tại khu phố Pháp, gần phố cổ, chúng tôi mang đến trải nghiệm sống bản địa với sự chăm sóc tinh tế chuẩn 5 sao trong một ngôi nhà truyền thống ấm cúng—lý tưởng cho những ai tìm kiếm nét duyên thay vì sự xa hoa.",
-                    },
-                    features: [
-                        {
-                            icon: "key",
-                            label: { en: "Self Check-in", vi: "Tự Check-in" },
-                        },
-                        {
-                            icon: "location_on",
-                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
-                        },
-                        {
-                            icon: "kitchen",
-                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
-                        },
-                    ],
-                    cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
-                    ctaIcon: "eco",
-                    images: [
-                        "/assets/images/trang-tien/tt-1.avif",
-                        "/assets/images/trang-tien/tt-2.avif",
-                        "/assets/images/trang-tien/tt-3.webp",
-                        "/assets/images/trang-tien/tt-4.avif",
-                        "/assets/images/trang-tien/tt-5.avif",
-                    ],
-                },
-            ];
-
-            const REVIEWS = [
-                {
-                    name: "Sarah Jenkins",
-                    place: { en: "London, UK", vi: "London, UK" },
-                    text: {
-                        en: '"The most beautiful house I\'ve stayed in Hanoi. Every corner is a piece of art."',
-                        vi: '"C\u0103n nh\u00e0 \u0111\u1eb9p nh\u1ea5t t\u00f4i t\u1eebng \u1edf H\u00e0 N\u1ed9i. M\u1ecdi ng\u00f3c ng\u00e1ch \u0111\u1ec1u l\u00e0 m\u1ed9t t\u00e1c ph\u1ea9m ngh\u1ec7 thu\u1eadt."',
-                    },
-                },
-                {
-                    name: "Minh Anh",
-                    place: { en: "HCMC, VN", vi: "TP.HCM, VN" },
-                    text: {
-                        en: '"Great location, very quiet but close to the action. The cinema room was a highlight."',
-                        vi: '"V\u1ecb tr\u00ed tuy\u1ec7t v\u1eddi, r\u1ea5t y\u00ean t\u0129nh nh\u01b0ng l\u1ea1i g\u1ea7n trung t\u00e2m. Ph\u00f2ng xem phim l\u00e0 \u0111i\u1ec3m nh\u1ea5n."',
-                    },
-                },
-                {
-                    name: "David Chen",
-                    place: { en: "Singapore", vi: "Singapore" },
-                    text: {
-                        en: '"Exceptional design. The botanical theme in the West Lake property is so relaxing."',
-                        vi: '"Thi\u1ebft k\u1ebf xu\u1ea5t s\u1eafc. Ch\u1ee7 \u0111\u1ec1 th\u1ef1c v\u1eadt \u1edf c\u01a1 s\u1edf H\u1ed3 T\u00e2y r\u1ea5t th\u01b0 gi\u00e3n."',
-                    },
-                },
-            ];
+            const COPY = window.LASIDO_CONTENT.desktop.copy;
+            const PROPERTIES = window.LASIDO_CONTENT.shared.properties;
+            const REVIEWS = window.LASIDO_CONTENT.shared.reviews;
 
             let currentLang = "en";
 
@@ -917,10 +770,11 @@
 
             function renderNav() {
                 const nav = document.getElementById("nav-links");
+                const copy = COPY[currentLang];
                 nav.innerHTML = `
-            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#about">${currentLang === "en" ? "About" : "Giới thiệu"}</a>
-            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#ltt">${currentLang === "en" ? "Spaces" : "Không gian"}</a>
-            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#reviews">${currentLang === "en" ? "Reviews" : "Đánh giá"}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#about">${copy.navAbout}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#ltt">${copy.navSpaces}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#reviews">${copy.navReviews}</a>
         `;
             }
 
@@ -1036,29 +890,18 @@
             }
 
             function updateTranslations() {
-                // Hero
+                const copy = COPY[currentLang];
+
                 document.getElementById("hero-subtitle").textContent =
-                    currentLang === "en"
-                        ? "A collection of curated stays in the heart of historic Hanoi."
-                        : "Chuỗi không gian lưu trú tinh tế giữa lòng Hà Nội cổ kính.";
-
-                // Static UI
-                document.getElementById("quote-text").textContent =
-                    currentLang === "en"
-                        ? "“Every house — its own unique story.”"
-                        : "“Mỗi căn nhà — một câu chuyện riêng.”";
+                    copy.heroSubtitle;
+                document.getElementById("quote-text").textContent = copy.quote;
                 document.getElementById("reviews-title").textContent =
-                    currentLang === "en"
-                        ? "Loved by Travelers"
-                        : "Khách hàng nói về chúng tôi";
+                    copy.reviewsTitle;
                 document.getElementById("reviews-subtitle").textContent =
-                    currentLang === "en"
-                        ? "Over 500+ five-star reviews on Airbnb and Booking.com"
-                        : "Hơn 500 đánh giá 5 sao trên Airbnb và Booking.com";
+                    copy.reviewsSubtitle;
                 document.getElementById("footer-copy").textContent =
-                    `© 2024 LaSiDoHouse. All rights reserved.`;
+                    copy.footerCopy;
 
-                // Dynamic Properties Content
                 PROPERTIES.forEach((p) => {
                     const labels = document.querySelectorAll(
                         `.prop-label[data-id="${p.id}"]`,
