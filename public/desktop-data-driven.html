@@ -296,14 +296,14 @@
                 <p
                     class="text-on-surface-variant leading-relaxed text-lg max-w-lg"
                 >
-                    <span class="lang-en"
+                    <span class="lang-en" id="about-copy-en"
                         >LaSiDoHouse is more than just accommodation; it is our
                         passion for preserving the rustic, quiet charm amidst
                         the bustle of Hoan Kiem. A private, cozy space where
                         every small corner carries the breath of Hanoi's old
                         streets.</span
                     >
-                    <span class="lang-vi"
+                    <span class="lang-vi" id="about-copy-vi"
                         >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
                         huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng
                         giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm
@@ -326,19 +326,7 @@
                     </div>
                     <div class="border-l border-outline-variant/30 pl-6">
                         <span class="block text-4xl font-headline text-primary"
-                            >7 <span class="lang-en text-2xl">Guests</span
-                            ><span class="lang-vi text-2xl">Khách</span></span
-                        >
-                        <span
-                            class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
-                        >
-                            <span class="lang-en">Max Capacity</span>
-                            <span class="lang-vi">Sức chứa tối đa</span>
-                        </span>
-                    </div>
-                    <div class="border-l border-outline-variant/30 pl-6">
-                        <span class="block text-4xl font-headline text-primary"
-                            >5.0 ★</span
+                            >4.8 ★</span
                         >
                         <span
                             class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
@@ -894,6 +882,10 @@
 
                 document.getElementById("hero-subtitle").textContent =
                     copy.heroSubtitle;
+                document.getElementById("about-copy-en").textContent =
+                    COPY.en.aboutCopy;
+                document.getElementById("about-copy-vi").textContent =
+                    COPY.vi.aboutCopy;
                 document.getElementById("quote-text").textContent = copy.quote;
                 document.getElementById("reviews-title").textContent =
                     copy.reviewsTitle;

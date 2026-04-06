@@ -24,8 +24,8 @@ window.LASIDO_CONTENT = {
                     vi: "📍 Phố Lê Thánh Tông, Hoàn Kiếm, Hà Nội (10' đi bộ ra hồ)",
                 },
                 badge: {
-                    en: "5.0 Airbnb",
-                    vi: "5.0 Airbnb",
+                    en: "4.8 Airbnb",
+                    vi: "4.8 Airbnb",
                 },
                 stats: [
                     {
@@ -35,13 +35,7 @@ window.LASIDO_CONTENT = {
                             vi: "3 Phòng ngủ",
                         },
                     },
-                    {
-                        icon: "group",
-                        text: {
-                            en: "7 Guests",
-                            vi: "7 Khách",
-                        },
-                    },
+
                     {
                         icon: "distance",
                         text: {
@@ -112,8 +106,8 @@ window.LASIDO_CONTENT = {
                     vi: "📍 Ngõ Tràng Tiền, Hoàn Kiếm, Hà Nội (2' đi bộ ra hồ)",
                 },
                 badge: {
-                    en: "4.74 Airbnb",
-                    vi: "4.74 Airbnb",
+                    en: "5 Airbnb",
+                    vi: "5 Airbnb",
                 },
                 stats: [
                     {
@@ -223,6 +217,8 @@ window.LASIDO_CONTENT = {
                 introKicker: "Stay Collection",
                 introTitle: "Two distinct homes, one LaSiDoHouse experience.",
                 introCopy: "Browse each property, compare the atmosphere, and choose the stay that fits your trip best.",
+                aboutCopy:
+                    "LaSiDoHouse is more than just accommodation; it is our passion for preserving the rustic, quiet charm amidst the bustle of Hoan Kiem. A private, cozy space where every small corner carries the breath of Hanoi's old streets.",
                 quote: '"Every house - its own unique story."',
                 reviewsKicker: "Social Proof",
                 reviewsTitle: "Loved by Travelers",
@@ -243,6 +239,8 @@ window.LASIDO_CONTENT = {
                 introKicker: "Bộ Sưu Tập",
                 introTitle: "Hai cơ sở riêng biệt, cùng một trải nghiệm LaSiDoHouse.",
                 introCopy: "Xem từng cơ sở, so sánh phong cách và chọn nơi ở phù hợp nhất cho chuyến đi của bạn.",
+                aboutCopy:
+                    "LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà Nội phố cổ.",
                 quote: '"Mỗi căn nhà - một câu chuyện riêng."',
                 reviewsKicker: "Trải Nghiệm Khách Hàng",
                 reviewsTitle: "Khách hàng nói về chúng tôi",
@@ -265,6 +263,8 @@ window.LASIDO_CONTENT = {
                 navSpaces: "Spaces",
                 navReviews: "Reviews",
                 heroSubtitle: "A collection of curated stays in the heart of historic Hanoi.",
+                aboutCopy:
+                    "LaSiDoHouse is more than just accommodation; it is our passion for preserving the rustic, quiet charm amidst the bustle of Hoan Kiem. A private, cozy space where every small corner carries the breath of Hanoi's old streets.",
                 quote: '"Every house - its own unique story."',
                 reviewsTitle: "Loved by Travelers",
                 reviewsSubtitle: "Over 500+ five-star reviews on Airbnb and Booking.com",
@@ -275,6 +275,8 @@ window.LASIDO_CONTENT = {
                 navSpaces: "Không gian",
                 navReviews: "Đánh giá",
                 heroSubtitle: "Chuỗi không gian lưu trú tinh tế giữa lòng Hà Nội cổ kính.",
+                aboutCopy:
+                    "LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà Nội phố cổ.",
                 quote: '"Mỗi căn nhà - một câu chuyện riêng."',
                 reviewsTitle: "Khách hàng nói về chúng tôi",
                 reviewsSubtitle: "Hơn 500 đánh giá 5 sao trên Airbnb và Booking.com",

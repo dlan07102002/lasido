@@ -287,22 +287,24 @@
                             ><span class="lang-vi">Tầng</span>
                         </p>
                     </div>
+
                     <div class="bg-surface p-4 text-center">
-                        <p class="font-headline text-2xl text-primary">7</p>
-                        <p
-                            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
-                        >
-                            <span class="lang-en">Guests</span
-                            ><span class="lang-vi">Khách</span>
-                        </p>
-                    </div>
-                    <div class="bg-surface p-4 text-center">
-                        <p class="font-headline text-2xl text-primary">5.0 ★</p>
+                        <p class="font-headline text-2xl text-primary">4.8 ★</p>
                         <p
                             class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
                         >
                             <span class="lang-en">Airbnb Rating</span
                             ><span class="lang-vi">Đánh giá Airbnb</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-surface p-4 text-center">
+                        <p class="font-headline text-2xl text-primary">Host</p>
+                        <p
+                            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
+                        >
+                            <span class="lang-en">Dedicated Superhost</span
+                            ><span class="lang-vi">Superhost tận tâm</span>
                         </p>
                     </div>
                 </div>
@@ -318,14 +320,14 @@
                         >
                     </h3>
                     <p class="text-on-surface-variant leading-relaxed text-lg">
-                        <span class="lang-en"
+                        <span class="lang-en" id="about-copy-en"
                             >LaSiDoHouse is more than just accommodation; it is
                             our passion for preserving the rustic, quiet charm
                             amidst the bustle of Hoan Kiem. A private, cozy
                             space where every small corner carries the breath of
                             Hanoi's old streets.</span
                         >
-                        <span class="lang-vi"
+                        <span class="lang-vi" id="about-copy-vi"
                             >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
                             huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh
                             lặng giữa Hoàn Kiếm sầm uất. Một không gian riêng
@@ -722,6 +724,10 @@
                     copy.heroKicker;
                 document.getElementById("hero-subtitle").textContent =
                     copy.heroSubtitle;
+                document.getElementById("about-copy-en").textContent =
+                    COPY.en.aboutCopy;
+                document.getElementById("about-copy-vi").textContent =
+                    COPY.vi.aboutCopy;
                 document.getElementById("hero-ctas").innerHTML =
                     renderHeroCtas();
                 document.getElementById("quote-text").textContent = copy.quote;
