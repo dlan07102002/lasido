@@ -1,0 +1,1197 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>LaSiDoHouse | Boutique Stays in Hanoi</title>
+        <script>
+            (function () {
+                var mobileQuery = window.matchMedia("(max-width: 767.98px)");
+
+                function syncViewport(event) {
+                    if (event.matches) {
+                        window.location.replace("mobile-data-driven.html");
+                    }
+                }
+
+                syncViewport(mobileQuery);
+
+                if (typeof mobileQuery.addEventListener === "function") {
+                    mobileQuery.addEventListener("change", syncViewport);
+                } else {
+                    mobileQuery.addListener(syncViewport);
+                }
+            })();
+        </script>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet"
+        />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#50652a",
+                            "primary-container": "#687f40",
+                            surface: "#fbfbe2",
+                            "surface-bright": "#fbfbe2",
+                            "on-surface": "#1b1d0e",
+                            "on-surface-variant": "#4d453c",
+                            "surface-container": "#efefd7",
+                            "surface-container-low": "#f5f5dc",
+                            "on-primary": "#ffffff",
+                        },
+                        borderRadius: {
+                            DEFAULT: "0.125rem",
+                            lg: "0.25rem",
+                            xl: "0.5rem",
+                            full: "0.75rem",
+                        },
+                        fontFamily: {
+                            headline: ["Noto Serif"],
+                            body: ["Inter"],
+                            label: ["Inter"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings:
+                    "FILL" 0,
+                    "wght" 300,
+                    "GRAD" 0,
+                    "opsz" 24;
+                vertical-align: middle;
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .hero-gradient {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(27, 29, 14, 0.4),
+                    rgba(27, 29, 14, 0.1)
+                );
+            }
+            .section-anchor-offset {
+                scroll-margin-top: 0;
+            }
+            .header-nav-link {
+                position: relative;
+                display: inline-flex;
+                padding-bottom: 0.35rem;
+            }
+            .header-nav-link::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 2px;
+                background: #50652a;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 250ms ease;
+            }
+            .header-nav-link.is-active {
+                color: #50652a !important;
+            }
+            .header-nav-link.is-active::after {
+                transform: scaleX(1);
+            }
+            [lang="vi"] .lang-vi {
+                display: inline;
+            }
+            [lang="vi"] .lang-en {
+                display: none;
+            }
+            [lang="en"] .lang-vi {
+                display: none;
+            }
+            [lang="en"] .lang-en {
+                display: inline;
+            }
+            .social-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                width: 100%;
+            }
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                width: 100%;
+                min-height: 52px;
+                padding: 0.75rem 1rem;
+                border-radius: 9999px;
+                border: 1px solid rgba(80, 101, 42, 0.14);
+                background: rgba(255, 255, 255, 0.62);
+                transition:
+                    transform 180ms ease,
+                    box-shadow 180ms ease,
+                    background-color 180ms ease;
+            }
+            .social-link:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 14px 28px rgba(27, 29, 14, 0.12);
+                background: rgba(255, 255, 255, 0.9);
+            }
+            .social-logo {
+                display: grid;
+                place-items: center;
+                width: 2.25rem;
+                height: 2.25rem;
+                border-radius: 9999px;
+                flex: 0 0 auto;
+                box-shadow: 0 10px 20px rgba(27, 29, 14, 0.16);
+            }
+            .social-logo svg {
+                width: 1.1rem;
+                height: 1.1rem;
+                display: block;
+            }
+            .social-logo-facebook {
+                background: #1877f2;
+            }
+            .social-logo-instagram {
+                background: linear-gradient(
+                    135deg,
+                    #f58529 0%,
+                    #dd2a7b 48%,
+                    #8134af 75%,
+                    #515bd4 100%
+                );
+            }
+            .social-link-label {
+                font-size: 0.95rem;
+                font-weight: 600;
+                line-height: 1;
+                white-space: nowrap;
+            }
+            @media (min-width: 640px) {
+                .social-links {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: auto;
+                    justify-content: flex-end;
+                }
+                .social-link {
+                    width: auto;
+                    min-width: 168px;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-surface text-on-surface font-body">
+        <!-- TopNavBar -->
+        <nav
+            class="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 backdrop-blur-md flex justify-between items-center px-8 py-4 max-w-full mx-auto"
+        >
+            <div class="text-2xl font-['Noto_Serif'] italic text-primary">
+                <a
+                    class="text-2xl font-serif italic text-lime-950 dark:text-lime-200"
+                    href="#"
+                >
+                    <img src="../assets/logo.svg" width="90"
+                /></a>
+            </div>
+            <div
+                class="hidden md:flex gap-8 font-['Noto_Serif'] font-normal tracking-tight"
+                id="nav-links"
+            >
+                <!-- Dynamic Nav Links -->
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="text-xs uppercase tracking-widest text-primary font-bold"
+                    id="lang-btn"
+                    onclick="toggleLang()"
+                >
+                    EN
+                </button>
+                <button
+                    class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-sm text-sm font-medium tracking-wide"
+                >
+                    Book Now
+                </button>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <section
+            class="relative h-screen flex items-center justify-center overflow-hidden"
+        >
+            <div class="absolute inset-0 z-0">
+                <img
+                    alt="Boutique Hotel Hero"
+                    class="w-full h-full object-cover scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYzxg6MUA69w94U8w_pxbkxDevKAAF8HMvYbbaYIaq5bWI4wrcW7qw7X443uaH8-SbCb5VUEdE4-QV_P2uDMhZR8RQRIVZuVssbczQRoaUOqOZZdXZ6KpkhaM3rJ9q8OFquglpi4oFh7VAjK4dCuMQWIXrWIPgygpWFu-Ecxn6qGZR07d2XYjNQA9ba-KnoOe13owWSAJMX3aqzQxOQYIPQZLeN1KE64Anb1Ur3E0lgyebbvBs46p3I-tXtBLNYm0bNyA3xtbcSI0"
+                />
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 reveal active">
+                <h1
+                    class="font-headline text-7xl md:text-9xl text-white mb-6 tracking-tighter italic"
+                >
+                    LaSiDoHouse
+                </h1>
+                <p
+                    class="text-surface-bright text-xl md:text-2xl font-light mb-12 tracking-wide max-w-2xl mx-auto"
+                    id="hero-subtitle"
+                >
+                    A collection of curated stays in the heart of historic
+                    Hanoi.
+                </p>
+                <div
+                    class="flex flex-col md:flex-row gap-4 justify-center items-center"
+                    id="hero-ctas"
+                >
+                    <!-- Dynamic CTAs -->
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section
+            class="section-anchor-offset py-24 px-8 md:px-24 bg-surface grid md:grid-cols-2 gap-16 items-center"
+            id="about"
+        >
+            <div class="space-y-8">
+                <h2
+                    class="font-headline text-4xl md:text-5xl text-on-surface leading-snug"
+                >
+                    <span class="lang-en"
+                        >Return to a sanctuary
+                        <span class="italic font-normal"
+                            >that feels like home</span
+                        >.</span
+                    >
+                    <span class="lang-vi"
+                        >Về chốn bình yên
+                        <span class="italic font-normal"
+                            >như chính ngôi nhà bạn</span
+                        >.</span
+                    >
+                </h2>
+                <p
+                    class="text-on-surface-variant leading-relaxed text-lg max-w-lg"
+                >
+                    <span class="lang-en"
+                        >LaSiDoHouse is more than just accommodation; it is our
+                        passion for preserving the rustic, quiet charm amidst
+                        the bustle of Hoan Kiem. A private, cozy space where
+                        every small corner carries the breath of Hanoi's old
+                        streets.</span
+                    >
+                    <span class="lang-vi"
+                        >LaSiDoHouse không chỉ là một nơi lưu trú, mà là tâm
+                        huyết của chúng tôi để gìn giữ nét mộc mạc, tĩnh lặng
+                        giữa Hoàn Kiếm sầm uất. Một không gian riêng tư, ấm
+                        cúng, nơi mỗi góc nhỏ đều mang hơi thở của Hà Nội phố
+                        cổ.</span
+                    >
+                </p>
+                <div class="grid grid-cols-2 gap-8 pt-4">
+                    <div class="border-l border-outline-variant/30 pl-6">
+                        <span class="block text-4xl font-headline text-primary"
+                            >3 <span class="lang-en text-2xl">Floors</span
+                            ><span class="lang-vi text-2xl">Tầng</span></span
+                        >
+                        <span
+                            class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
+                        >
+                            <span class="lang-en">Private Townhouse</span>
+                            <span class="lang-vi">Nhà phố nguyên căn</span>
+                        </span>
+                    </div>
+                    <div class="border-l border-outline-variant/30 pl-6">
+                        <span class="block text-4xl font-headline text-primary"
+                            >7 <span class="lang-en text-2xl">Guests</span
+                            ><span class="lang-vi text-2xl">Khách</span></span
+                        >
+                        <span
+                            class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
+                        >
+                            <span class="lang-en">Max Capacity</span>
+                            <span class="lang-vi">Sức chứa tối đa</span>
+                        </span>
+                    </div>
+                    <div class="border-l border-outline-variant/30 pl-6">
+                        <span class="block text-4xl font-headline text-primary"
+                            >5.0 ★</span
+                        >
+                        <span
+                            class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
+                        >
+                            <span class="lang-en">Airbnb Rating</span>
+                            <span class="lang-vi">Đánh giá Airbnb</span>
+                        </span>
+                    </div>
+                    <div class="border-l border-outline-variant/30 pl-6">
+                        <span class="block text-4xl font-headline text-primary"
+                            >Host</span
+                        >
+                        <span
+                            class="text-sm uppercase tracking-widest text-on-surface-variant font-medium"
+                        >
+                            <span class="lang-en">Dedicated Superhost</span>
+                            <span class="lang-vi">Superhost tận tâm</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div
+                    class="aspect-[4/5] bg-surface-container-high rounded-sm overflow-hidden"
+                >
+                    <img
+                        alt="Cozy living space"
+                        class="w-full h-full object-cover"
+                        src="../assets/images/le-thanh-tong/ltt-1.avif"
+                    />
+                </div>
+                <div
+                    class="absolute -bottom-8 -left-8 bg-primary p-8 text-on-primary max-w-xs shadow-2xl"
+                >
+                    <p class="font-headline text-xl italic">
+                        <span class="lang-en"
+                            >"It feels like returning home after a long day
+                            exploring the city."</span
+                        >
+                        <span class="lang-vi"
+                            >"Cảm giác như được trở về nhà sau một ngày dài khám
+                            phá phố phường."</span
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Main Container for Properties -->
+        <main id="properties-container">
+            <!-- Dynamic Property Sections -->
+        </main>
+        <!-- Quote Divider -->
+        <section
+            class="py-32 bg-surface-container-low text-center overflow-hidden"
+        >
+            <div class="reveal">
+                <span
+                    class="material-symbols-outlined text-primary/30 text-6xl mb-6"
+                    >format_quote</span
+                >
+                <h2
+                    class="font-headline text-4xl md:text-6xl italic text-on-surface-variant max-w-4xl mx-auto leading-tight px-6"
+                    id="quote-text"
+                >
+                    “Every house — its own unique story.”
+                </h2>
+                <div class="mt-8 h-[1px] w-24 bg-primary/20 mx-auto"></div>
+            </div>
+        </section>
+        <!-- Social Proof -->
+        <section
+            class="section-anchor-offset py-24 bg-surface-container"
+            id="reviews"
+        >
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex justify-between items-end mb-16 reveal">
+                    <div>
+                        <h3
+                            class="font-headline text-4xl mb-2"
+                            id="reviews-title"
+                        >
+                            Loved by Travelers
+                        </h3>
+                        <p
+                            class="text-on-surface-variant"
+                            id="reviews-subtitle"
+                        >
+                            Over 500+ five-star reviews on Airbnb and
+                            Booking.com
+                        </p>
+                    </div>
+                    <a
+                        class="text-primary font-bold tracking-widest uppercase text-sm border-b border-primary/20 pb-1"
+                        href="#"
+                        >View all reviews</a
+                    >
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Static Reviews as per source -->
+                    <div class="bg-surface p-10 rounded-sm shadow-sm reveal">
+                        <div class="flex text-primary mb-4">
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                        </div>
+                        <p
+                            class="italic text-on-surface-variant mb-6 leading-relaxed review-text"
+                            data-en='"The most beautiful house I&apos;ve stayed in Hanoi. Every corner is a piece of art."'
+                            data-vi='"Căn nhà đẹp nhất tôi từng ở Hà Nội. Mỗi ngóc ngách đều là một tác phẩm nghệ thuật."'
+                        ></p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-high bg-gray-200"
+                            ></div>
+                            <div>
+                                <p class="text-sm font-bold">Sarah Jenkins</p>
+                                <p
+                                    class="text-[10px] text-on-surface-variant uppercase tracking-widest"
+                                >
+                                    London, UK
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More reviews could be data-driven too, but following source content structure -->
+                    <div class="bg-surface p-10 rounded-sm shadow-sm reveal">
+                        <div class="flex text-primary mb-4">
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                        </div>
+                        <p
+                            class="italic text-on-surface-variant mb-6 leading-relaxed review-text"
+                            data-en='"Great location, very quiet but close to the action. The cinema room was a highlight."'
+                            data-vi='"Vị trí tuyệt vời, rất yên tĩnh nhưng lại gần trung tâm. Phòng xem phim là điểm nhấn."'
+                        ></p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-high bg-gray-200"
+                            ></div>
+                            <div>
+                                <p class="text-sm font-bold">Minh Anh</p>
+                                <p
+                                    class="text-[10px] text-on-surface-variant uppercase tracking-widest"
+                                >
+                                    HCMC, VN
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface p-10 rounded-sm shadow-sm reveal">
+                        <div class="flex text-primary mb-4">
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                            <span
+                                class="material-symbols-outlined"
+                                style="
+                                    font-variation-settings: &quot;FILL&quot; 1;
+                                "
+                                >star</span
+                            >
+                        </div>
+                        <p
+                            class="italic text-on-surface-variant mb-6 leading-relaxed review-text"
+                            data-en='"Exceptional design. The botanical theme in the West Lake property is so relaxing."'
+                            data-vi='"Thiết kế xuất sắc. Chủ đề thực vật ở cơ sở Hồ Tây rất thư giãn."'
+                        ></p>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-high bg-gray-200"
+                            ></div>
+                            <div>
+                                <p class="text-sm font-bold">David Chen</p>
+                                <p
+                                    class="text-[10px] text-on-surface-variant uppercase tracking-widest"
+                                >
+                                    Singapore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto"
+            >
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <a
+                        class="text-xl font-serif text-lime-950 dark:text-lime-100"
+                        href="#"
+                    >
+                        <img src="../assets/logo.svg" width="90" />
+                    </a>
+                    <p
+                        class="font-sans text-sm uppercase tracking-widest text-lime-900 dark:text-lime-400"
+                    >
+                        Hoan Kiem, Hanoi
+                    </p>
+                </div>
+                <div class="flex gap-8">
+                    <a
+                        class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest"
+                        href="#"
+                    >
+                        <span class="lang-en">Privacy Policy</span>
+                        <span class="lang-vi">Chính sách bảo mật</span>
+                    </a>
+                    <a
+                        class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest"
+                        href="#"
+                    >
+                        <span class="lang-en">House Rules</span>
+                        <span class="lang-vi">Nội quy nhà</span>
+                    </a>
+                    <a
+                        class="text-stone-500 dark:text-stone-500 hover:text-lime-800 dark:hover:text-lime-200 transition-all font-sans text-sm uppercase tracking-widest"
+                        href="#"
+                    >
+                        <span class="lang-en">Contact Host</span>
+                        <span class="lang-vi">Liên hệ Host</span>
+                    </a>
+                </div>
+                <div
+                    class="flex flex-col items-center md:items-end gap-3 w-full md:w-auto"
+                >
+                    <p
+                        class="font-sans text-[11px] uppercase tracking-[0.3em] text-stone-500 dark:text-stone-500"
+                    >
+                        <span class="lang-en">Follow Us</span>
+                        <span class="lang-vi">Kết nối</span>
+                    </p>
+                    <div class="social-links">
+                        <a
+                            class="social-link text-lime-950 dark:text-lime-100"
+                            href="https://www.facebook.com/profile.php?id=61584634003772"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-logo social-logo-facebook"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M13.642 23V13.876H16.703L17.162 10.32H13.642V8.049C13.642 7.02 13.927 6.318 15.403 6.318H17.286V3.138C16.96 3.095 15.84 3 14.538 3C11.82 3 9.958 4.659 9.958 7.705V10.32H7V13.876H9.958V23H13.642Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <span class="social-link-label">Facebook</span>
+                        </a>
+                        <a
+                            class="social-link text-lime-950 dark:text-lime-100"
+                            href="https://www.instagram.com/lasidohomestay/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <span
+                                class="social-logo social-logo-instagram"
+                                aria-hidden="true"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M7.75 2H16.25C19.4256 2 22 4.57436 22 7.75V16.25C22 19.4256 19.4256 22 16.25 22H7.75C4.57436 22 2 19.4256 2 16.25V7.75C2 4.57436 4.57436 2 7.75 2ZM16.25 3.8H7.75C5.56848 3.8 3.8 5.56848 3.8 7.75V16.25C3.8 18.4315 5.56848 20.2 7.75 20.2H16.25C18.4315 20.2 20.2 18.4315 20.2 16.25V7.75C20.2 5.56848 18.4315 3.8 16.25 3.8ZM12 6.75C14.8995 6.75 17.25 9.10051 17.25 12C17.25 14.8995 14.8995 17.25 12 17.25C9.10051 17.25 6.75 14.8995 6.75 12C6.75 9.10051 9.10051 6.75 12 6.75ZM12 8.55C10.0946 8.55 8.55 10.0946 8.55 12C8.55 13.9054 10.0946 15.45 12 15.45C13.9054 15.45 15.45 13.9054 15.45 12C15.45 10.0946 13.9054 8.55 12 8.55ZM17.575 5.4C18.0507 5.4 18.4364 5.78566 18.4364 6.26136C18.4364 6.73705 18.0507 7.12273 17.575 7.12273C17.0993 7.12273 16.7136 6.73705 16.7136 6.26136C16.7136 5.78566 17.0993 5.4 17.575 5.4Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                            </span>
+                            <span class="social-link-label">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-12 text-center text-stone-500 dark:text-stone-500 font-sans text-xs uppercase tracking-widest"
+                id="footer-copy"
+            >
+                © 2024 LaSiDoHouse. All rights reserved.
+            </div>
+        </footer>
+        <!-- Lightbox -->
+        <div
+            class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center p-8 backdrop-blur-xl transition-all duration-500"
+            id="lightbox"
+            onclick="closeLightbox()"
+        >
+            <button class="absolute top-8 right-8 text-white text-4xl">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <img
+                class="max-w-full max-h-[90vh] object-contain rounded-sm shadow-2xl"
+                id="lightbox-img"
+                src=""
+            />
+        </div>
+        <script>
+            const PROPERTIES = [
+                {
+                    id: "ltt",
+                    accent: "#50652a",
+                    btnColor: "#50652a",
+                    label: {
+                        en: "Le Thanh Tong Collection",
+                        vi: "Cơ sở Lê Thánh Tông",
+                    },
+                    title: { en: "Heritage House", vi: "Heritage House" },
+                    district: {
+                        en: "Hoan Kiem District",
+                        vi: "Quận Hoàn Kiếm",
+                    },
+                    address: {
+                        en: "📍 Le Thanh Tong St, Hoan Kiem, Hanoi (10' Lake Walk)",
+                        vi: "📍 Phố Lê Thánh Tông, Hoàn Kiếm, Hà Nội (10' đi bộ ra hồ)",
+                    },
+                    badge: { en: "5.0 Airbnb", vi: "5.0 Airbnb" },
+                    stats: [
+                        {
+                            icon: "bed",
+                            text: { en: "3 Bedrooms", vi: "3 Phòng ngủ" },
+                        },
+                        {
+                            icon: "group",
+                            text: { en: "7 Guests", vi: "7 Khách" },
+                        },
+                        {
+                            icon: "distance",
+                            text: { en: "10' Hoan Kiem", vi: "10' Hồ Gươm" },
+                        },
+                    ],
+                    desc: {
+                        en: "A quiet 3-story house filled with light, featuring an elegant style with old Hanoi vibes. Nestled in a peaceful alley in the intellectual quarter, just a short walk to the Lake.",
+                        vi: "Ngôi nhà 3 tầng yên tĩnh, ánh sáng ngập tràn, phong cách sang trọng mang nét Hà Nội xưa. Tọa lạc trong con ngõ nhỏ khu phố tri thức, chỉ vài phút đi bộ ra Hồ Gươm.",
+                    },
+                    features: [
+                        {
+                            icon: "key",
+                            label: { en: "Self Check-in", vi: "Tự Check-in" },
+                        },
+                        {
+                            icon: "location_on",
+                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
+                        },
+                        {
+                            icon: "kitchen",
+                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
+                        },
+                    ],
+                    cta: { en: "Book on Airbnb", vi: "Đặt trên Airbnb" },
+                    ctaIcon: "arrow_forward",
+                    images: [
+                        "../assets/images/le-thanh-tong/ltt-1.avif",
+                        "../assets/images/le-thanh-tong/ltt-2.avif",
+                        "../assets/images/le-thanh-tong/ltt-3.avif",
+                        "../assets/images/le-thanh-tong/ltt-4.avif",
+                        "../assets/images/le-thanh-tong/ltt-5.avif",
+                    ],
+                },
+                {
+                    id: "tt",
+                    accent: "#8b7355",
+                    btnColor: "#8b7355",
+                    label: {
+                        en: "Trang Tien Collection",
+                        vi: "Cơ sở Tràng Tiền",
+                    },
+                    title: {
+                        en: "French Quarter Home",
+                        vi: "French Quarter Home",
+                    },
+                    district: { en: "Old Quarter", vi: "Phố Cổ / Hoàn Kiếm" },
+                    address: {
+                        en: "📍 Trang Tien Alley, Hoan Kiem, Hanoi (2' Lake Walk)",
+                        vi: "📍 Ngõ Tràng Tiền, Hoàn Kiếm, Hà Nội (2' đi bộ ra hồ)",
+                    },
+                    badge: { en: "4.74 Airbnb", vi: "4.74 Airbnb" },
+                    stats: [
+                        {
+                            icon: "king_bed",
+                            text: { en: "2 Bedrooms", vi: "2 Phòng ngủ" },
+                        },
+                        {
+                            icon: "group",
+                            text: { en: "5-6 Guests", vi: "5-6 Khách" },
+                        },
+                        {
+                            icon: "waves",
+                            text: { en: "2' Lake Walk", vi: "2' Hồ Gươm" },
+                        },
+                    ],
+                    desc: {
+                        en: "Experience local living in the French Quarter, just 15m from Trang Tien Street. A traditional cozy home offering 5-star care for those seeking local charm over luxury.",
+                        vi: "Trải nghiệm sống như người địa phương tại Khu Phố Pháp, cách phố Tràng Tiền chỉ 15m. Một ngôi nhà truyền thống ấm cúng với dịch vụ chu đáo cho du khách yêu nét quyến rũ bản địa.",
+                    },
+                    features: [
+                        {
+                            icon: "key",
+                            label: { en: "Self Check-in", vi: "Tự Check-in" },
+                        },
+                        {
+                            icon: "location_on",
+                            label: { en: "Prime Location", vi: "Vị trí đẹp" },
+                        },
+                        {
+                            icon: "kitchen",
+                            label: { en: "Full Kitchen", vi: "Bếp đầy đủ" },
+                        },
+                    ],
+                    cta: { en: "Reserve My Stay", vi: "Đặt phòng ngay" },
+                    ctaIcon: "eco",
+                    images: [
+                        "../assets/images/trang-tien/tt-1.avif",
+                        "../assets/images/trang-tien/tt-2.avif",
+                        "../assets/images/trang-tien/tt-3.webp",
+                        "../assets/images/trang-tien/tt-4.avif",
+                        "../assets/images/trang-tien/tt-5.avif",
+                    ],
+                },
+            ];
+
+            let currentLang = "en";
+
+            function init() {
+                document.documentElement.setAttribute("lang", currentLang);
+                renderNav();
+                renderHero();
+                renderProperties();
+                setupHeaderNavigation();
+                updateTranslations();
+                observeElements();
+            }
+
+            function toggleLang() {
+                currentLang = currentLang === "en" ? "vi" : "en";
+                document.documentElement.setAttribute("lang", currentLang);
+                document.getElementById("lang-btn").textContent =
+                    currentLang.toUpperCase();
+                renderNav();
+                setupHeaderNavigation();
+                updateTranslations();
+            }
+
+            function renderNav() {
+                const nav = document.getElementById("nav-links");
+                nav.innerHTML = `
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#about">${currentLang === "en" ? "About" : "Giới thiệu"}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#ltt">${currentLang === "en" ? "Spaces" : "Không gian"}</a>
+            <a class="header-nav-link text-[#8b7355] hover:text-primary transition-colors duration-500" data-header-link href="#reviews">${currentLang === "en" ? "Reviews" : "Đánh giá"}</a>
+        `;
+            }
+
+            function renderHero() {
+                const ctaContainer = document.getElementById("hero-ctas");
+                ctaContainer.innerHTML = PROPERTIES.map(
+                    (p, idx) => `
+            <a class="${idx === 0 ? "bg-white text-on-surface" : "bg-transparent border border-white text-white"} px-10 py-4 rounded-full text-sm font-semibold tracking-widest uppercase hover:opacity-90 transition-all backdrop-blur-sm" href="#${p.id}">
+                <span class="prop-label" data-id="${p.id}"></span>
+            </a>
+        `,
+                ).join("");
+            }
+
+            function renderProperties() {
+                const container = document.getElementById(
+                    "properties-container",
+                );
+                container.innerHTML = PROPERTIES.map(
+                    (p, idx) => `
+            <section class="section-anchor-offset py-24 bg-surface px-8 md:px-16 lg:px-24" id="${p.id}">
+                <div class="max-w-7xl mx-auto flex flex-col ${idx % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-16">
+                    <!-- Gallery -->
+                    <div class="lg:w-[55%] reveal">
+                        <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
+                            <div class="col-span-4 row-span-1 overflow-hidden rounded-md">
+                                <img class="w-full h-full object-cover hover:scale-110 transition-transform duration-700 cursor-zoom-in" src="${p.images[0]}" onclick="openLightbox(this.src)"/>
+                            </div>
+                            ${p.images
+                                .slice(1)
+                                .map(
+                                    (img) => `
+                                <div class="col-span-1 overflow-hidden rounded-md">
+                                    <img class="w-full h-full object-cover cursor-zoom-in" src="${img}" onclick="openLightbox(this.src)"/>
+                                </div>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                    </div>
+                    <!-- Info -->
+                    <div class="lg:w-[45%] sticky top-32 h-fit reveal">
+                        <div class="mb-4 flex gap-2">
+                            <span class="px-3 py-1 text-[10px] uppercase font-bold tracking-widest rounded-full" style="background-color: ${p.accent}20; color: ${p.accent}">${p.district[currentLang]}</span>
+                            <span class="bg-primary/10 text-primary px-3 py-1 text-[10px] uppercase font-bold tracking-widest rounded-full flex items-center gap-1">
+                                <span class="material-symbols-outlined !text-xs" style="font-variation-settings: 'FILL' 1;">star</span> ${p.badge[currentLang]}
+                            </span>
+                        </div>
+                        <h2 class="font-headline text-5xl mb-1 text-on-surface leading-tight prop-title" data-id="${p.id}"></h2>
+                        <p class="text-sm text-primary font-medium mb-6 prop-address" data-id="${p.id}"></p>
+                        
+                        <div class="flex gap-6 mb-8 text-on-surface-variant font-medium text-sm">
+                            ${p.stats
+                                .map(
+                                    (s) => `
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined">${s.icon}</span> ${s.text[currentLang]}</span>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed mb-10 text-lg prop-desc" data-id="${p.id}"></p>
+                        
+                        <div class="grid grid-cols-3 gap-6 mb-12">
+                            ${p.features
+                                .map(
+                                    (f) => `
+                                <div class="flex flex-col items-center p-4 bg-surface-container rounded-lg">
+                                    <span class="material-symbols-outlined mb-2" style="color: ${p.accent}">${f.icon}</span>
+                                    <span class="text-[10px] uppercase tracking-tighter font-bold">${f.label[currentLang]}</span>
+                                </div>
+                            `,
+                                )
+                                .join("")}
+                        </div>
+                        <button class="w-full text-white py-5 rounded-sm font-bold tracking-widest uppercase hover:shadow-xl transition-all flex justify-center items-center gap-3" style="background: linear-gradient(135deg, ${p.btnColor}, ${p.btnColor}dd)">
+                            <span class="prop-cta" data-id="${p.id}"></span>
+                            <span class="material-symbols-outlined">${p.ctaIcon}</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        `,
+                ).join("");
+            }
+
+            function updateTranslations() {
+                // Hero
+                document.getElementById("hero-subtitle").textContent =
+                    currentLang === "en"
+                        ? "A collection of curated stays in the heart of historic Hanoi."
+                        : "Chuỗi không gian lưu trú tinh tế giữa lòng Hà Nội cổ kính.";
+
+                // Static UI
+                document.getElementById("quote-text").textContent =
+                    currentLang === "en"
+                        ? "“Every house — its own unique story.”"
+                        : "“Mỗi căn nhà — một câu chuyện riêng.”";
+                document.getElementById("reviews-title").textContent =
+                    currentLang === "en"
+                        ? "Loved by Travelers"
+                        : "Khách hàng nói về chúng tôi";
+                document.getElementById("reviews-subtitle").textContent =
+                    currentLang === "en"
+                        ? "Over 500+ five-star reviews on Airbnb and Booking.com"
+                        : "Hơn 500 đánh giá 5 sao trên Airbnb và Booking.com";
+                document.getElementById("footer-copy").textContent =
+                    `© 2024 LaSiDoHouse. All rights reserved.`;
+
+                // Dynamic Properties Content
+                PROPERTIES.forEach((p) => {
+                    const labels = document.querySelectorAll(
+                        `.prop-label[data-id="${p.id}"]`,
+                    );
+                    labels.forEach(
+                        (el) => (el.textContent = p.label[currentLang]),
+                    );
+
+                    const titles = document.querySelectorAll(
+                        `.prop-title[data-id="${p.id}"]`,
+                    );
+                    titles.forEach(
+                        (el) => (el.textContent = p.title[currentLang]),
+                    );
+
+                    const addresses = document.querySelectorAll(
+                        `.prop-address[data-id="${p.id}"]`,
+                    );
+                    addresses.forEach(
+                        (el) => (el.textContent = p.address[currentLang]),
+                    );
+
+                    const descs = document.querySelectorAll(
+                        `.prop-desc[data-id="${p.id}"]`,
+                    );
+                    descs.forEach(
+                        (el) => (el.textContent = p.desc[currentLang]),
+                    );
+
+                    const ctas = document.querySelectorAll(
+                        `.prop-cta[data-id="${p.id}"]`,
+                    );
+                    ctas.forEach((el) => (el.textContent = p.cta[currentLang]));
+                });
+
+                // Reviews
+                document.querySelectorAll(".review-text").forEach((el) => {
+                    el.textContent = el.getAttribute(`data-${currentLang}`);
+                });
+            }
+
+            // Lightbox
+            function openLightbox(src) {
+                const lb = document.getElementById("lightbox");
+                const img = document.getElementById("lightbox-img");
+                img.src = src;
+                lb.classList.remove("hidden");
+                lb.classList.add("flex");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeLightbox() {
+                const lb = document.getElementById("lightbox");
+                lb.classList.add("hidden");
+                lb.classList.remove("flex");
+                document.body.style.overflow = "auto";
+            }
+
+            // Reveal animations observer
+            function observeElements() {
+                const observerOptions = { threshold: 0.1 };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        }
+                    });
+                }, observerOptions);
+                document
+                    .querySelectorAll(".reveal")
+                    .forEach((el) => observer.observe(el));
+            }
+
+            let cleanupHeaderNavigation = null;
+
+            function setupHeaderNavigation() {
+                if (typeof cleanupHeaderNavigation === "function") {
+                    cleanupHeaderNavigation();
+                }
+
+                const nav = document.querySelector("nav");
+                const navLinks = Array.from(
+                    document.querySelectorAll("[data-header-link]"),
+                );
+                const sections = ["about", "ltt", "reviews"].map((id) => ({
+                    id,
+                    node: document.getElementById(id),
+                }));
+                let lockedActiveId = null;
+                let lockedScrollTop = null;
+                let unlockTimer = null;
+
+                function getHeaderOffset() {
+                    return nav ? nav.offsetHeight + 12 : 0;
+                }
+
+                function setActiveLink(activeId) {
+                    navLinks.forEach((link) => {
+                        const isActive =
+                            link.getAttribute("href") === `#${activeId}`;
+                        link.classList.toggle("is-active", isActive);
+                        link.setAttribute(
+                            "aria-current",
+                            isActive ? "page" : "false",
+                        );
+                    });
+                }
+
+                function releaseActiveLock() {
+                    lockedActiveId = null;
+                    lockedScrollTop = null;
+                    if (unlockTimer) {
+                        window.clearTimeout(unlockTimer);
+                        unlockTimer = null;
+                    }
+                }
+
+                function lockActiveLink(activeId, scrollTop) {
+                    lockedActiveId = activeId;
+                    lockedScrollTop = scrollTop;
+                    setActiveLink(activeId);
+
+                    if (unlockTimer) {
+                        window.clearTimeout(unlockTimer);
+                    }
+
+                    unlockTimer = window.setTimeout(() => {
+                        releaseActiveLock();
+                        updateActiveSection();
+                    }, 700);
+                }
+
+                function updateActiveSection() {
+                    if (!navLinks.length || !sections.length) return;
+
+                    if (lockedActiveId !== null) {
+                        if (Math.abs(window.scrollY - lockedScrollTop) <= 8) {
+                            releaseActiveLock();
+                        } else {
+                            setActiveLink(lockedActiveId);
+                            return;
+                        }
+                    }
+
+                    const scrollPosition =
+                        window.scrollY + getHeaderOffset() + 24;
+                    let activeId = sections[0].id;
+
+                    sections.forEach((section) => {
+                        if (!section.node) return;
+                        if (section.node.offsetTop <= scrollPosition) {
+                            activeId = section.id;
+                        }
+                    });
+
+                    setActiveLink(activeId);
+                }
+
+                function handleNavClick(event) {
+                    const href = event.currentTarget.getAttribute("href");
+                    if (!href || href.charAt(0) !== "#") return;
+
+                    const target = document.querySelector(href);
+                    if (!target) return;
+
+                    event.preventDefault();
+                    const top = Math.max(
+                        target.offsetTop - getHeaderOffset(),
+                        0,
+                    );
+                    lockActiveLink(href.slice(1), top);
+                    window.scrollTo({ top, behavior: "smooth" });
+                }
+
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", handleNavClick);
+                });
+
+                window.addEventListener("scroll", updateActiveSection, {
+                    passive: true,
+                });
+                window.addEventListener("resize", updateActiveSection);
+                window.addEventListener("load", updateActiveSection);
+                updateActiveSection();
+
+                cleanupHeaderNavigation = function () {
+                    navLinks.forEach((link) => {
+                        link.removeEventListener("click", handleNavClick);
+                    });
+                    window.removeEventListener("scroll", updateActiveSection);
+                    window.removeEventListener("resize", updateActiveSection);
+                    window.removeEventListener("load", updateActiveSection);
+                    if (unlockTimer) {
+                        window.clearTimeout(unlockTimer);
+                    }
+                };
+            }
+
+            // Run Init
+            init();
+        </script>
+    </body>
+</html>
