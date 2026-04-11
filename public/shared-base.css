@@ -1,0 +1,15 @@
+.social-logo-facebook,
+.social-card-logo-facebook {
+    background: #1877f2;
+}
+
+.social-logo-instagram,
+.social-card-logo-instagram {
+    background: linear-gradient(
+        135deg,
+        #f58529 0%,
+        #dd2a7b 48%,
+        #8134af 75%,
+        #515bd4 100%
+    );
+}
